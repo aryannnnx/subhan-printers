@@ -1,0 +1,1464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Graphic Designing Services | Subhan Printers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <style>
+        /* ============================================================
+                   ROOT VARIABLES
+                   ============================================================ */
+        :root {
+            /* Colours */
+            --clr-bg: #0a0a12;
+            --clr-surface: #11111e;
+            --clr-surface-2: #1a1a2e;
+            --clr-border: rgba(255, 255, 255, 0.06);
+            --clr-white: #ffffff;
+            --clr-muted: #a0a0b8;
+            --clr-muted-2: #6a6a82;
+
+            /* Brand */
+            --clr-primary: #8b5cf6;
+            --clr-primary-dark: #6d28d9;
+            --clr-primary-light: #a78bfa;
+            --clr-accent: #f59e0b;
+            --clr-green: #22c55e;
+            --clr-blue: #3b82f6;
+            --clr-pink: #ec4899;
+            --clr-rose: #f43f5e;
+
+            /* Fonts */
+            --font-display: 'DM Sans', sans-serif;
+            --font-body: 'Inter', sans-serif;
+
+            /* Radius */
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --radius-full: 9999px;
+
+            /* Shadows */
+            --shadow-glow: 0 0 40px rgba(139, 92, 246, 0.15);
+            --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.4);
+        }
+
+        /* ============================================================
+                   RESET & BASE
+                   ============================================================ */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--clr-bg);
+            color: var(--clr-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 12px;
+        }
+
+        .section-title .highlight {
+            background: linear-gradient(135deg, var(--clr-primary), var(--clr-primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-desc {
+            font-size: 1.05rem;
+            color: var(--clr-muted);
+            max-width: 600px;
+            margin: 0 auto 32px;
+            text-align: center;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--clr-primary-light);
+            background: rgba(139, 92, 246, 0.12);
+            border: 1px solid rgba(139, 92, 246, 0.15);
+            padding: 6px 18px;
+            border-radius: var(--radius-full);
+            margin-bottom: 16px;
+        }
+
+        /* ============================================================
+                   BUTTONS
+                   ============================================================ */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 32px;
+            font-family: var(--font-body);
+            font-weight: 700;
+            font-size: 0.95rem;
+            border: none;
+            border-radius: var(--radius-full);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--clr-primary), var(--clr-primary-dark));
+            color: #fff;
+            box-shadow: 0 4px 20px rgba(139, 92, 246, 0.3);
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(139, 92, 246, 0.4);
+        }
+
+        .btn-accent {
+            background: linear-gradient(135deg, var(--clr-accent), #d97706);
+            color: #0a0a12;
+            box-shadow: 0 4px 20px rgba(245, 158, 11, 0.25);
+        }
+        .btn-accent:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(245, 158, 11, 0.35);
+        }
+
+        .btn-green {
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            color: #fff;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.25);
+        }
+        .btn-green:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.35);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--clr-white);
+            border: 2px solid rgba(255, 255, 255, 0.15);
+        }
+        .btn-outline:hover {
+            border-color: var(--clr-primary);
+            background: rgba(139, 92, 246, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .btn-lg {
+            padding: 16px 40px;
+            font-size: 1.05rem;
+        }
+
+        .btn-sm {
+            padding: 10px 20px;
+            font-size: 0.85rem;
+        }
+
+        /* ============================================================
+                   REVEAL ANIMATIONS
+                   ============================================================ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-d1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-d2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-d3 {
+            transition-delay: 0.3s;
+        }
+        .reveal-d4 {
+            transition-delay: 0.4s;
+        }
+
+        /* ============================================================
+                   HERO SECTION
+                   ============================================================ */
+        #hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 80px 0 60px;
+        }
+
+        #hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 20% 50%, rgba(139, 92, 246, 0.12), transparent 60%),
+                radial-gradient(ellipse at 80% 50%, rgba(245, 158, 11, 0.06), transparent 50%);
+            z-index: 0;
+        }
+
+        .hero-grid-lines {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            opacity: 0.04;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+
+        .hero-inner {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-eyebrow {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--clr-primary-light);
+            margin-bottom: 12px;
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.8rem, 5.5vw, 4.2rem);
+            font-weight: 900;
+            line-height: 1.08;
+            margin-bottom: 20px;
+        }
+
+        .hero-title .line-gold {
+            background: linear-gradient(135deg, var(--clr-accent), #fbbf24);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-desc {
+            font-size: 1.1rem;
+            color: var(--clr-muted);
+            max-width: 520px;
+            line-height: 1.8;
+            margin-bottom: 32px;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-bottom: 40px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+        }
+
+        .hero-stat-num {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--clr-primary), var(--clr-accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-stat-label {
+            font-size: 0.85rem;
+            color: var(--clr-muted-2);
+            font-weight: 500;
+        }
+
+        /* Hero Visual */
+        .hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-card {
+            background: var(--clr-surface-2);
+            border: 1px solid var(--clr-border);
+            border-radius: var(--radius-xl);
+            padding: 20px;
+            width: 100%;
+            max-width: 520px;
+            box-shadow: var(--shadow-card), var(--shadow-glow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 30% 20%, rgba(139, 92, 246, 0.06), transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-slider-wrap {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--radius-md);
+            aspect-ratio: 16/10;
+            background: var(--clr-bg);
+        }
+
+        .hero-slide {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity 0.6s ease;
+        }
+
+        .hero-slide.active {
+            opacity: 1;
+        }
+
+        .hero-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-slider-dots {
+            position: absolute;
+            bottom: 14px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 5;
+        }
+
+        .hero-slider-dots .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            padding: 0;
+        }
+
+        .hero-slider-dots .dot.active {
+            background: var(--clr-primary);
+            width: 24px;
+            border-radius: 4px;
+        }
+
+        .hero-card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 16px;
+            gap: 12px;
+        }
+
+        .hero-card-title {
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--clr-white);
+        }
+
+        .hero-card-sub {
+            font-size: 0.8rem;
+            color: var(--clr-muted-2);
+        }
+
+        .hero-badge {
+            position: absolute;
+            top: 28px;
+            right: 28px;
+            background: linear-gradient(135deg, var(--clr-accent), #d97706);
+            color: #0a0a12;
+            font-size: 0.6rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            text-align: center;
+            line-height: 1.2;
+            padding: 8px 10px;
+            border-radius: var(--radius-sm);
+            letter-spacing: 0.04em;
+            box-shadow: 0 4px 16px rgba(245, 158, 11, 0.3);
+        }
+
+        .hero-float {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(139, 92, 246, 0.06);
+            pointer-events: none;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero-float-1 {
+            width: 160px;
+            height: 160px;
+            top: -40px;
+            right: -40px;
+            animation-delay: 0s;
+        }
+
+        .hero-float-2 {
+            width: 100px;
+            height: 100px;
+            bottom: -20px;
+            left: -30px;
+            animation-delay: 3s;
+        }
+
+        @keyframes float {
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+            50% {
+                transform: translate(10px, -20px) scale(1.05);
+            }
+        }
+
+        /* ============================================================
+                   SERVICE CARDS
+                   ============================================================ */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 20px;
+        }
+
+        .service-card {
+            background: var(--clr-surface);
+            border: 1px solid var(--clr-border);
+            border-radius: var(--radius-lg);
+            padding: 32px 28px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.03), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(139, 92, 246, 0.2);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            margin-bottom: 18px;
+            background: rgba(139, 92, 246, 0.12);
+            color: var(--clr-primary-light);
+        }
+
+        .service-icon.gold {
+            background: rgba(245, 158, 11, 0.12);
+            color: var(--clr-accent);
+        }
+        .service-icon.blue {
+            background: rgba(59, 130, 246, 0.12);
+            color: var(--clr-blue);
+        }
+        .service-icon.green {
+            background: rgba(34, 197, 94, 0.12);
+            color: var(--clr-green);
+        }
+        .service-icon.pink {
+            background: rgba(236, 72, 153, 0.12);
+            color: var(--clr-pink);
+        }
+        .service-icon.rose {
+            background: rgba(244, 63, 94, 0.12);
+            color: var(--clr-rose);
+        }
+
+        .service-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .service-card p {
+            color: var(--clr-muted);
+            font-size: 0.92rem;
+            line-height: 1.7;
+            margin-bottom: 14px;
+        }
+
+        .service-price {
+            font-weight: 700;
+            color: var(--clr-primary-light);
+            font-size: 0.95rem;
+        }
+
+        .service-price span {
+            font-weight: 400;
+            color: var(--clr-muted-2);
+            font-size: 0.8rem;
+        }
+
+        .service-card .btn {
+            margin-top: 16px;
+            width: 100%;
+        }
+
+        /* ============================================================
+                   PORTFOLIO GALLERY
+                   ============================================================ */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .portfolio-item {
+            position: relative;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            cursor: pointer;
+            aspect-ratio: 4/3;
+            background: var(--clr-surface-2);
+            border: 1px solid var(--clr-border);
+            transition: all 0.4s ease;
+        }
+
+        .portfolio-item:hover {
+            transform: scale(1.02);
+            border-color: rgba(139, 92, 246, 0.3);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, transparent 60%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 24px;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .portfolio-overlay .cat {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--clr-primary-light);
+            margin-bottom: 4px;
+        }
+
+        .portfolio-overlay .title {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .portfolio-overlay .sub {
+            font-size: 0.85rem;
+            color: var(--clr-muted);
+        }
+
+        .portfolio-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            font-size: 0.6rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            padding: 4px 12px;
+            border-radius: var(--radius-full);
+            background: rgba(139, 92, 246, 0.85);
+            color: #fff;
+            z-index: 2;
+        }
+
+        .portfolio-badge.gold {
+            background: rgba(245, 158, 11, 0.85);
+            color: #0a0a12;
+        }
+
+        /* ============================================================
+                   PROCESS / HOW IT WORKS
+                   ============================================================ */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+            margin-top: 20px;
+        }
+
+        .process-card {
+            background: var(--clr-surface);
+            border: 1px solid var(--clr-border);
+            border-radius: var(--radius-lg);
+            padding: 32px 24px;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .process-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(139, 92, 246, 0.15);
+        }
+
+        .process-num {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: 1.2rem;
+            margin: 0 auto 16px;
+            background: rgba(139, 92, 246, 0.12);
+            color: var(--clr-primary-light);
+        }
+
+        .process-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .process-card p {
+            color: var(--clr-muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* ============================================================
+                   TESTIMONIALS
+                   ============================================================ */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .testimonial-card {
+            background: var(--clr-surface);
+            border: 1px solid var(--clr-border);
+            border-radius: var(--radius-lg);
+            padding: 28px;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            border-color: rgba(139, 92, 246, 0.15);
+            transform: translateY(-4px);
+        }
+
+        .testimonial-stars {
+            color: var(--clr-accent);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .testimonial-text {
+            font-size: 0.95rem;
+            color: var(--clr-muted);
+            line-height: 1.7;
+            margin-bottom: 16px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .testimonial-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--clr-primary), var(--clr-primary-dark));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1rem;
+            color: #fff;
+            flex-shrink: 0;
+        }
+
+        .testimonial-name {
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .testimonial-role {
+            font-size: 0.8rem;
+            color: var(--clr-muted-2);
+        }
+
+        /* ============================================================
+                   CTA / NEWSLETTER
+                   ============================================================ */
+        #cta {
+            background: var(--clr-surface-2);
+            border: 1px solid var(--clr-border);
+            border-radius: var(--radius-xl);
+            padding: 60px 40px;
+            text-align: center;
+            margin: 40px 0 80px;
+        }
+
+        #cta h2 {
+            font-family: var(--font-display);
+            font-size: clamp(1.8rem, 3vw, 2.6rem);
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        #cta p {
+            color: var(--clr-muted);
+            max-width: 500px;
+            margin: 0 auto 28px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            justify-content: center;
+        }
+
+        /* ============================================================
+                   TRUST BADGES
+                   ============================================================ */
+        .trust-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            justify-content: center;
+            padding: 20px 0 0;
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--clr-muted-2);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .trust-badge i {
+            color: var(--clr-primary-light);
+            font-size: 1.1rem;
+        }
+
+        /* ============================================================
+                   RESPONSIVE
+                   ============================================================ */
+        @media (max-width: 1024px) {
+            .hero-inner {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-desc {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-actions {
+                justify-content: center;
+            }
+
+            .hero-stats {
+                justify-content: center;
+            }
+
+            .hero-visual {
+                order: -1;
+            }
+
+            .hero-card {
+                max-width: 460px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                padding: 50px 0;
+            }
+
+            .hero-title {
+                font-size: 2.4rem;
+            }
+
+            .hero-stats {
+                gap: 24px;
+                flex-wrap: wrap;
+            }
+
+            .hero-stat-num {
+                font-size: 1.4rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            #cta {
+                padding: 40px 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-actions .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .hero-card {
+                padding: 12px;
+            }
+
+            .hero-badge {
+                top: 16px;
+                right: 16px;
+                font-size: 0.5rem;
+                padding: 4px 8px;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ============================================================
+    HERO SECTION
+    ============================================================ -->
+    <section id="hero">
+        <div class="hero-grid-lines" aria-hidden="true"></div>
+        <div class="container hero-inner">
+            <!-- Left Content -->
+            <div class="hero-left">
+                <div class="hero-eyebrow reveal">✨ Professional Graphic Design</div>
+                <h1 class="hero-title reveal">
+                    Design That<br />
+                    <span class="line-gold">Tells Your Story</span>
+                </h1>
+                <p class="hero-desc reveal reveal-d1">
+                    From logos to complete brand identities, packaging, social media graphics, and print-ready
+                    designs — we craft visuals that captivate, communicate, and convert.
+                </p>
+                <div class="hero-actions reveal reveal-d2">
+                    <a href="#services" class="btn btn-primary btn-lg">
+                        <i class="fas fa-palette"></i> Explore Services
+                    </a>
+                    <a href="https://wa.me/923004197033" target="_blank" class="btn btn-green btn-lg">
+                        <i class="fab fa-whatsapp"></i> Get Free Quote
+                    </a>
+                </div>
+                <div class="hero-stats reveal reveal-d3">
+                    <div>
+                        <div class="hero-stat-num">500+</div>
+                        <div class="hero-stat-label">Designs Delivered</div>
+                    </div>
+                    <div>
+                        <div class="hero-stat-num">98%</div>
+                        <div class="hero-stat-label">Client Satisfaction</div>
+                    </div>
+                    <div>
+                        <div class="hero-stat-num">2–3d</div>
+                        <div class="hero-stat-label">Fast Turnaround</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Visual -->
+            <div class="hero-visual reveal reveal-d2">
+                <div class="hero-float hero-float-1" aria-hidden="true"></div>
+                <div class="hero-float hero-float-2" aria-hidden="true"></div>
+                <div class="hero-card">
+                    <div class="hero-slider-wrap" id="heroSlider">
+                        <div class="hero-slide active">
+                            <img src="https://placehold.co/520x340/1a1a2e/8b5cf6?text=Logo+Design" alt="Logo Design" />
+                        </div>
+                        <div class="hero-slide">
+                            <img src="https://placehold.co/520x340/1a1a2e/f59e0b?text=Brand+Identity" alt="Brand Identity" />
+                        </div>
+                        <div class="hero-slide">
+                            <img src="https://placehold.co/520x340/1a1a2e/22c55e?text=Packaging+Design" alt="Packaging Design" />
+                        </div>
+                        <div class="hero-slide">
+                            <img src="https://placehold.co/520x340/1a1a2e/3b82f6?text=Social+Media+Graphics" alt="Social Media Graphics" />
+                        </div>
+                        <div class="hero-slider-dots" id="heroDots"></div>
+                    </div>
+                    <div class="hero-card-meta">
+                        <div>
+                            <div class="hero-card-title" id="slideTitle">Logo &amp; Brand Identity</div>
+                            <div class="hero-card-sub" id="slideSub">Creative · Memorable · Professional</div>
+                        </div>
+                        <i class="fas fa-check-circle" style="color:var(--clr-green);font-size:1.4rem;flex-shrink:0"></i>
+                    </div>
+                    <div class="hero-badge" aria-hidden="true">Best<br />Quality</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    SERVICES SECTION
+    ============================================================ -->
+    <section id="services" class="section">
+        <div class="container">
+            <div class="text-center reveal">
+                <div class="tag"><i class="fas fa-crown"></i> What We Offer</div>
+                <h2 class="section-title">Our <span class="highlight">Design Services</span></h2>
+                <p class="section-desc">Professional graphic design solutions tailored to your brand and budget</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card reveal">
+                    <div class="service-icon"><i class="fas fa-crown"></i></div>
+                    <h3>Logo &amp; Brand Identity</h3>
+                    <p>Unique, memorable logos that tell your brand's story and leave lasting impressions.</p>
+                    <div class="service-price">Starting from <span>₨ 2,999</span></div>
+                    <a href="https://wa.me/923004197033" target="_blank" class="btn btn-primary btn-sm">
+                        <i class="fab fa-whatsapp"></i> Order Now
+                    </a>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card reveal reveal-d1">
+                    <div class="service-icon gold"><i class="fas fa-box-open"></i></div>
+                    <h3>Packaging Design</h3>
+                    <p>Eye-catching product packaging that stands out on shelves and delights customers.</p>
+                    <div class="service-price">Starting from <span>₨ 4,999</span></div>
+                    <a href="https://wa.me/923004197033" target="_blank" class="btn btn-primary btn-sm">
+                        <i class="fab fa-whatsapp"></i> Order Now
+                    </a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card reveal reveal-d2">
+                    <div class="service-icon blue"><i class="fas fa-hashtag"></i></div>
+                    <h3>Social Media Graphics</h3>
+                    <p>Engaging posts, stories, and covers that boost your online presence and engagement.</p>
+                    <div class="service-price">Starting from <span>₨ 1,499</span></div>
+                    <a href="https://wa.me/923004197033" target="_blank" class="btn btn-primary btn-sm">
+                        <i class="fab fa-whatsapp"></i> Order Now
+                    </a>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card reveal reveal-d1">
+                    <div class="service-icon green"><i class="fas fa-print"></i></div>
+                    <h3>Print Design</h3>
+                    <p>Brochures, flyers, business cards, and more — ready for professional printing.</p>
+                    <div class="service-price">Starting from <span>₨ 2,499</span></div>
+                    <a href="https://wa.me/923004197033" target="_blank" class="btn btn-primary btn-sm">
+                        <i class="fab fa-whatsapp"></i> Order Now
+                    </a>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="service-card reveal reveal-d2">
+                    <div class="service-icon pink"><i class="fas fa-laptop-code"></i></div>
+                    <h3>Web &amp; App UI Design</h3>
+                    <p>Beautiful, user-friendly interfaces that enhance digital experiences.</p>
+                    <div class="service-price">Starting from <span>₨ 7,999</span></div>
+                    <a href="https://wa.me/923004197033" target="_blank" class="btn btn-primary btn-sm">
+                        <i class="fab fa-whatsapp"></i> Order Now
+                    </a>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="service-card reveal reveal-d3">
+                    <div class="service-icon rose"><i class="fas fa-paintbrush"></i></div>
+                    <h3>Custom Illustrations</h3>
+                    <p>Unique hand-drawn and digital illustrations for any project or purpose.</p>
+                    <div class="service-price">Starting from <span>₨ 3,999</span></div>
+                    <a href="https://wa.me/923004197033" target="_blank" class="btn btn-primary btn-sm">
+                        <i class="fab fa-whatsapp"></i> Order Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    PORTFOLIO SHOWCASE
+    ============================================================ -->
+    <section id="portfolio" class="section" style="background:var(--clr-surface);">
+        <div class="container">
+            <div class="text-center reveal">
+                <div class="tag"><i class="fas fa-images"></i> Our Work</div>
+                <h2 class="section-title">Recent <span class="highlight">Design Projects</span></h2>
+                <p class="section-desc">Real projects delivered for real clients — each one crafted with care</p>
+            </div>
+
+            <div class="portfolio-grid">
+                <!-- Item 1 -->
+                <div class="portfolio-item reveal">
+                    <img src="https://placehold.co/400x300/1a1a2e/8b5cf6?text=Luxury+Packaging" alt="Luxury Packaging Design" loading="lazy" />
+                    <span class="portfolio-badge gold">⭐ Featured</span>
+                    <div class="portfolio-overlay">
+                        <span class="cat">Packaging Design</span>
+                        <span class="title">Luxury Perfume Box</span>
+                        <span class="sub">Gold foil · Premium finish</span>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="portfolio-item reveal reveal-d1">
+                    <img src="https://placehold.co/400x300/1a1a2e/f59e0b?text=Brand+Identity" alt="Brand Identity Design" loading="lazy" />
+                    <span class="portfolio-badge">Branding</span>
+                    <div class="portfolio-overlay">
+                        <span class="cat">Brand Identity</span>
+                        <span class="title">Tech Startup Branding</span>
+                        <span class="sub">Logo · Stationery · Guidelines</span>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="portfolio-item reveal reveal-d2">
+                    <img src="https://placehold.co/400x300/1a1a2e/22c55e?text=Social+Media" alt="Social Media Graphics" loading="lazy" />
+                    <span class="portfolio-badge">Social</span>
+                    <div class="portfolio-overlay">
+                        <span class="cat">Social Media</span>
+                        <span class="title">Instagram Campaign</span>
+                        <span class="sub">20+ posts · 4.5M reach</span>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="portfolio-item reveal reveal-d3">
+                    <img src="https://placehold.co/400x300/1a1a2e/3b82f6?text=Wedding+Card" alt="Wedding Card Design" loading="lazy" />
+                    <span class="portfolio-badge">Wedding</span>
+                    <div class="portfolio-overlay">
+                        <span class="cat">Wedding Design</span>
+                        <span class="title">Elegant Wedding Suite</span>
+                        <span class="sub">Cards · Envelopes · RSVP</span>
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="portfolio-item reveal reveal-d1">
+                    <img src="https://placehold.co/400x300/1a1a2e/ec4899?text=Brochure" alt="Brochure Design" loading="lazy" />
+                    <span class="portfolio-badge">Print</span>
+                    <div class="portfolio-overlay">
+                        <span class="cat">Print Design</span>
+                        <span class="title">Corporate Brochure</span>
+                        <span class="sub">12-page · Full colour</span>
+                    </div>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="portfolio-item reveal reveal-d2">
+                    <img src="https://placehold.co/400x300/1a1a2e/8b5cf6?text=Illustration" alt="Custom Illustration" loading="lazy" />
+                    <span class="portfolio-badge">Illustration</span>
+                    <div class="portfolio-overlay">
+                        <span class="cat">Illustration</span>
+                        <span class="title">Children's Book Art</span>
+                        <span class="sub">16 illustrations · Whimsical</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center reveal" style="margin-top:40px;">
+                <a href="#" class="btn btn-outline btn-lg">
+                    View Full Portfolio <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    HOW IT WORKS
+    ============================================================ -->
+    <section id="process" class="section">
+        <div class="container">
+            <div class="text-center reveal">
+                <div class="tag"><i class="fas fa-route"></i> Simple Process</div>
+                <h2 class="section-title">How It <span class="highlight">Works</span></h2>
+                <p class="section-desc">From concept to final delivery — we make it easy</p>
+            </div>
+
+            <div class="process-grid">
+                <div class="process-card reveal">
+                    <div class="process-num">1</div>
+                    <h3>Share Your Brief</h3>
+                    <p>Tell us about your brand, vision, and requirements. We'll listen and understand.</p>
+                </div>
+                <div class="process-card reveal reveal-d1">
+                    <div class="process-num">2</div>
+                    <h3>Get Quote &amp; Confirm</h3>
+                    <p>Transparent pricing with no hidden costs. Confirm and we start immediately.</p>
+                </div>
+                <div class="process-card reveal reveal-d2">
+                    <div class="process-num">3</div>
+                    <h3>Design &amp; Revisions</h3>
+                    <p>We create drafts, you give feedback. Unlimited revisions until you're 100% happy.</p>
+                </div>
+                <div class="process-card reveal reveal-d3">
+                    <div class="process-num">4</div>
+                    <h3>Delivery &amp; Support</h3>
+                    <p>Get your final designs in all formats. We're here for ongoing support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    TESTIMONIALS
+    ============================================================ -->
+    <section id="testimonials" class="section" style="background:var(--clr-surface);">
+        <div class="container">
+            <div class="text-center reveal">
+                <div class="tag"><i class="fas fa-star"></i> Client Love</div>
+                <h2 class="section-title">What Our <span class="highlight">Clients Say</span></h2>
+                <p class="section-desc">Real feedback from real people who trusted us with their design needs</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "Subhan Printers designed our entire brand identity — logo, packaging, and social media.
+                        Absolutely stunning work! They understood our vision perfectly."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">AK</div>
+                        <div>
+                            <div class="testimonial-name">Ayesha Khan</div>
+                            <div class="testimonial-role">Founder, Glow Cosmetics</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card reveal reveal-d1">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "The packaging designs for our food products were incredible. They made our products
+                        look premium and our sales increased by 40%!"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar" style="background:linear-gradient(135deg,#f59e0b,#d97706);">HR</div>
+                        <div>
+                            <div class="testimonial-name">Hamza Riaz</div>
+                            <div class="testimonial-role">Owner, Urban Bites</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card reveal reveal-d2">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "Fast, professional, and creative. Our wedding cards were beyond beautiful. Everyone
+                        complimented them. Highly recommended!"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar" style="background:linear-gradient(135deg,#ec4899,#f43f5e);">SA</div>
+                        <div>
+                            <div class="testimonial-name">Sana Arif</div>
+                            <div class="testimonial-role">Bride &amp; Client</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trust Badges -->
+            <div class="trust-badges reveal">
+                <span class="trust-badge"><i class="fas fa-shield-alt"></i> 100% Satisfaction Guaranteed</span>
+                <span class="trust-badge"><i class="fas fa-users"></i> 500+ Happy Clients</span>
+                <span class="trust-badge"><i class="fas fa-trophy"></i> 4.9/5 Average Rating</span>
+                <span class="trust-badge"><i class="fas fa-clock"></i> 2–3 Day Turnaround</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    CTA / CONVERSION SECTION
+    ============================================================ -->
+    <section id="cta" class="container reveal">
+        <h2>Ready to Bring Your <span style="color:var(--clr-primary-light);">Design Vision</span> to Life?</h2>
+        <p>Let's create something amazing together. Get a free quote today — no obligation, just great design.</p>
+        <div class="cta-buttons">
+            <a href="https://wa.me/923004197033" target="_blank" class="btn btn-green btn-lg">
+                <i class="fab fa-whatsapp"></i> Get Free Quote
+            </a>
+            <a href="#services" class="btn btn-outline btn-lg">
+                <i class="fas fa-palette"></i> Explore Services
+            </a>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    FOOTER
+    ============================================================ -->
+    <footer style="background:var(--clr-surface);border-top:1px solid var(--clr-border);padding:40px 0;">
+        <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
+            <div>
+                <h3 style="font-family:var(--font-display);font-weight:800;font-size:1.4rem;">
+                    Subhan <span style="color:var(--clr-primary-light);">Printers</span>
+                </h3>
+                <p style="color:var(--clr-muted-2);font-size:0.85rem;">Gawalmandi, Lahore, Pakistan</p>
+            </div>
+            <div style="display:flex;gap:20px;flex-wrap:wrap;">
+                <a href="https://wa.me/923004197033" target="_blank" style="color:var(--clr-muted-2);font-size:1.2rem;transition:color 0.3s;" onmouseover="this.style.color='#25d366'" onmouseout="this.style.color='var(--clr-muted-2)'"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" style="color:var(--clr-muted-2);font-size:1.2rem;transition:color 0.3s;" onmouseover="this.style.color='#1da1f2'" onmouseout="this.style.color='var(--clr-muted-2)'"><i class="fab fa-twitter"></i></a>
+                <a href="#" style="color:var(--clr-muted-2);font-size:1.2rem;transition:color 0.3s;" onmouseover="this.style.color='#e4405f'" onmouseout="this.style.color='var(--clr-muted-2)'"><i class="fab fa-instagram"></i></a>
+                <a href="#" style="color:var(--clr-muted-2);font-size:1.2rem;transition:color 0.3s;" onmouseover="this.style.color='#0a66c2'" onmouseout="this.style.color='var(--clr-muted-2)'"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <p style="color:var(--clr-muted-2);font-size:0.8rem;">&copy; 2025 Subhan Printers. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- ============================================================
+    JAVASCRIPT
+    ============================================================ -->
+    <script>
+        // ============================================================
+        // REVEAL ON SCROLL
+        // ============================================================
+        document.addEventListener('DOMContentLoaded', function() {
+            const revealElements = document.querySelectorAll('.reveal');
+
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -40px 0px'
+            });
+
+            revealElements.forEach(el => revealObserver.observe(el));
+
+            // ============================================================
+            // HERO SLIDER
+            // ============================================================
+            const slides = document.querySelectorAll('.hero-slide');
+            const dotsContainer = document.getElementById('heroDots');
+            const slideTitle = document.getElementById('slideTitle');
+            const slideSub = document.getElementById('slideSub');
+
+            const slideData = [
+                { title: 'Logo &amp; Brand Identity', sub: 'Creative · Memorable · Professional' },
+                { title: 'Brand Identity System', sub: 'Consistent · Scalable · Premium' },
+                { title: 'Packaging Design', sub: 'Eye-catching · Shelf-ready · Custom' },
+                { title: 'Social Media Graphics', sub: 'Engaging · On-brand · Viral-ready' }
+            ];
+
+            let currentSlide = 0;
+            let slideInterval;
+
+            // Create dots
+            slides.forEach((_, index) => {
+                const dot = document.createElement('button');
+                dot.className = 'dot' + (index === 0 ? ' active' : '');
+                dot.setAttribute('data-index', index);
+                dot.addEventListener('click', () => goToSlide(index));
+                dotsContainer.appendChild(dot);
+            });
+
+            function goToSlide(index) {
+                // Remove active from all
+                slides.forEach(s => s.classList.remove('active'));
+                document.querySelectorAll('.dot').forEach(d => d.classList.remove('active'));
+
+                // Set active
+                slides[index].classList.add('active');
+                document.querySelectorAll('.dot')[index].classList.add('active');
+
+                // Update meta
+                if (slideData[index]) {
+                    slideTitle.innerHTML = slideData[index].title;
+                    slideSub.textContent = slideData[index].sub;
+                }
+
+                currentSlide = index;
+                resetInterval();
+            }
+
+            function nextSlide() {
+                const next = (currentSlide + 1) % slides.length;
+                goToSlide(next);
+            }
+
+            function resetInterval() {
+                clearInterval(slideInterval);
+                slideInterval = setInterval(nextSlide, 4000);
+            }
+
+            // Start auto-play
+            slideInterval = setInterval(nextSlide, 4000);
+
+            // Pause on hover
+            const sliderWrap = document.getElementById('heroSlider');
+            sliderWrap.addEventListener('mouseenter', () => clearInterval(slideInterval));
+            sliderWrap.addEventListener('mouseleave', resetInterval);
+
+            // ============================================================
+            // PORTFOLIO ITEM CLICK (Lightbox preview)
+            // ============================================================
+            document.querySelectorAll('.portfolio-item').forEach(item => {
+                item.addEventListener('click', function() {
+                    const title = this.querySelector('.title')?.textContent || 'Portfolio Project';
+                    const cat = this.querySelector('.cat')?.textContent || 'Design';
+                    const img = this.querySelector('img')?.src || '';
+                    // In production, open a lightbox or modal
+                    // For demo, show alert with info
+                    alert(
+                        `📁 ${title}\nCategory: ${cat}\n\nThis is a preview. Contact us to order a similar design!`);
+                });
+            });
+
+            // ============================================================
+            // SMOOTH SCROLL FOR NAV LINKS
+            // ============================================================
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href === '#') return;
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

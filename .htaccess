@@ -1,0 +1,77 @@
+# ============================================
+# SUBHAN PRINTERS - Apache Configuration
+# ============================================
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # Redirect to HTTPS (uncomment in production)
+    # RewriteCond %{HTTPS} off
+    # RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+    
+    # Remove index.php from URLs
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+    
+    # API Routes
+    RewriteRule ^api/newsletter/?$ api/newsletter.php [L]
+    RewriteRule ^api/quote/?$ api/quote.php [L]
+    RewriteRule ^api/orders/?$ api/orders.php [L]
+    RewriteRule ^api/portfolio/?$ api/portfolio.php [L]
+    RewriteRule ^api/contact/?$ api/contact.php [L]
+    RewriteRule ^api/auth/login/?$ api/auth/login.php [L]
+    RewriteRule ^api/auth/register/?$ api/auth/register.php [L]
+    
+    # Admin Routes
+    RewriteRule ^admin/?$ admin/index.php [L]
+    RewriteRule ^admin/login/?$ admin/login.php [L]
+    RewriteRule ^admin/orders/?$ admin/orders/index.php [L]
+    RewriteRule ^admin/portfolio/?$ admin/portfolio/index.php [L]
+</IfModule>
+
+<IfModule mod_headers.c>
+    # Security Headers
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "DENY"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    
+    # CORS Headers for API
+    <FilesMatch "\.(php)$">
+        Header set Access-Control-Allow-Origin "*"
+        Header set Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
+        Header set Access-Control-Allow-Headers "Content-Type, Authorization"
+    </FilesMatch>
+</IfModule>
+
+# Prevent directory listing
+Options -Indexes
+
+# Protect sensitive files
+<FilesMatch "\.(env|log|ini|json|config\.php|database\.php)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Set default charset
+AddDefaultCharset UTF-8
+
+# Cache static assets
+<FilesMatch "\.(css|js|jpg|jpeg|png|gif|ico|svg|webp|woff|woff2|ttf|eot)$">
+    Header set Cache-Control "max-age=2592000, public, immutable"
+    Header unset ETag
+</FilesMatch>
+
+# Compress files
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript
+    AddOutputFilterByType DEFLATE application/javascript application/x-javascript
+    AddOutputFilterByType DEFLATE application/json application/xml application/rss+xml
+    AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# Error pages
+ErrorDocument 404 /404.php
+ErrorDocument 403 /403.php
+ErrorDocument 500 /500.php

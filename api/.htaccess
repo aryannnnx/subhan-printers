@@ -1,0 +1,33 @@
+# api/.htaccess
+# API routing rules
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # Route API requests to appropriate files
+    RewriteRule ^products$ products.php [L]
+    RewriteRule ^portfolio$ portfolio.php [L]
+    RewriteRule ^newsletter$ newsletter.php [L]
+    RewriteRule ^quote$ quote.php [L]
+    RewriteRule ^contact$ contact.php [L]
+    RewriteRule ^orders$ orders.php [L]
+    RewriteRule ^auth$ auth.php [L]
+    
+    # Handle any other API requests
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php?action=$1 [QSA,L]
+</IfModule>
+
+# CORS headers for all API responses
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+    Header set Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
+    Header set Access-Control-Allow-Headers "Content-Type, Authorization"
+</IfModule>
+
+# Prevent direct access to PHP files
+<FilesMatch "\.(php)$">
+    Order allow,deny
+    Allow from all
+</FilesMatch>

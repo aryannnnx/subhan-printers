@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Multi-Language Image to Voice - Urdu, English, Spanish & More</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: system-ui, 'Segoe UI', 'Roboto', sans-serif;
+        }
+        body {
+            background: linear-gradient(145deg, #f5f7fc 0%, #e9eef4 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+        .card {
+            max-width: 850px;
+            width: 100%;
+            background: rgba(255,255,255,0.85);
+            backdrop-filter: blur(2px);
+            border-radius: 48px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12), 0 8px 24px rgba(0,0,0,0.05);
+            padding: 24px 28px 36px;
+            transition: all 0.2s ease;
+            border: 1px solid rgba(255,255,255,0.6);
+        }
+        h1 {
+            font-size: 1.9rem;
+            font-weight: 600;
+            margin: 0 0 8px 0;
+            background: linear-gradient(135deg, #1F2B3C, #2C3E66);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.3px;
+        }
+        .sub {
+            color: #4a5b6e;
+            margin-bottom: 28px;
+            font-weight: 450;
+            border-left: 4px solid #3b82f6;
+            padding-left: 14px;
+        }
+        .upload-area {
+            background: #f8fafd;
+            border: 2px dashed #b9c8e8;
+            border-radius: 36px;
+            padding: 28px 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.2s;
+            margin-bottom: 24px;
+        }
+        .upload-area:hover {
+            border-color: #3b82f6;
+            background: #f1f5fe;
+        }
+        .upload-icon {
+            font-size: 48px;
+            margin-bottom: 12px;
+        }
+        .file-input {
+            display: none;
+        }
+        .preview-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .preview-img {
+            max-width: 100%;
+            max-height: 220px;
+            border-radius: 28px;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+            border: 2px solid white;
+            background: #f0f2f5;
+            object-fit: contain;
+        }
+        .language-section {
+            background: #ffffffcc;
+            border-radius: 28px;
+            padding: 18px 20px;
+            margin: 18px 0;
+            border: 1px solid #e2edff;
+        }
+        .lang-selector {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .lang-selector label {
+            font-weight: 600;
+            color: #1e2a47;
+            min-width: 100px;
+        }
+        select, .voice-select {
+            flex: 2;
+            min-width: 200px;
+            padding: 10px 14px;
+            border-radius: 40px;
+            border: 1px solid #cbd5e1;
+            background: white;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        select:hover, .voice-select:hover {
+            border-color: #3b82f6;
+        }
+        .voice-quality {
+            font-size: 0.75rem;
+            color: #059669;
+            margin-top: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .ocr-status {
+            font-size: 0.85rem;
+            margin: 12px 0 8px;
+            color: #2c3e66;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .spinner {
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            border: 2px solid #cbd5e1;
+            border-top-color: #3b82f6;
+            border-radius: 50%;
+            animation: spin 0.7s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .extracted-text {
+            background: #ffffffdd;
+            backdrop-filter: blur(4px);
+            border-radius: 28px;
+            padding: 18px 22px;
+            margin: 18px 0 20px;
+            border: 1px solid #e2edff;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+        .text-label {
+            font-weight: 600;
+            color: #1e2a47;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-items: baseline;
+            margin-bottom: 12px;
+        }
+        .text-content {
+            font-size: 1rem;
+            line-height: 1.45;
+            color: #1f2a3e;
+            word-break: break-word;
+            max-height: 150px;
+            overflow-y: auto;
+            padding-right: 8px;
+            white-space: pre-wrap;
+            font-family: 'Courier New', monospace;
+            background: #fefce8;
+            padding: 12px 16px;
+            border-radius: 20px;
+        }
+        .button-group {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-top: 8px;
+        }
+        button {
+            flex: 1;
+            background: #1f2f4f;
+            border: none;
+            padding: 12px 16px;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 1rem;
+            color: white;
+            cursor: pointer;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        button:active { transform: scale(0.97); }
+        .btn-primary {
+            background: #2563eb;
+        }
+        .btn-primary:hover {
+            background: #1d4ed8;
+        }
+        .btn-secondary {
+            background: #4b5563;
+        }
+        .btn-secondary:hover {
+            background: #374151;
+        }
+        .btn-outline {
+            background: #eef3ff;
+            color: #1f2f4f;
+            border: 1px solid #bfd9ff;
+        }
+        .btn-outline:hover {
+            background: #e2eaff;
+        }
+        .warning {
+            background: #fffbeb;
+            border-left: 6px solid #f59e0b;
+            padding: 12px 18px;
+            border-radius: 24px;
+            font-size: 0.85rem;
+            margin-top: 20px;
+            color: #92400e;
+        }
+        footer {
+            font-size: 0.7rem;
+            text-align: center;
+            margin-top: 28px;
+            color: #62748c;
+        }
+        @media (max-width: 600px) {
+            .card { padding: 18px; }
+            button { padding: 10px 12px; font-size: 0.85rem;}
+            .lang-selector { flex-direction: column; align-items: stretch; }
+            .lang-selector label { margin-bottom: 5px; }
+        }
+    </style>
+</head>
+<body>
+<div class="card">
+    <h1>🌍 📸 ➡️ 🎧  Multi-Language Voice Reader</h1>
+    <div class="sub">Upload any image → Extract text → Hear it in <strong>Urdu, English, Spanish, Arabic, French, German, Chinese, Hindi</strong> & 100+ languages with country accents</div>
+
+    <!-- Upload area -->
+    <div class="upload-area" id="uploadBox">
+        <div class="upload-icon">🖼️📂🌐</div>
+        <div>Click or drag & drop image (JPG, PNG, WEBP)</div>
+        <div style="font-size: 12px; margin-top: 8px;">Supports any language text — OCR auto-detects & extracts</div>
+        <input type="file" id="fileInput" accept="image/jpeg,image/png,image/webp,image/bmp" class="file-input">
+    </div>
+
+    <!-- Preview -->
+    <div class="preview-container" id="previewContainer" style="display: none;">
+        <img id="previewImage" class="preview-img" alt="preview">
+        <div id="ocrStatus" class="ocr-status"></div>
+    </div>
+
+    <!-- Language Selection Section -->
+    <div class="language-section">
+        <div class="lang-selector">
+            <label>🗣️ Speak in:</label>
+            <select id="languageSelect">
+                <option value="ur-PK">🇵🇰 Urdu (Pakistan) - اردو</option>
+                <option value="en-US">🇺🇸 English (US)</option>
+                <option value="en-GB">🇬🇧 English (UK)</option>
+                <option value="en-AU">🇦🇺 English (Australia)</option>
+                <option value="en-IN">🇮🇳 English (India)</option>
+                <option value="es-ES">🇪🇸 Spanish (Spain) - Castellano</option>
+                <option value="es-MX">🇲🇽 Spanish (Mexico)</option>
+                <option value="es-AR">🇦🇷 Spanish (Argentina)</option>
+                <option value="fr-FR">🇫🇷 French (France)</option>
+                <option value="fr-CA">🇨🇦 French (Canada)</option>
+                <option value="de-DE">🇩🇪 German (Germany)</option>
+                <option value="de-AT">🇦🇹 German (Austria)</option>
+                <option value="it-IT">🇮🇹 Italian (Italy)</option>
+                <option value="pt-PT">🇵🇹 Portuguese (Portugal)</option>
+                <option value="pt-BR">🇧🇷 Portuguese (Brazil)</option>
+                <option value="ar-SA">🇸🇦 Arabic (Saudi Arabia)</option>
+                <option value="ar-EG">🇪🇬 Arabic (Egypt)</option>
+                <option value="hi-IN">🇮🇳 Hindi (India)</option>
+                <option value="zh-CN">🇨🇳 Chinese (Mandarin - China)</option>
+                <option value="zh-TW">🇹🇼 Chinese (Taiwan)</option>
+                <option value="ja-JP">🇯🇵 Japanese</option>
+                <option value="ko-KR">🇰🇷 Korean</option>
+                <option value="ru-RU">🇷🇺 Russian</option>
+                <option value="tr-TR">🇹🇷 Turkish</option>
+                <option value="nl-NL">🇳🇱 Dutch (Netherlands)</option>
+                <option value="pl-PL">🇵🇱 Polish</option>
+                <option value="sv-SE">🇸🇪 Swedish</option>
+                <option value="da-DK">🇩🇰 Danish</option>
+                <option value="no-NO">🇳🇴 Norwegian</option>
+                <option value="fi-FI">🇫🇮 Finnish</option>
+            </select>
+        </div>
+        <div class="lang-selector" id="voiceSelectorContainer" style="display: none;">
+            <label>🎤 Fine-tune voice:</label>
+            <select id="voiceSelect" class="voice-select"></select>
+        </div>
+        <div class="voice-quality" id="voiceInfo">
+            💡 Tip: Choose language with country flag for authentic accent
+        </div>
+    </div>
+
+    <!-- Extracted text panel -->
+    <div class="extracted-text" id="textPanel" style="display: none;">
+        <div class="text-label">
+            <span>📄 Extracted text</span>
+            <span style="font-size:12px;">✏️ Editable before speaking</span>
+        </div>
+        <div id="extractedTextDisplay" class="text-content" contenteditable="true" role="textbox"></div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="button-group">
+        <button id="speakBtn" class="btn-primary" disabled>🔊 Read Aloud</button>
+        <button id="stopBtn" class="btn-secondary">⏹️ Stop</button>
+        <button id="clearBtn" class="btn-outline">🗑️ Clear all</button>
+    </div>
+
+    <div class="warning" id="supportWarning" style="display:none;"></div>
+    <footer>🔍 OCR: Tesseract.js (supports 100+ languages, auto-detects script).<br>
+        🌎 Voice: Uses your device's built-in voices. If Urdu/Pakistani voice missing, system picks best match.
+    </footer>
+</div>
+
+<script>
+    (function(){
+        // DOM elements
+        const uploadBox = document.getElementById('uploadBox');
+        const fileInput = document.getElementById('fileInput');
+        const previewContainer = document.getElementById('previewContainer');
+        const previewImage = document.getElementById('previewImage');
+        const ocrStatusDiv = document.getElementById('ocrStatus');
+        const textPanel = document.getElementById('textPanel');
+        const extractedTextDisplay = document.getElementById('extractedTextDisplay');
+        const speakBtn = document.getElementById('speakBtn');
+        const stopBtn = document.getElementById('stopBtn');
+        const clearBtn = document.getElementById('clearBtn');
+        const supportWarning = document.getElementById('supportWarning');
+        const languageSelect = document.getElementById('languageSelect');
+        const voiceSelect = document.getElementById('voiceSelect');
+        const voiceSelectorContainer = document.getElementById('voiceSelectorContainer');
+        const voiceInfo = document.getElementById('voiceInfo');
+
+        let currentRecognizedText = "";
+        let currentSpeechInstance = null;
+        let availableVoices = [];
+        let selectedVoiceURI = null;
+
+        // ---- Stop speaking ----
+        function stopSpeaking() {
+            if (window.speechSynthesis) {
+                window.speechSynthesis.cancel();
+            }
+            currentSpeechInstance = null;
+        }
+
+        // ---- Load available voices and filter by language ----
+        function loadVoices() {
+            return new Promise((resolve) => {
+                if (!window.speechSynthesis) {
+                    resolve([]);
+                    return;
+                }
+                let voices = window.speechSynthesis.getVoices();
+                if (voices.length > 0) {
+                    resolve(voices);
+                } else {
+                    window.speechSynthesis.onvoiceschanged = () => {
+                        voices = window.speechSynthesis.getVoices();
+                        resolve(voices);
+                    };
+                    // fallback timeout
+                    setTimeout(() => {
+                        voices = window.speechSynthesis.getVoices();
+                        resolve(voices);
+                    }, 500);
+                }
+            });
+        }
+
+        // Update voice dropdown based on selected language code
+        async function updateVoiceList() {
+            availableVoices = await loadVoices();
+            const selectedLang = languageSelect.value; // e.g., "ur-PK", "es-ES"
+            const langPrefix = selectedLang.split('-')[0]; // "ur", "es"
+            
+            // Filter voices matching the language
+            let matchingVoices = availableVoices.filter(voice => 
+                voice.lang === selectedLang || voice.lang.startsWith(selectedLang + '-') || voice.lang.startsWith(langPrefix + '-')
+            );
+            
+            // Also include voices that have the language in their name (for Urdu etc)
+            if (matchingVoices.length === 0) {
+                matchingVoices = availableVoices.filter(voice => 
+                    voice.lang.toLowerCase().includes(langPrefix.toLowerCase())
+                );
+            }
+            
+            if (matchingVoices.length > 0) {
+                voiceSelectorContainer.style.display = "flex";
+                voiceSelect.innerHTML = '';
+                matchingVoices.forEach((voice, idx) => {
+                    const option = document.createElement('option');
+                    option.value = voice.voiceURI;
+                    option.textContent = `${voice.name} (${voice.lang}) ${voice.localService ? '📱' : '🌐'}`;
+                    if (idx === 0) option.selected = true;
+                    voiceSelect.appendChild(option);
+                });
+                selectedVoiceURI = matchingVoices[0].voiceURI;
+                voiceInfo.innerHTML = `✅ ${matchingVoices.length} voice(s) available for ${selectedLang}. ${matchingVoices[0].name} selected.`;
+            } else {
+                voiceSelectorContainer.style.display = "none";
+                voiceInfo.innerHTML = `⚠️ No specific voice for ${selectedLang}. Using default system voice (may not match accent).`;
+                selectedVoiceURI = null;
+            }
+        }
+
+        // Get the selected voice object
+        function getSelectedVoice() {
+            if (!window.speechSynthesis) return null;
+            const voices = window.speechSynthesis.getVoices();
+            if (voiceSelectorContainer.style.display !== "none" && selectedVoiceURI) {
+                const found = voices.find(v => v.voiceURI === selectedVoiceURI);
+                if (found) return found;
+            }
+            // fallback: pick first voice matching language code
+            const selectedLang = languageSelect.value;
+            const fallbackVoice = voices.find(v => v.lang === selectedLang);
+            if (fallbackVoice) return fallbackVoice;
+            // Urdu fallback: try to find any voice with ur or pk
+            if (selectedLang === 'ur-PK') {
+                const urduVoice = voices.find(v => v.lang.includes('ur') || v.name.toLowerCase().includes('urdu'));
+                if (urduVoice) return urduVoice;
+            }
+            return null;
+        }
+
+        // ---- Speak text with selected language/voice ----
+        function speakText(text) {
+            if (!text || text.trim() === "") {
+                alert("No text to speak. Upload an image first.");
+                return;
+            }
+            if (!window.speechSynthesis) {
+                supportWarning.style.display = "block";
+                supportWarning.innerHTML = "⚠️ Speech synthesis not supported in this browser.";
+                return;
+            }
+            
+            stopSpeaking();
+            
+            const utterance = new SpeechSynthesisUtterance(text);
+            
+            // Set language from dropdown
+            utterance.lang = languageSelect.value;
+            
+            // Set specific voice if available
+            const selectedVoice = getSelectedVoice();
+            if (selectedVoice) {
+                utterance.voice = selectedVoice;
+                console.log("Using voice:", selectedVoice.name, selectedVoice.lang);
+            }
+            
+            // Adjust rate for better clarity in different languages
+            utterance.rate = 0.92;
+            utterance.pitch = 1.0;
+            utterance.volume = 1;
+            
+            utterance.onend = () => { currentSpeechInstance = null; };
+            utterance.onerror = (e) => {
+                console.warn("Speech error", e);
+                currentSpeechInstance = null;
+                // fallback: try without specific voice
+                if (e.error === 'voice-unavailable') {
+                    const fallbackUtterance = new SpeechSynthesisUtterance(text);
+                    fallbackUtterance.lang = languageSelect.value;
+                    fallbackUtterance.rate = 0.92;
+                    window.speechSynthesis.speak(fallbackUtterance);
+                }
+            };
+            
+            currentSpeechInstance = utterance;
+            window.speechSynthesis.speak(utterance);
+        }
+
+        // ---- Load Tesseract and perform OCR ----
+        async function loadTesseractScript() {
+            if (typeof Tesseract !== 'undefined') return true;
+            return new Promise((resolve, reject) => {
+                const script = document.createElement('script');
+                script.src = 'https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js';
+                script.async = true;
+                script.onload = () => resolve(true);
+                script.onerror = () => reject(new Error("Failed to load OCR library"));
+                document.head.appendChild(script);
+            });
+        }
+
+        async function performOCR(imageFile) {
+            try {
+                await loadTesseractScript();
+            } catch(e) {
+                ocrStatusDiv.innerHTML = "❌ OCR library failed to load";
+                return "";
+            }
+            
+            ocrStatusDiv.innerHTML = `<span class="spinner"></span> Reading text from image (supports Urdu, Spanish, English & more)...`;
+            
+            try {
+                // For Urdu/Arabic script, use appropriate language pack
+                // Tesseract supports 'urd' for Urdu, 'spa' for Spanish, 'eng' etc
+                const ocrLang = 'urd+eng+spa+fra+deu+ara+hin'; // Multi-language support
+                
+                const { data: { text } } = await Tesseract.recognize(
+                    imageFile,
+                    ocrLang,
+                    {
+                        logger: m => {
+                            if (m.status === 'recognizing text') {
+                                ocrStatusDiv.innerHTML = `📖 OCR: ${Math.round(m.progress * 100)}% ...`;
+                            }
+                        }
+                    }
+                );
+                
+                const cleanedText = text.trim() || "No text detected. Try a clearer image with visible text.";
+                currentRecognizedText = cleanedText;
+                extractedTextDisplay.innerText = cleanedText;
+                textPanel.style.display = "block";
+                ocrStatusDiv.innerHTML = `✅ Text extracted (${cleanedText.length} chars) — Ready to speak in ${languageSelect.options[languageSelect.selectedIndex]?.text || 'selected language'}`;
+                speakBtn.disabled = false;
+                return cleanedText;
+            } catch (err) {
+                console.error(err);
+                ocrStatusDiv.innerHTML = `❌ OCR error: ${err.message || "unknown"}`;
+                currentRecognizedText = "OCR could not read the image. Try another picture.";
+                extractedTextDisplay.innerText = currentRecognizedText;
+                textPanel.style.display = "block";
+                speakBtn.disabled = false;
+                return currentRecognizedText;
+            }
+        }
+
+        // ---- Handle image upload ----
+        function handleImage(file) {
+            if (!file || !file.type.startsWith('image/')) {
+                alert("Please select a valid image file.");
+                return;
+            }
+            
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                previewImage.src = e.target.result;
+                previewContainer.style.display = "block";
+                textPanel.style.display = "none";
+                extractedTextDisplay.innerText = "";
+                speakBtn.disabled = true;
+                ocrStatusDiv.innerHTML = "⏳ Preparing OCR...";
+                currentRecognizedText = "";
+                stopSpeaking();
+            };
+            reader.readAsDataURL(file);
+            
+            reader.onloadend = () => {
+                performOCR(file);
+            };
+        }
+
+        // ---- Event Listeners ----
+        uploadBox.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadBox.style.background = "#eef4ff";
+        });
+        uploadBox.addEventListener('dragleave', () => {
+            uploadBox.style.background = "#f8fafd";
+        });
+        uploadBox.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadBox.style.background = "#f8fafd";
+            const file = e.dataTransfer.files[0];
+            if (file && file.type.startsWith('image/')) handleImage(file);
+            else alert("Drop an image file");
+        });
+        uploadBox.addEventListener('click', () => fileInput.click());
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files.length) handleImage(e.target.files[0]);
+        });
+        
+        speakBtn.addEventListener('click', () => {
+            const textToSpeak = extractedTextDisplay.innerText || currentRecognizedText;
+            if (!textToSpeak || textToSpeak.trim() === "") {
+                alert("No text found. Upload an image first.");
+                return;
+            }
+            speakText(textToSpeak);
+        });
+        
+        stopBtn.addEventListener('click', () => stopSpeaking());
+        
+        clearBtn.addEventListener('click', () => {
+            stopSpeaking();
+            currentRecognizedText = "";
+            extractedTextDisplay.innerText = "";
+            textPanel.style.display = "none";
+            previewContainer.style.display = "none";
+            previewImage.src = "";
+            ocrStatusDiv.innerHTML = "";
+            fileInput.value = "";
+            speakBtn.disabled = true;
+        });
+        
+        languageSelect.addEventListener('change', () => {
+            updateVoiceList();
+            if (currentRecognizedText) {
+                voiceInfo.innerHTML += " — Language changed. Press 'Read Aloud' again to hear in new accent.";
+            }
+        });
+        
+        voiceSelect.addEventListener('change', (e) => {
+            selectedVoiceURI = e.target.value;
+        });
+        
+        // Initialize voices
+        if (window.speechSynthesis) {
+            updateVoiceList();
+        } else {
+            supportWarning.style.display = "block";
+            supportWarning.innerHTML = "⚠️ Your browser doesn't support text-to-speech. Try Chrome, Edge, or Safari.";
+            speakBtn.disabled = true;
+        }
+        
+        // Preload Tesseract
+        setTimeout(() => loadTesseractScript().catch(console.warn), 1500);
+        
+        // Sync editable text
+        extractedTextDisplay.addEventListener('input', (e) => {
+            currentRecognizedText = extractedTextDisplay.innerText;
+        });
+    })();
+</script>
+</body>
+</html>

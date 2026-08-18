@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Reset your Subhan Printers password - Recover your account access.">
+<title>Forgot Password | Subhan Printers</title>
+
+<link rel="icon" href="images/logo.png" type="image/png">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<link rel="stylesheet" href="assets/css/forgot-password.css">
+</head>
+<body>
+
+<div class="bg-blob purple"></div>
+<div class="bg-blob gold"></div>
+
+<!-- Header -->
+<header class="header-home" id="headerHome">
+    <nav class="nav-container">
+        <a href="index.html" class="nav-logo">
+            <img src="images/logo.png" alt="Subhan Printers Logo">
+            <span class="nav-brand"><span class="brand-first">Subhan</span> <span class="brand-second">Printers</span></span>
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li>
+                <a href="portfolio.html" class="dropdown-toggle">Portfolio <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="portfolio.html"><i class="fas fa-th-large"></i> All Projects</a></li>
+                    <li><a href="portfolio.html?cat=wedding"><i class="fas fa-heart"></i> Wedding Cards</a></li>
+                    <li><a href="portfolio.html?cat=packaging"><i class="fas fa-box"></i> Box Packaging</a></li>
+                    <li><a href="portfolio.html?cat=flex"><i class="fas fa-image"></i> Flex & Banners</a></li>
+                    <li class="dropdown-divider"></li>
+                    <li><a href="portfolio.html?cat=brochures"><i class="fas fa-file-alt"></i> Brochures</a></li>
+                    <li><a href="portfolio.html?cat=stickers"><i class="fas fa-tag"></i> Stickers</a></li>
+                </ul>
+            </li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+            <a href="login.html" class="btn-login">Login</a>
+            <button class="btn-icon" title="Design Studio"><i class="fas fa-pen-nib"></i></button>
+            <a href="order.html" class="btn-order"><i class="fas fa-shopping-cart"></i> Order Now</a>
+        </div>
+
+        <div class="hamburger-menu" id="hamburgerMenu">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+</header>
+
+<!-- Mobile Menu -->
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<div class="mobile-menu" id="mobileMenu">
+    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+    <a href="services.html"><i class="fas fa-cogs"></i> Services</a>
+    <a href="javascript:void(0)" id="mobilePortfolioToggle"><i class="fas fa-images"></i> Portfolio <i class="fas fa-chevron-down" style="margin-left:auto;font-size:12px;"></i></a>
+    <div class="mobile-dropdown" id="mobilePortfolioDropdown">
+        <a href="portfolio.html"><i class="fas fa-th-large"></i> All Projects</a>
+        <a href="portfolio.html?cat=wedding"><i class="fas fa-heart"></i> Wedding Cards</a>
+        <a href="portfolio.html?cat=packaging"><i class="fas fa-box"></i> Box Packaging</a>
+        <a href="portfolio.html?cat=flex"><i class="fas fa-image"></i> Flex & Banners</a>
+        <a href="portfolio.html?cat=brochures"><i class="fas fa-file-alt"></i> Brochures</a>
+        <a href="portfolio.html?cat=stickers"><i class="fas fa-tag"></i> Stickers</a>
+    </div>
+    <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+    <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+    <a href="login.html"><i class="fas fa-user"></i> Login</a>
+    <a href="order.html" style="color:var(--gold);"><i class="fas fa-shopping-cart"></i> Order Now</a>
+</div>
+
+<!-- Main Content -->
+<main class="main-wrapper">
+    <div class="forgot-container">
+
+        <!-- Left Side -->
+        <div class="left">
+
+            <div class="logo-wrap">
+                <img src="images/logo.png" alt="Logo" class="logo">
+                <span class="logo-text"><span class="brand-first">Subhan</span> <span class="brand-second">Printers</span></span>
+            </div>
+
+            <!-- Reset Password Form -->
+            <div id="resetFormSection">
+                <h1 class="welcome">Forgot <span>Password?</span></h1>
+
+                <p class="subtitle">
+                    No worries! Enter your email address and we'll send you a link to reset your password.
+                </p>
+
+                <form id="forgotForm" novalidate>
+
+                    <div class="form-group">
+                        <div class="input-wrap">
+                            <input type="email" id="emailInput" placeholder="Email Address" autocomplete="email" required>
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="input-error" id="emailError">
+                            <i class="fas fa-exclamation-circle"></i>
+                            <span>Please enter a valid email address</span>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="reset-btn" id="resetBtn">
+                        <i class="fas fa-paper-plane"></i> Send Reset Link
+                    </button>
+
+                    <div class="back-to-login">
+                        <a href="login.html">
+                            <i class="fas fa-arrow-left"></i> Back to Login
+                        </a>
+                    </div>
+
+                </form>
+            </div>
+
+            <!-- Success Message -->
+            <div class="success-message" id="successMessage">
+                <div class="success-icon">
+                    <i class="fas fa-check"></i>
+                </div>
+                <h2>Check Your Email</h2>
+                <p>We've sent a password reset link to <strong id="sentEmail"></strong>. Please check your inbox and follow the instructions to reset your password.</p>
+                <button class="resend-btn" id="resendBtn">
+                    <i class="fas fa-redo"></i> Resend Email
+                </button>
+                <div class="back-to-login" style="margin-top:25px;">
+                    <a href="login.html">
+                        <i class="fas fa-arrow-left"></i> Back to Login
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Right Side -->
+        <div class="right">
+            <div class="right-bg"></div>
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+
+            <div class="brand-box">
+                <img src="images/logo.png" alt="Subhan Printers" class="brand-logo">
+                <h2 class="brand-title">SUBHAN PRINTERS</h2>
+                <p class="brand-description">
+                    Professional graphic designing and printing services — wedding cards, packaging, flex banners & more since 1998.
+                </p>
+
+                <div class="brand-stats">
+                    <div class="stat-item">
+                        <div class="stat-num">25+</div>
+                        <div class="stat-label">Years</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-num">10K+</div>
+                        <div class="stat-label">Orders</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-num">5★</div>
+                        <div class="stat-label">Rating</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<!-- Toast -->
+<div class="toast" id="toast">
+    <div class="toast-icon"><i class="fas fa-check"></i></div>
+    <div class="toast-message">Reset link sent successfully!</div>
+</div>
+
+<script>
+// Header scroll
+
+</script>
+
+</body>
+</html>

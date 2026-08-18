@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Subhan Printers Portfolio – Wedding cards, box packaging, flex banners, brochures, stickers and graphic design work. Lahore, Pakistan."/>
+  <title>Portfolio | Subhan Printers – Lahore</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<LINk rel="stylesheet" href="assets/css/portolio.css"></LINk>>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="Subhan Printers Home">
+      <img src="images/logo.png" alt="Subhan Printers" width="44" height="44" onerror="this.style.display='none'"/>
+      Subhan <span>Printers</span>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li class="nav-dropdown" id="portfolioDropdown">
+        <button class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false" id="portfolioToggle">
+          Portfolio <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="portfolio.html"><i class="fas fa-th"></i> All Projects</a>
+          <a href="portfolio.html?cat=wedding"><i class="fas fa-heart"></i> Wedding Cards</a>
+          <a href="portfolio.html?cat=packaging"><i class="fas fa-box"></i> Box Packaging</a>
+          <a href="portfolio.html?cat=flex"><i class="fas fa-image"></i> Flex &amp; Banners</a>
+          <div class="dd-divider"></div>
+          <a href="portfolio.html?cat=brochures"><i class="fas fa-file-alt"></i> Brochures</a>
+          <a href="portfolio.html?cat=stickers"><i class="fas fa-tags"></i> Stickers</a>
+        </div>
+      </li>
+      <li><a href="About.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="login.html" class="btn-login">Login</a>
+      <a href="signup.html" class="btn-signup">Sign Up</a>
+      <a href="order.html" class="btn btn-accent" style="font-weight:700">
+        <i class="fas fa-shopping-cart"></i> Order Now
+      </a>
+    </div>
+    <button class="hamburger" id="hamburger-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" role="dialog" aria-modal="true">
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="portfolio.html" class="active">Portfolio</a>
+  <a href="portfolio.html?cat=wedding" style="padding-left:32px;font-size:.85rem">↳ Wedding Cards</a>
+  <a href="portfolio.html?cat=packaging" style="padding-left:32px;font-size:.85rem">↳ Box Packaging</a>
+  <a href="About.html">About</a>
+  <a href="contact.html">Contact</a>
+  <div style="display:flex;gap:10px;padding:8px 0">
+    <a href="login.html" class="btn btn-outline" style="flex:1;justify-content:center">Login</a>
+    <a href="signup.html" class="btn btn-primary" style="flex:1;justify-content:center">Sign Up</a>
+  </div>
+  <a href="https://wa.me/923001234567" target="_blank" rel="noopener" class="btn btn-green">
+    <i class="fab fa-whatsapp"></i> Order Now
+  </a>
+</div>
+
+<main>
+
+<!-- PAGE HERO -->
+<section id="port-hero" aria-label="Portfolio hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-grid-lines" aria-hidden="true"></div>
+  <div class="container hero-inner">
+    <nav class="breadcrumb reveal" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <i class="fas fa-chevron-right"></i>
+      <span style="color:var(--clr-white)">Portfolio</span>
+    </nav>
+    <h1 class="hero-title reveal">
+      Our <span class="highlight">Portfolio</span> of<br>Print &amp; Design Work
+    </h1>
+    <p class="hero-desc reveal reveal-d1">
+      Over 10,000 projects delivered across Pakistan — wedding cards, luxury packaging, flex banners, branding, and more. Every project crafted with precision and passion.
+    </p>
+    <div class="hero-actions reveal reveal-d2">
+      <a href="https://wa.me/923001234567" target="_blank" rel="noopener" class="btn btn-green btn-lg">
+        <i class="fab fa-whatsapp"></i> Start Your Project
+      </a>
+      <a href="#port-main" class="btn btn-outline btn-lg">
+        Browse Work <i class="fas fa-arrow-down"></i>
+      </a>
+    </div>
+    <div class="stats-strip reveal reveal-d3">
+      <div class="stat-card"><div class="stat-num" style="color:var(--clr-accent)">10K+</div><div class="stat-label">Projects Done</div></div>
+      <div class="stat-card"><div class="stat-num" style="color:var(--clr-primary)">5000+</div><div class="stat-label">Happy Clients</div></div>
+      <div class="stat-card"><div class="stat-num" style="color:var(--clr-green)">25+</div><div class="stat-label">Years Experience</div></div>
+      <div class="stat-card"><div class="stat-num" style="color:#3b82f6">4.9★</div><div class="stat-label">Average Rating</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FILTER TABS -->
+<div id="port-tabs" role="tablist" aria-label="Filter by category">
+  <div class="container">
+    <div class="tabs-scroll">
+      <button class="f-tab active" data-filter="all"       role="tab" aria-selected="true" ><i class="fas fa-th-large"></i> All <span class="f-count">20</span></button>
+      <button class="f-tab" data-filter="wedding"          role="tab" aria-selected="false"><i class="fas fa-heart"></i> Wedding <span class="f-count">6</span></button>
+      <button class="f-tab" data-filter="packaging"        role="tab" aria-selected="false"><i class="fas fa-box"></i> Packaging <span class="f-count">6</span></button>
+      <button class="f-tab" data-filter="flex"             role="tab" aria-selected="false"><i class="fas fa-image"></i> Flex &amp; Banners <span class="f-count">4</span></button>
+      <button class="f-tab" data-filter="brochures"        role="tab" aria-selected="false"><i class="fas fa-file-alt"></i> Brochures <span class="f-count">4</span></button>
+      <button class="f-tab" data-filter="stickers"         role="tab" aria-selected="false"><i class="fas fa-tags"></i> Stickers <span class="f-count">4</span></button>
+    </div>
+  </div>
+</div>
+
+<!-- PORTFOLIO GRID -->
+<section id="port-main" class="section" aria-label="Portfolio projects">
+  <div class="container">
+
+    <div class="port-toolbar reveal">
+      <div class="results-txt">Showing <strong id="visible-count">20</strong> projects</div>
+      <div class="sort-wrap">
+        <label for="sort-sel">Sort:</label>
+        <select id="sort-sel"><option value="default">Default</option><option value="newest">Newest</option><option value="az">A – Z</option></select>
+      </div>
+    </div>
+
+    <div class="port-grid" id="the-grid">
+
+      <!-- WEDDING CARDS (6) -->
+      <article class="p-card wide visible reveal" data-cat="wedding" data-id="w001"
+        data-title="Royal Wedding Invitation" data-sub="Gold Foil · 150 cards · Luxury Collection"
+        data-desc="Luxurious gold-foil wedding invitation for a premium Lahore wedding. Double-layer card with velvet overlay and custom calligraphy. 150 cards printed on 400gsm ivory board."
+        data-img="images/portfolio.jpg" tabindex="0" aria-label="View Royal Wedding Invitation">
+        <span class="p-card-badge" style="background:rgba(236,72,153,.85);color:#fff">Wedding</span>
+        <span class="p-card-popular">⭐ Featured</span>
+        <img class="p-card-img" src="images/portfolio.jpg" alt="Royal Wedding Invitation" loading="lazy" onerror="this.src='https://placehold.co/900x480/1a1a2e/ec4899?text=Royal+Wedding+Card'"/>
+        <div class="p-card-overlay"></div>
+        <div class="p-card-zoom"><i class="fas fa-expand-alt"></i></div>
+        <div class="p-card-body">
+          <div class="p-card-cat">Wedding Cards</div>
+          <div class="p-card-title">Royal Wedding Invitation</div>
+          <div class="p-card-sub">Gold foil · 150 cards · Luxury collection</div>
+          <div class="p-card-tags"><span class="p-tag">Gold Foil</span><span class="p-tag">Embossed</span><span class="p-tag">Premium</span></div>
+        </div>
+      </article>
+
+      <article class="p-card visible reveal reveal-d1" data-cat="wedding" data-id="w002"
+        data-title="Elegant Floral Wedding Card" data-sub="Matte lamination · 200 sets"
+        data-desc="Soft pink floral wedding card with custom hand-drawn illustration. Matte lamination with spot UV finish. 200 complete sets delivered on time."
+        data-img="images/portfolio3.png" tabindex="0" aria-label="View Elegant Floral Wedding Card">
+        <span class="p-card-badge" style="background:rgba(236,72,153,.85);color:#fff">Wedding</span>
+        <img class="p-card-img" src="images/portfolio3.png" alt="Elegant Floral Wedding Card" loading="lazy" onerror="this.src='https://placehold.co/600x400/1a1a2e/ec4899?text=Floral+Card'"/>
+        <div class="p-card-overlay"></div>
+        <div class="p-card-zoom"><i class="fas fa-expand-alt"></i></div>
+        <div class="p-card-body">
+          <div class="p-card-cat">Wedding Cards</div>
+          <div class="p-card-title">Elegant Floral Card</div>
+          <div class="p-card-sub">Matte lamination · 200 sets</div>
+        </div>
+      </article>
+
+      <article class="p-card visible reveal reveal-d2" data-cat="packaging" data-id="p001"
+        data-title="Perfume Box Design" data-sub="Gold foil · Soft-touch · 500 units"
+        data-desc="Premium perfume box with hot gold foil stamping, soft-touch lamination and custom die-cut window. 500 units produced for a Lahore fragrance brand."
+        data-img="images/portfolio1.png" tabindex="0" aria-label="View Perfume Box Design">
+        <span class="p-card-badge" style="background:rgba(245,158,11,.85);color:#111">Packaging</span>
+        <img class="p-card-img" src="images/portfolio1.png" alt="Perfume Box Packaging" loading="lazy" onerror="this.src='https://placehold.co/600x400/1a1a2e/f59e0b?text=Perfume+Box'"/>
+        <div class="p-card-overlay"></div>
+        <div class="p-card-zoom"><i class="fas fa-expand-alt"></i></div>
+        <div class="p-card-body">
+          <div class="p-card-cat">Box Packaging</div>
+          <div class="p-card-title">Perfume Box Design</div>
+          <div class="p-card-sub">Gold foil · Soft-touch · 500 units</div>
+          <div class="p-card-tags"><span class="p-tag">Hot Foil</span><span class="p-tag">Spot UV</span></div>
+        </div>
+      </article>
+
+      <article class="p-card visible reveal" data-cat="flex" data-id="f001"
+        data-title="Restaurant Promo Flex" data-sub="10×6 ft · Outdoor grade · 440gsm"
+        data-desc="10ft × 6ft outdoor flex banner for a popular Lahore restaurant. Vivid CMYK printing on 440gsm frontlit flex material with eyelets for pole mounting."
+        data-img="images/portfolio2.webp" tabindex="0" aria-label="View Restaurant Promo Flex">
+        <span class="p-card-badge" style="background:rgba(34,197,94,.85);color:#fff">Flex</span>
+        <img class="p-card-img" src="images/portfolio2.webp" alt="Restaurant Promotional Flex Banner" loading="lazy" onerror="this.src='https://placehold.co/600x400/1a1a2e/22c55e?text=Flex+Banner'"/>
+        <div class="p-card-overlay"></div>
+        <div class="p-card-zoom"><i class="fas fa-expand-alt"></i></div>
+        <div class="p-card-body">
+          <div class="p-card-cat">Flex &amp; Banners</div>
+          <div class="p-card-title">Restaurant Promo Flex</div>
+          <div class="p-card-sub">10×6 ft · Outdoor grade · 440gsm</div>
+        </div>
+      </article>
+
+      <article class="p-card visible reveal reveal-d1" data-cat="brochures" data-id="b001"
+        data-title="Corporate Business Brochure" data-sub="Tri-fold A4 · 1000 copies"
+        data-desc="Tri-fold A4 corporate brochure for a Lahore real-estate firm. 170gsm gloss art paper with matte lamination cover. 1000 copies."
+        data-img="images/portfolio4.jpg" tabindex="0" aria-label="View Corporate Business Brochure">
+        <span class="p-card-badge" style="background:rgba(59,130,246,.85);color:#fff">Brochures</span>
+        <img class="p-card-img" src="images/portfolio4.jpg" alt="Corporate Business Brochure" loading="lazy" onerror="this.src='https://placehold.co/600x400/1a1a2e/3b82f6?text=Brochure'"/>
+        <div class="p-card-overlay"></div>
+        <div class="p-card-zoom"><i class="fas fa-expand-alt"></i></div>
+        <div class="p-card-body">
+          <div class="p-card-cat">Brochures</div>
+          <div class="p-card-title">Corporate Brochure</div>
+          <div class="p-card-sub">Tri-fold A4 · 1000 copies</div>
+        </div>
+      </article>
+
+      <article class="p-card visible reveal reveal-d2" data-cat="stickers" data-id="s001"
+        data-title="Product Label Stickers" data-sub="Waterproof vinyl · 2000 pcs"
+        data-desc="Custom die-cut product labels for a local skincare brand. Waterproof vinyl with gloss lamination. 2000 labels across 4 SKUs."
+        data-img="images/portfolio5.png" tabindex="0" aria-label="View Product Label Stickers">
+        <span class="p-card-badge" style="background:rgba(99,102,241,.85);color:#fff">Stickers</span>
+        <img class="p-card-img" src="images/portfolio5.png" alt="Product Label Stickers" loading="lazy" onerror="this.src='https://placehold.co/600x400/1a1a2e/6366f1?text=Labels'"/>
+        <div class="p-card-overlay"></div>
+        <div class="p-card-zoom"><i class="fas fa-expand-alt"></i></div>
+        <div class="p-card-body">
+          <div class="p-card-cat">Stickers &amp; Labels</div>
+          <div class="p-card-title">Skincare Product Labels</div>
+          <div class="p-card-sub">Waterproof vinyl · 2000 pcs</div>
+        </div>
+      </article>
+
+      <article class="p-card visible reveal" data-cat="wedding" data-id="w003"
+        data-title="Traditional Nikah Card" data-sub="400gsm ivory · Gold foil · 300 cards"
+        data-desc="Ornate gold-and-maroon traditional Nikah ceremony card. Offset printed on 400gsm ivory card with gold foil borders. 300 cards, delivered in 4 days."
+        data-img="images/wedding.avif" tabindex="0" aria-label="View Traditional Nikah Card">
+        <span class="p-card-badge" style="background:rgba(236,72,153,.85);color:#fff">Wedding</span>
+        <img class="p-card-img" src="images/wedding.avif" alt="Traditional Nikah Card" loading="lazy" onerror="this.src='https://placehold.co/600x400/1a1a2e/ec4899?text=Nikah+Card'"/>
+        <div class="p-card-overlay"></div>
+        <div class="p-card-zoom"><i class="fas fa-expand-alt"></i></div>
+        <div class="p-card-body">
+          <div class="p-card-cat">Wedding Cards</div>
+          <div class="p-card-title">Traditional Nikah Card</div>
+          <div class="p-card-sub">400gsm ivory · Gold foil · 300 cards</div>
+        </div>
+      </article>
+
+      <article class="p-card visible reveal reveal-d1" data-cat="packaging" data-id="p002"
+        data-title="Bakery Food Box" data-sub="Kraft board · Food-safe · 500 pcs"
+        data-desc="Kraft food-safe boxes for a boutique bakery. Custom printed with logo and pattern. 500 flat-pack boxes, food-safe ink, easy assembly tabs."
+        data-img="images/boxes.webp" tabindex="0" aria-label="View Bakery Food Box">
+        <span class="p-card-badge" style="background:rgba(245,158,11,.85);color:#111">Packaging</span>
+        <img class="p-card-img" src="images/boxes.webp" alt="Bakery Food Box" loading="lazy" onerror="this.src='https://placehold.co/600x400/1a1a2e/f59e0b?text=Food+Box'"/>
+        <div class="p-card-overlay"></div>
+        <div class="p-card-zoom"><i class="fas fa-expand-alt"></i></div>
+        <div class="p-card-body">
+          <div class="p-card-cat">Box Packaging</div>
+          <div class="p-card-title">Bakery Food Box</div>
+          <div class="p-card-sub">Kraft board · Food-safe · 500 pcs</div>
+          <div class="p-card-tags"><span class="p-tag">Food Safe</span></div>
+        </div>
+      </article>
+
+      <article class="p-card visible reveal reveal-d2" data-cat="flex" data-id="f002"
+        data-title="Shop Signage Flex" data-sub="Backlit flex · Full colour"
+        data-desc="Outdoor shop signage for a boutique clothing store. Backlit flex material, vivid full-colour print, aluminium frame installed by our team."
+        data-img="images/bannerss.png" tabindex="0" aria-label="View Shop Signage Flex">
+        <span class="p-card-badge" style="background:rgba(34,197,94,.85);color:#fff">Flex</span>
+        <img class="p-card-img" src="images/bannerss.png" alt="Shop Signage Flex" loading="lazy" onerror="this.src='https://placehold.co/600x400/1a1a2e/22c55e?text=Shop+Signage'"/>
+        <div class="p-card-overlay"></div>
+        <div class="p-card-zoom"><i class="fas fa-expand-alt"></i></div>
+        <div class="p-card-body">
+          <div class="p-card-cat">Flex &amp; Banners</div>
+          <div class="p-card-title">Boutique Shop Signage</div>
+          <div class="p-card-sub">Backlit flex · Full colour · Aluminium frame</div>
+        </div>
+      </article>
+
+      <article class="p-card visible reveal" data-cat="brochures" data-id="b002"
+        data-title="Restaurant Menu Brochure" data-sub="Bi-fold A4 · Soft-touch · 500 pcs"
+        data-desc="A4 bi-fold restaurant menu with soft-touch matte cover. 170gsm gloss inside pages, full colour. 500 copies for a fine-dining restaurant in DHA Lahore."
+        data-img="images/food.webp" tabindex="0" aria-label="View Restaurant Menu Brochure">
+        <span class="p-card-badge" style="background:rgba(59,130,246,.85);color:#fff">Brochures</span>
+        <img class="p-card-img" src="images/food.webp" alt="Restaurant Menu Brochure" loading="lazy" onerror="this.src='https://placehold.co/600x400/1a1a2e/3b82f6?text=Menu+Brochure'"/>
+        <div class="p-card-overlay"></div>
+        <div class="p-card-zoom"><i class="fas fa-expand-alt"></i></div>
+        <div class="p-card-body">
+          <div class="p-card-cat">Brochures</div>
+          <div class="p-card-title">Restaurant Menu</div>
+          <div class="p-card-sub">Bi-fold A4 · Soft-touch · 500 pcs</div>
+        </div>
+      </article>
+
+      <article class="p-card visible reveal reveal-d1" data-cat="stickers" data-id="s002"
+        data-title="Boutique Thank You Stickers" data-sub="Holographic foil · 38mm · 1000 pcs"
+        data-desc="Round die-cut thank you stickers for a fashion boutique's packaging inserts. Holographic gold foil, 38mm diameter. 1000 stickers on rolls."
+        data-img="images/f1.jpg" tabindex="0" aria-label="View Boutique Thank You Stickers">
+        <span class="p-card-badge" style="background:rgba(99,102,241,.85);color:#fff">Stickers</span>
+        <img class="p-card-img" src="images/f1.jpg" alt="Boutique Thank You Stickers" loading="lazy" onerror="this.src='https://placehold.co/600x400/1a1a2e/6366f1?text=Thank+You+Stickers'"/>
+        <div class="p-card-overlay"></div>
+        <div class="p-card-zoom"><i class="fas fa-expand-alt"></i></div>
+        <div class="p-card-body">
+          <div class="p-card-cat">Stickers &amp; Labels</div>
+          <div class="p-card-title">Boutique Thank You Stickers</div>
+          <div class="p-card-sub">Holographic foil · 38mm round · 1000 pcs</div>
+        </div>
+      </article>
+
+      <article class="p-card visible reveal reveal-d2" data-cat="packaging" data-id="p003"
+        data-title="E-commerce Shipping Box" data-sub="B-flute · White liner · 2000 pcs"
+        data-desc="Custom printed corrugated shipping boxes. B-flute white liner with 2-colour print. 2000 boxes for a Lahore-based online fashion store."
+        data-img="images/corrugatedbox.jfif" tabindex="0" aria-label="View E-commerce Shipping Box">
+        <span class="p-card-badge" style="background:rgba(245,158,11,.85);color:#111">Packaging</span>
+        <img class="p-card-img" src="images/corrugatedbox.jfif" alt="E-commerce Shipping Box" loading="lazy" onerror="this.src='https://placehold.co/600x400/1a1a2e/f59e0b?text=Shipping+Box'"/>
+        <div class="p-card-overlay"></div>
+        <div class="p-card-zoom"><i class="fas fa-expand-alt"></i></div>
+        <div class="p-card-body">
+          <div class="p-card-cat">Box Packaging</div>
+          <div class="p-card-title">E-commerce Shipping Box</div>
+          <div class="p-card-sub">B-flute · White liner · 2000 pcs</div>
+        </div>
+      </article>
+
+      <article class="p-card visible reveal" data-cat="wedding" data-id="w004"
+        data-title="Baraat Card + Envelope Set" data-sub="Pastel pink · Gold accents · 100 sets"
+        data-desc="Baraat invitation card set with matching printed envelope. Pastel pink and gold, 350gsm duplex board. 100 complete sets with gold ribbon."
+        data-img="images/envelop.jpg" tabindex="0" aria-label="View Baraat Card Set">
+        <span class="p-card-badge" style="background:rgba(236,72,153,.85);color:#fff">Wedding</span>
+        <img class="p-card-img" src="images/envelop.jpg" alt="Baraat Card with Envelope" loading="lazy" onerror="this.src='https://placehold.co/600x400/1a1a2e/ec4899?text=Baraat+Card'"/>
+        <div class="p-card-overlay"></div>
+        <div class="p-card-zoom"><i class="fas fa-expand-alt"></i></div>
+        <div class="p-card-body">
+          <div class="p-card-cat">Wedding Cards</div>
+          <div class="p-card-title">Baraat Card + Envelope</div>
+          <div class="p-card-sub">Pastel pink · Gold accents · 100 sets</div>
+        </div>
+      </article>
+
+      <article class="p-card visible reveal reveal-d1" data-cat="flex" data-id="f003"
+        data-title="Event Pull-Up Standee" data-sub="85×200cm · Chrome stand"
+        data-desc="Pull-up standee for a corporate product launch. 85cm × 200cm premium chrome stand with carry bag. Printed on high-clarity polyester film."
+        data-img="https://picsum.photos/id/1/600/400" tabindex="0" aria-label="View Event Pull-Up Standee">
+        <span class="p-card-badge" style="background:rgba(34,197,94,.85);color:#fff">Flex</span>
+        <img class="p-card-img" src="https://picsum.photos/id/1/600/400" alt="Event Roll-Up Standee" loading="lazy" onerror="this.src='https://placehold.co/600x400/1a1a2e/22c55e?text=Roll+Up'"/>
+        <div class="p-card-overlay"></div>
+        <div class="p-card-zoom"><i class="fas fa-expand-alt"></i></div>
+        <div class="p-card-body">
+          <div class="p-card-cat">Flex &amp; Banners</div>
+          <div class="p-card-title">Event Pull-Up Standee</div>
+          <div class="p-card-sub">85×200cm · Chrome stand included</div>
+        </div>
+      </article>
+
+      <article class="p-card visible reveal reveal-d2" data-cat="stickers" data-id="s003"
+        data-title="Jewellery Hang Tags" data-sub="Gold foil · Ivory board · 500 sets"
+        data-desc="Premium foil jewellery hang tags and brand labels. Gold hot-stamped on ivory card stock, custom die-cut shape. 500 complete sets with string loops."
+        data-img="images/tags.jpg" tabindex="0" aria-label="View Jewellery Hang Tags">
+        <span class="p-card-badge" style="background:rgba(99,102,241,.85);color:#fff">Stickers</span>
+        <img class="p-card-img" src="images/tags.jpg" alt="Jewellery Hang Tags" loading="lazy" onerror="this.src='https://placehold.co/600x400/1a1a2e/6366f1?text=Hang+Tags'"/>
+        <div class="p-card-overlay"></div>
+        <div class="p-card-zoom"><i class="fas fa-expand-alt"></i></div>
+        <div class="p-card-body">
+          <div class="p-card-cat">Stickers &amp; Labels</div>
+          <div class="p-card-title">Jewellery Hang Tags</div>
+          <div class="p-card-sub">Gold foil · Ivory board · 500 sets</div>
+        </div>
+      </article>
+
+      <article class="p-card visible reveal" data-cat="brochures" data-id="b003"
+        data-title="Real Estate Brochure" data-sub="8pp saddle-stitch · 500 copies"
+        data-desc="Premium 8-page real estate project brochure. Laminated cover, high-quality photography and custom infographics. Saddle-stitched. 500 copies."
+        data-img="https://picsum.photos/id/0/600/400" tabindex="0" aria-label="View Real Estate Brochure">
+        <span class="p-card-badge" style="background:rgba(59,130,246,.85);color:#fff">Brochures</span>
+        <img class="p-card-img" src="https://picsum.photos/id/0/600/400" alt="Real Estate Brochure" loading="lazy" onerror="this.src='https://placehold.co/600x400/1a1a2e/3b82f6?text=RE+Brochure'"/>
+        <div class="p-card-overlay"></div>
+        <div class="p-card-zoom"><i class="fas fa-expand-alt"></i></div>
+        <div class="p-card-body">
+          <div class="p-card-cat">Brochures</div>
+          <div class="p-card-title">Real Estate Brochure</div>
+          <div class="p-card-sub">8pp saddle-stitch · 500 copies</div>
+        </div>
+      </article>
+
+      <article class="p-card visible reveal reveal-d1" data-cat="packaging" data-id="p004"
+        data-title="Cosmetics Gift Box" data-sub="Rigid · Magnetic closure · 200 pcs"
+        data-desc="Rigid gift box for a cosmetics brand with magnetic closure, velvet lining, and hot gold foil logo. 200 boxes completed in 7 days."
+        data-img="images/box.jpg" tabindex="0" aria-label="View Cosmetics Gift Box">
+        <span class="p-card-badge" style="background:rgba(245,158,11,.85);color:#111">Packaging</span>
+        <img class="p-card-img" src="images/box.jpg" alt="Cosmetics Gift Box" loading="lazy" onerror="this.src='https://placehold.co/600x400/1a1a2e/f59e0b?text=Gift+Box'"/>
+        <div class="p-card-overlay"></div>
+        <div class="p-card-zoom"><i class="fas fa-expand-alt"></i></div>
+        <div class="p-card-body">
+          <div class="p-card-cat">Box Packaging</div>
+          <div class="p-card-title">Cosmetics Gift Box</div>
+          <div class="p-card-sub">Rigid · Magnetic close · Gold foil · 200 pcs</div>
+          <div class="p-card-tags"><span class="p-tag">Magnetic</span><span class="p-tag">Velvet Lining</span></div>
+        </div>
+      </article>
+
+      <article class="p-card visible reveal reveal-d2" data-cat="wedding" data-id="w005"
+        data-title="Mehndi Party Invitation" data-sub="Custom illustration · 150 cards"
+        data-desc="Vibrant mehndi invitation with custom illustration and teal-yellow colour scheme. 350gsm gloss card, 150 pieces. Designed and printed in 48 hours."
+        data-img="images/thankyou.jpg" tabindex="0" aria-label="View Mehndi Party Invitation">
+        <span class="p-card-badge" style="background:rgba(236,72,153,.85);color:#fff">Wedding</span>
+        <img class="p-card-img" src="images/thankyou.jpg" alt="Mehndi Party Invitation" loading="lazy" onerror="this.src='https://placehold.co/600x400/1a1a2e/ec4899?text=Mehndi+Card'"/>
+        <div class="p-card-overlay"></div>
+        <div class="p-card-zoom"><i class="fas fa-expand-alt"></i></div>
+        <div class="p-card-body">
+          <div class="p-card-cat">Wedding Cards</div>
+          <div class="p-card-title">Mehndi Party Invitation</div>
+          <div class="p-card-sub">Custom illustration · 150 cards</div>
+        </div>
+      </article>
+
+      <article class="p-card visible reveal" data-cat="stickers" data-id="s004"
+        data-title="Holographic Logo Stickers" data-sub="Kiss-cut · Holo vinyl · 3000 pcs"
+        data-desc="Holographic die-cut logo stickers for a youth clothing brand. Silver holographic vinyl, kiss-cut on A4 sheets. 500 sheets × 6 stickers each."
+        data-img="images/ribbons.avif" tabindex="0" aria-label="View Holographic Stickers">
+        <span class="p-card-badge" style="background:rgba(99,102,241,.85);color:#fff">Stickers</span>
+        <img class="p-card-img" src="images/ribbons.avif" alt="Holographic Logo Stickers" loading="lazy" onerror="this.src='https://placehold.co/600x400/1a1a2e/6366f1?text=Holo+Stickers'"/>
+        <div class="p-card-overlay"></div>
+        <div class="p-card-zoom"><i class="fas fa-expand-alt"></i></div>
+        <div class="p-card-body">
+          <div class="p-card-cat">Stickers &amp; Labels</div>
+          <div class="p-card-title">Holographic Logo Stickers</div>
+          <div class="p-card-sub">Kiss-cut · Holo vinyl · 3000 pcs</div>
+        </div>
+      </article>
+
+      <article class="p-card visible reveal reveal-d1" data-cat="packaging" data-id="p005"
+        data-title="Premium Shoe Box" data-sub="Matte black · Gold foil · 1000 pcs"
+        data-desc="Stylish shoe box for a premium footwear brand. Matt black with gold foil branding, magnetic closure lid. 1000 boxes produced over 10 days."
+        data-img="images/fabric.webp" tabindex="0" aria-label="View Premium Shoe Box">
+        <span class="p-card-badge" style="background:rgba(245,158,11,.85);color:#111">Packaging</span>
+        <img class="p-card-img" src="images/fabric.webp" alt="Premium Shoe Box Packaging" loading="lazy" onerror="this.src='https://placehold.co/600x400/1a1a2e/f59e0b?text=Shoe+Box'"/>
+        <div class="p-card-overlay"></div>
+        <div class="p-card-zoom"><i class="fas fa-expand-alt"></i></div>
+        <div class="p-card-body">
+          <div class="p-card-cat">Box Packaging</div>
+          <div class="p-card-title">Premium Shoe Box</div>
+          <div class="p-card-sub">Matte black · Gold foil · 1000 pcs</div>
+        </div>
+      </article>
+
+    </div><!-- /#the-grid -->
+
+    <div style="text-align:center;margin-top:48px" class="reveal">
+      <a href="https://wa.me/923001234567?text=Hi!%20I%20want%20to%20discuss%20a%20print%20project" target="_blank" rel="noopener" class="btn btn-primary btn-lg">
+        <i class="fab fa-whatsapp"></i> Like What You See? Let's Talk
+      </a>
+    </div>
+  </div>
+</section><!-- /#port-main -->
+
+<!-- NUMBERS SECTION -->
+<section id="port-numbers" class="section" aria-label="Our achievements">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="tag">By The Numbers</div>
+      <h2 class="section-title">Trusted by <span class="highlight">Thousands</span></h2>
+      <div class="divider-center"></div>
+      <p class="section-desc">25+ years of printing excellence in Lahore, Pakistan</p>
+    </div>
+    <div class="numbers-grid">
+      <div class="number-card reveal">
+        <div class="number-icon" style="background:linear-gradient(135deg,var(--clr-primary),var(--clr-primary-2))"><i class="fas fa-users"></i></div>
+        <div class="n-num">5,000+</div>
+        <div class="n-label">Happy Clients</div>
+      </div>
+      <div class="number-card reveal reveal-d1">
+        <div class="number-icon" style="background:linear-gradient(135deg,var(--clr-accent),var(--clr-accent-2))"><i class="fas fa-print"></i></div>
+        <div class="n-num">10K+</div>
+        <div class="n-label">Projects Completed</div>
+      </div>
+      <div class="number-card reveal reveal-d2">
+        <div class="number-icon" style="background:linear-gradient(135deg,var(--clr-green),#15803d)"><i class="fas fa-award"></i></div>
+        <div class="n-num">25+</div>
+        <div class="n-label">Years in Business</div>
+      </div>
+      <div class="number-card reveal reveal-d3">
+        <div class="number-icon" style="background:linear-gradient(135deg,#3b82f6,#1d4ed8)"><i class="fas fa-star"></i></div>
+        <div class="n-num">4.9 ★</div>
+        <div class="n-label">Average Rating</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="port-reviews" class="section" aria-label="Client reviews">
+  <div class="t-blob tb1" aria-hidden="true"></div>
+  <div class="t-blob tb2" aria-hidden="true"></div>
+  <div class="container" style="position:relative;z-index:1">
+    <div class="text-center reveal">
+      <div class="tag" style="color:rgba(255,255,255,.7);background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.15)">
+        <i class="fas fa-star" style="color:var(--clr-accent)"></i> Client Reviews
+      </div>
+      <h2 class="section-title">What Clients <span class="highlight">Say</span></h2>
+      <div class="divider-center"></div>
+      <p class="section-desc" style="margin:0 auto">Real feedback from real clients across Pakistan</p>
+    </div>
+    <div class="reviews-grid">
+      <div class="r-card reveal">
+        <div class="r-head">
+          <img class="r-avatar" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Ayesha Khan" loading="lazy"/>
+          <div><div class="r-name">Ayesha Khan</div><div class="r-role">Bride – Lahore</div></div>
+        </div>
+        <div class="r-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="r-text">"Absolutely blown away by our wedding cards! The gold foil detail was stunning. Delivered 2 days ahead of schedule. Couldn't be happier!"</p>
+        <div class="r-badge">💍 Wedding Cards</div>
+      </div>
+      <div class="r-card reveal reveal-d2">
+        <div class="r-head">
+          <img class="r-avatar" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Bilal Ahmed" loading="lazy"/>
+          <div><div class="r-name">Bilal Ahmed</div><div class="r-role">Brand Manager – Karachi</div></div>
+        </div>
+        <div class="r-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="r-text">"Our perfume box packaging turned out absolutely premium. The soft-touch lamination and gold foil exceeded our expectations. Will reorder!"</p>
+        <div class="r-badge">📦 Packaging</div>
+      </div>
+      <div class="r-card reveal reveal-d4">
+        <div class="r-head">
+          <img class="r-avatar" src="https://randomuser.me/api/portraits/men/75.jpg" alt="Usman Ch" loading="lazy"/>
+          <div><div class="r-name">Usman Chaudhry</div><div class="r-role">Restaurant Owner – DHA Lahore</div></div>
+        </div>
+        <div class="r-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="r-text">"Menu brochures and flex banners both came out excellent. Vibrant colours, great paper quality. Delivered same week. Highly recommended!"</p>
+        <div class="r-badge">🍴 Brochures + Flex</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="port-cta" aria-label="Call to action">
+  <div class="cta-blob cb1" aria-hidden="true"></div>
+  <div class="cta-blob cb2" aria-hidden="true"></div>
+  <div class="container cta-inner">
+    <div class="reveal">
+      <div class="cta-title">Ready to Create Your<br><span class="gold">Next Print Project?</span></div>
+      <p class="cta-desc">Share your idea on WhatsApp and we'll send you a quote within 1 hour during business hours.</p>
+      <div class="cta-btns">
+        <a href="https://wa.me/923001234567" target="_blank" rel="noopener" class="btn btn-green btn-lg">
+          <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+        </a>
+        <a href="services.html" class="btn btn-lg" style="background:rgba(255,255,255,.15);color:#fff;border:1.5px solid rgba(255,255,255,.3)">
+          <i class="fas fa-layer-group"></i> View All Services
+        </a>
+      </div>
+      <div class="cta-trust">
+        <div class="cta-trust-item"><i class="fas fa-shield-alt"></i> 100% Satisfaction Guarantee</div>
+        <div class="cta-trust-item"><i class="fas fa-redo"></i> Free Reprints on Our Error</div>
+        <div class="cta-trust-item"><i class="fas fa-truck"></i> Nationwide Delivery</div>
+        <div class="cta-trust-item"><i class="fas fa-clock"></i> 1-Hour Response</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Project details">
+  <div class="lb-box">
+    <div class="lb-img-wrap">
+      <img id="lb-img" class="lb-img" src="" alt="Project preview"/>
+      <button class="lb-close" id="lb-close" aria-label="Close lightbox"><i class="fas fa-times"></i></button>
+      <button class="lb-nav lb-prev" id="lb-prev" aria-label="Previous project"><i class="fas fa-chevron-left"></i></button>
+      <button class="lb-nav lb-next" id="lb-next" aria-label="Next project"><i class="fas fa-chevron-right"></i></button>
+    </div>
+    <div class="lb-info">
+      <div class="lb-cat" id="lb-cat"></div>
+      <div class="lb-title" id="lb-title"></div>
+      <p class="lb-desc" id="lb-desc"></p>
+      <div class="lb-btns">
+        <a href="https://wa.me/923001234567" target="_blank" rel="noopener" class="btn btn-green">
+          <i class="fab fa-whatsapp"></i> Order Similar
+        </a>
+        <a href="services.html" class="btn btn-outline">View Services</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <img src="images/logo.png" alt="Subhan Printers" width="36" onerror="this.style.display='none'"/>
+          Subhan <span>Printers</span>
+        </div>
+        <p class="footer-desc">Professional printing and graphic design services in Gawalmandi, Lahore, Pakistan.</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-social" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="footer-social" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/923001234567" target="_blank" rel="noopener" class="footer-social" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="mailto:info@subhanprinters.com" class="footer-social" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer-col-title">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+          <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+          <li><a href="portfolio.html"><i class="fas fa-chevron-right"></i> Portfolio</a></li>
+          <li><a href="About.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+          <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-col-title">Categories</h4>
+        <ul class="footer-links">
+          <li><a href="portfolio.html?cat=wedding"><i class="fas fa-heart" style="color:var(--clr-primary)"></i> Wedding Cards</a></li>
+          <li><a href="portfolio.html?cat=packaging"><i class="fas fa-box" style="color:var(--clr-primary)"></i> Packaging</a></li>
+          <li><a href="portfolio.html?cat=flex"><i class="fas fa-image" style="color:var(--clr-primary)"></i> Flex &amp; Banners</a></li>
+          <li><a href="portfolio.html?cat=brochures"><i class="fas fa-file-alt" style="color:var(--clr-primary)"></i> Brochures</a></li>
+          <li><a href="portfolio.html?cat=stickers"><i class="fas fa-tags" style="color:var(--clr-primary)"></i> Stickers</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-col-title">Contact Info</h4>
+        <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>Hamza Center, Gawalmandi, Lahore</span></div>
+        <div class="footer-contact-item"><i class="fas fa-phone"></i><a href="tel:+923001234567">+92 300 1234567</a></div>
+        <div class="footer-contact-item"><i class="fas fa-envelope"></i><a href="mailto:info@subhanprinters.com">info@subhanprinters.com</a></div>
+        <div class="footer-contact-item"><i class="fas fa-clock"></i><span>Mon–Sat: 9 AM – 8 PM</span></div>
+      </div>
+    </div>
+    <div class="footer-payments">
+      <span class="footer-payments-label">We Accept</span>
+      <div class="footer-payments-logos">
+        <div class="pay-logo" title="Mastercard"><svg viewBox="0 0 38 24" width="38" height="24"><circle cx="13" cy="12" r="9" fill="#EB001B"/><circle cx="25" cy="12" r="9" fill="#F79E1B"/><path d="M19 5.5a9 9 0 0 1 0 13 9 9 0 0 1 0-13z" fill="#FF5F00"/></svg></div>
+        <div class="pay-logo" title="VISA"><svg viewBox="0 0 60 24" width="60" height="24"><text x="2" y="19" font-family="Arial Black,sans-serif" font-weight="900" font-size="20" fill="#1A1F71" letter-spacing="-1">VISA</text></svg></div>
+        <div class="pay-logo" title="JazzCash"><svg viewBox="0 0 90 24" width="90" height="24"><text x="2" y="18" font-family="Arial,sans-serif" font-weight="800" font-size="13" fill="#C8102E">Jazz</text><text x="40" y="18" font-family="Arial,sans-serif" font-weight="800" font-size="13" fill="#f5a623">Cash</text></svg></div>
+        <div class="pay-logo" title="EasyPaisa"><svg viewBox="0 0 100 24" width="100" height="24"><text x="2" y="18" font-family="Arial,sans-serif" font-weight="700" font-size="13" fill="#4CAF50">easy</text><text x="44" y="18" font-family="Arial,sans-serif" font-weight="700" font-size="13" fill="#2196F3">paisa</text></svg></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-bottom-text">© <span id="footer-year">2025</span> <strong style="color:var(--clr-white)">Subhan Printers</strong>. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp float -->
+<a href="https://wa.me/923001234567" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<script src="assets/js/portfolio.js">
+
+</script>
+
+</body>
+</html>

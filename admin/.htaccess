@@ -1,0 +1,25 @@
+# admin/.htaccess
+# Protect admin directory
+
+# Redirect to login if not authenticated
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # Allow access to login page and assets
+    RewriteCond %{REQUEST_URI} !^/SP/admin/login\.php$
+    RewriteCond %{REQUEST_URI} !^/SP/admin/assets/
+    RewriteCond %{REQUEST_URI} !^/SP/admin/logout\.php$
+    
+    # Check if session exists
+    RewriteCond %{HTTP_COOKIE} !PHPSESSID [NC]
+    RewriteRule ^(.*)$ /SP/admin/login.php [L,R=302]
+</IfModule>
+
+# Prevent directory listing
+Options -Indexes
+
+# Protect sensitive files
+<FilesMatch "\.(env|log|ini|json)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>

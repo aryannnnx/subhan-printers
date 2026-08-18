@@ -1,0 +1,122 @@
+/* ============================================
+   PAYMENT LOGOS STYLING
+   ============================================ */
+
+.footer-payments {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem;
+    padding: 20px 0;
+    border-top: 1px solid var(--clr-border);
+    margin-bottom: 24px;
+}
+
+.footer-payments-label {
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--clr-muted);
+    padding: 0.5rem 1.2rem;
+    border-radius: 60px;
+    white-space: nowrap;
+    border: 1px solid var(--clr-border);
+}
+
+.footer-payments-logos {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    row-gap: 1rem;
+}
+
+.pay-logo-img {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 0.4rem 0.8rem;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
+    border: 1px solid #e2e8f0;
+    transition: all 0.2s ease;
+    height: 44px;
+    min-width: 56px;
+}
+
+.pay-logo-img:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 20px -10px rgba(0, 0, 0, 0.2);
+    border-color: var(--clr-primary);
+}
+
+.pay-logo-img img {
+    display: block;
+    height: 32px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.easypaisa-bg-wrapper {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    transition: all 0.2s ease;
+    height: 44px;
+    min-width: 110px;
+}
+
+.easypaisa-bg-wrapper:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 20px -10px rgba(0, 0, 0, 0.2);
+    border-color: var(--clr-primary);
+}
+
+.easypaisa-logo-img {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0.8rem;
+    height: 100%;
+    background: transparent;
+}
+
+.easypaisa-logo-img img {
+    display: block;
+    height: 32px;
+    width: auto;
+    max-width: 110px;
+    object-fit: contain;
+    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.1));
+}
+
+@media (max-width: 600px) {
+    .footer-payments {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+    .footer-payments-logos {
+        gap: 0.5rem;
+    }
+    .pay-logo-img,
+    .easypaisa-bg-wrapper {
+        height: 38px;
+        min-width: 44px;
+    }
+    .pay-logo-img img,
+    .easypaisa-logo-img img {
+        height: 28px;
+    }
+}

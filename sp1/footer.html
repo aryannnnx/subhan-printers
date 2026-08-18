@@ -1,0 +1,499 @@
+ <!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Subhan Printers – Professional graphic designing and printing services in Gawalmandi, Lahore, Pakistan. Wedding cards, packaging, flex banners, brochures & more." />
+  <title>Subhan Printers | Professional Printing Services – Lahore</title>
+
+  <!-- Preload critical fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+ <style>
+  :root {
+      --clr-bg:        #0d0d14;
+      --clr-surface:   #13131f;
+      --clr-surface-2: #1a1a2e;
+      --clr-border:    rgba(255,255,255,0.08);
+      --clr-text:      #e8e8f0;
+      --clr-muted:     #8888aa;
+      --clr-primary:   #8b5cf6;
+      --clr-primary-2: #6d28d9;
+      --clr-accent:    #f59e0b;
+      --clr-accent-2:  #d97706;
+      --clr-green:     #22c55e;
+      --clr-white:     #ffffff;
+      --radius-sm:     8px;
+      --radius-md:     16px;
+      --radius-lg:     24px;
+      --radius-xl:     32px;
+      --shadow-sm:     0 2px 8px rgba(0,0,0,0.3);
+      --shadow-md:     0 8px 30px rgba(0,0,0,0.4);
+      --shadow-lg:     0 20px 60px rgba(0,0,0,0.5);
+      --shadow-glow:   0 0 40px rgba(139,92,246,0.3);
+      --font-display:  'Playfair Display', Georgia, serif;
+      --font-body:     'DM Sans', system-ui, sans-serif;
+      --transition:    0.3s cubic-bezier(0.4,0,0.2,1);
+      --nav-h:         72px;
+    }
+
+    /* ============================================================
+       RESET & BASE
+       ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: var(--font-body);
+      background: var(--clr-bg);
+      color: var(--clr-text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+    /* ============================================================
+       UTILITY CLASSES
+       ============================================================ */
+    .container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+    .section    { padding: 96px 0; }
+    .section-sm { padding: 64px 0; }
+
+    .tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--clr-primary);
+      background: rgba(139,92,246,0.1); border: 1px solid rgba(139,92,246,0.2);
+      padding: 6px 14px; border-radius: 100px;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800; line-height: 1.15;
+      color: var(--clr-white); margin: 12px 0 16px;
+    }
+    .section-title .highlight { color: var(--clr-primary); }
+    .section-title .gold      { color: var(--clr-accent); }
+    .section-desc { color: var(--clr-muted); font-size: 1.05rem; max-width: 600px; }
+    .text-center { text-align: center; }
+    .text-center .section-desc { margin: 0 auto; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 28px; border-radius: 100px;
+      font-weight: 600; font-size: 0.95rem;
+      transition: var(--transition); white-space: nowrap;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--clr-primary), var(--clr-primary-2));
+      color: #fff; box-shadow: 0 4px 20px rgba(139,92,246,0.4);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(139,92,246,0.6); }
+    .btn-outline {
+      border: 2px solid rgba(255,255,255,0.2); color: var(--clr-text);
+    }
+    .btn-outline:hover { border-color: var(--clr-primary); color: var(--clr-primary); background: rgba(139,92,246,0.05); }
+    .btn-accent {
+      background: linear-gradient(135deg, var(--clr-accent), var(--clr-accent-2));
+      color: #111; box-shadow: 0 4px 20px rgba(245,158,11,0.3);
+    }
+    .btn-accent:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(245,158,11,0.5); }
+    .btn-green {
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      color: #fff; box-shadow: 0 4px 20px rgba(34,197,94,0.3);
+    }
+    .btn-green:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(34,197,94,0.5); }
+    .btn-lg { padding: 18px 36px; font-size: 1rem; }
+
+    .divider { width: 60px; height: 3px; background: linear-gradient(90deg, var(--clr-primary), var(--clr-accent)); border-radius: 2px; }
+    .divider-center { margin: 16px auto; }
+
+    /* card base */
+    .card {
+      background: var(--clr-surface);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-lg);
+      transition: var(--transition);
+    }
+    .card:hover { border-color: rgba(139,92,246,0.3); box-shadow: var(--shadow-glow); transform: translateY(-4px); }
+
+    /* grid helpers */
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .grid-5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; }
+
+   footer {
+      background: #080810; border-top: 1px solid var(--clr-border);
+      padding: 72px 0 32px;
+    }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 48px; margin-bottom: 48px; }
+    .footer-logo { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-size: 1.3rem; color: var(--clr-white); margin-bottom: 16px; }
+    .footer-logo span { color: var(--clr-primary); }
+    .footer-logo img { width: 36px; border-radius: 6px; }
+    .footer-desc { font-size: 0.88rem; color: var(--clr-muted); line-height: 1.75; margin-bottom: 24px; }
+    .footer-socials { display: flex; gap: 10px; }
+    .footer-social {
+      width: 38px; height: 38px; border-radius: 50%;
+      background: var(--clr-surface-2); border: 1px solid var(--clr-border);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--clr-muted); font-size: 0.9rem; transition: var(--transition);
+    }
+    .footer-social:hover { background: var(--clr-primary); border-color: var(--clr-primary); color: #fff; }
+    .footer-col-title { font-weight: 700; color: var(--clr-white); margin-bottom: 20px; font-size: 0.95rem; }
+    .footer-links li + li { margin-top: 10px; }
+    .footer-links a {
+      font-size: 0.875rem; color: var(--clr-muted); transition: var(--transition);
+      display: flex; align-items: center; gap: 6px;
+    }
+    .footer-links a:hover { color: var(--clr-primary); }
+    .footer-contact-item {
+      display: flex; gap: 10px; align-items: flex-start;
+      font-size: 0.875rem; color: var(--clr-muted); margin-bottom: 14px;
+    }
+    .footer-contact-item i { color: var(--clr-primary); margin-top: 2px; flex-shrink: 0; }
+    .footer-contact-item a { transition: var(--transition); }
+    .footer-contact-item a:hover { color: var(--clr-primary); }
+    .footer-bottom {
+      padding-top: 28px; border-top: 1px solid var(--clr-border);
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 16px;
+    }
+    .footer-bottom-text { font-size: 0.82rem; color: var(--clr-muted); }
+    .footer-bottom-links { display: flex; gap: 20px; }
+    .footer-bottom-links a { font-size: 0.82rem; color: var(--clr-muted); transition: var(--transition); }
+    .footer-bottom-links a:hover { color: var(--clr-primary); }
+
+    /* Payment logos bar */
+    .footer-payments {
+      display: flex; align-items: center; gap: 20px;
+      padding: 20px 0; margin-bottom: 24px;
+      border-top: 1px solid var(--clr-border);
+      flex-wrap: wrap;
+    }
+    .footer-payments-label {
+      font-size: 0.78rem; font-weight: 600; color: var(--clr-muted);
+      text-transform: uppercase; letter-spacing: 0.08em; white-space: nowrap;
+    }
+    .footer-payments-logos {
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    }
+    .pay-logo {
+      background: #fff; border-radius: 6px;
+      padding: 5px 10px; display: flex; align-items: center; justify-content: center;
+      transition: var(--transition); cursor: default;
+      min-width: 56px; height: 34px;
+    }
+    .pay-logo:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
+
+    /* ============================================================
+       WHATSAPP FLOAT
+       ============================================================ */
+    .wa-float {
+      position: fixed; bottom: 32px; right: 32px; z-index: 999;
+      width: 58px; height: 58px; border-radius: 50%;
+      background: #25d366; color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem; box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+      transition: var(--transition);
+    }
+    .wa-float:hover { transform: scale(1.1); box-shadow: 0 8px 30px rgba(37,211,102,0.6); }
+
+    /* ============================================================
+       ANIMATIONS — fade up on scroll
+       ============================================================ */
+    .reveal {
+      opacity: 0; transform: translateY(32px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ============================================================
+       RESPONSIVE BREAKPOINTS
+       ============================================================ */
+    @media (max-width: 1100px) {
+      .categories-grid { grid-template-columns: repeat(3,1fr); padding: 0 24px; }
+      .products-grid   { grid-template-columns: repeat(2,1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .process-grid::before { display: none; }
+    }
+    @media (max-width: 900px) {
+      .hero-inner, .about-grid { grid-template-columns: 1fr; gap: 48px; }
+      .hero-visual { display: none; }
+      .t-grid, .ds-grid, .packaging-grid { grid-template-columns: 1fr 1fr; }
+      .cat3-grid { grid-template-columns: 1fr; }
+      .contact-methods { grid-template-columns: 1fr 1fr; }
+      .ds-stats { grid-template-columns: 1fr 1fr; }
+      .process-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta .btn:not(.btn-green) { display: none; }
+      .hamburger { display: flex; }
+      .section { padding: 64px 0; }
+      .portfolio-grid  { grid-template-columns: 1fr 1fr; }
+      .categories-grid { grid-template-columns: repeat(2, 1fr); padding: 0 16px; }
+      .products-grid   { grid-template-columns: 1fr 1fr; }
+      .about-grid      { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 540px) {
+      .categories-grid { grid-template-columns: 1fr; padding: 0 16px; }
+      .portfolio-grid, .t-grid, .ds-grid, .packaging-grid { grid-template-columns: 1fr; }
+      .hero-stats { flex-direction: column; gap: 16px; }
+      .hero-actions { flex-direction: column; }
+      .contact-methods { grid-template-columns: 1fr; }
+      .ds-stats { grid-template-columns: 1fr 1fr; }
+      .process-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .ft-inner { flex-direction: column; text-align: center; }
+      .comparison-slider-container { height: 280px; }
+    }
+
+     .footer-payments {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.25rem;
+        }
+
+        .footer-payments-label {
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: #2c3e50;
+            background: #ecf3f9;
+            padding: 0.5rem 1.2rem;
+            border-radius: 60px;
+            white-space: nowrap;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), 0 1px 2px rgba(0,0,0,0.05);
+        }
+
+        .footer-payments-logos {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 1rem;
+            row-gap: 1rem;
+        }
+
+        /* standard logo image container */
+        .pay-logo-img {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 0.4rem 0.8rem;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06), 0 0 0 1px #e2e8f0;
+            transition: all 0.2s ease;
+            cursor: default;
+            height: 44px;
+        }
+
+        .pay-logo-img:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 20px -10px rgba(0, 0, 0, 0.2), 0 0 0 1px #cbd5e1;
+            background: #fefefe;
+        }
+
+        .pay-logo-img img {
+            display: block;
+            height: 32px;
+            width: auto;
+            max-width: 100%;
+            object-fit: contain;
+        }
+
+        /* ----- SPECIAL CONTAINER FOR EASYPAISA WITH BACKGROUND IMAGE (actual image behind) ----- */
+        .easypaisa-bg-wrapper {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 14px;
+            overflow: hidden;
+            background: #f8fafc;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06), 0 0 0 1px #e2e8f0;
+            transition: all 0.2s ease;
+            height: 44px;
+            min-width: 110px;
+            cursor: default;
+        }
+
+        .easypaisa-bg-wrapper:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 20px -10px rgba(0, 0, 0, 0.2), 0 0 0 1px #cbd5e1;
+        }
+
+        /* background image layer (the image behind the logo) */
+        .easypaisa-bg-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center 25%;
+            background-repeat: no-repeat;
+            z-index: 0;
+            transition: filter 0.3s ease, transform 0.2s;
+            border-radius: 14px;
+        }
+
+        /* subtle overlay for better text contrast */
+        .easypaisa-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.15) 100%);
+            z-index: 1;
+            pointer-events: none;
+            border-radius: 14px;
+        }
+
+        /* actual EasyPaisa image (PNG logo) sits on top */
+        .easypaisa-logo-img {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 0.8rem;
+            height: 100%;
+            background: transparent;
+        }
+
+        .easypaisa-logo-img img {
+            display: block;
+            height: 32px;
+            width: auto;
+            max-width: 110px;
+            object-fit: contain;
+            filter: drop-shadow(0 1px 1px rgba(0,0,0,0.1));
+        }</style>
+        <body>
+ <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand -->
+        <div>
+          <div class="footer-logo">
+            <img src="images/logo.png" alt="Subhan Printers" width="36" onerror="this.style.display='none'" />
+            Subhan <span>Printers</span>
+          </div>
+          <p class="footer-desc">
+            Your trusted partner for professional graphic designing and printing services in Gawalmandi, Lahore, Pakistan.
+          </p>
+          <div class="footer-socials">
+            <a href="#" class="footer-social" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="footer-social" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/923001234567" target="_blank" rel="noopener" class="footer-social" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="mailto:info@subhanprinters.com" class="footer-social" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick links -->
+        <div>
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Home</a></li>
+            <li><a href="services.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Services</a></li>
+            <li><a href="portfolio.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Portfolio</a></li>
+            <li><a href="About.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> About Us</a></li>
+            <li><a href="contact.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div>
+          <h4 class="footer-col-title">Our Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html"><i class="fas fa-check" style="color:var(--clr-primary)" aria-hidden="true"></i> Graphic Designing</a></li>
+            <li><a href="services.html"><i class="fas fa-check" style="color:var(--clr-primary)" aria-hidden="true"></i> Printing Solutions</a></li>
+            <li><a href="services.html"><i class="fas fa-check" style="color:var(--clr-primary)" aria-hidden="true"></i> Packaging Designs</a></li>
+            <li><a href="services.html"><i class="fas fa-check" style="color:var(--clr-primary)" aria-hidden="true"></i> Corporate Branding</a></li>
+            <li><a href="services.html"><i class="fas fa-check" style="color:var(--clr-primary)" aria-hidden="true"></i> Wedding Cards</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <h4 class="footer-col-title">Contact Info</h4>
+          <div class="footer-contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Hamza Center, Gawalmandi, Lahore, Pakistan</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fas fa-phone"></i>
+            <a href="tel:+923001234567">+92 300 1234567</a>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:info@subhanprinters.com">info@subhanprinters.com</a>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fas fa-clock"></i>
+            <span>Mon–Sat: 9 AM – 8 PM</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Payment logos bar -->
+    
+
+      <div class="footer-bottom">
+        <p class="footer-bottom-text">
+          © <span id="footer-year">2025</span> <strong style="color:var(--clr-white)">Subhan Printers</strong>. All rights reserved.
+          &nbsp;|&nbsp; Hamza Center, Gawalmandi, Pakistan
+        </p>
+        <div class="footer-bottom-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="sitemap.xml">Sitemap</a>
+        </div>
+       <div class="footer-payments-logos">
+            <!-- Mastercard (image) -->
+            <div class="pay-logo-img" title="Mastercard">
+                <img src="images/pngwing.com.png" alt="Mastercard" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg'">
+            </div>
+            <!-- VISA (image) -->
+            <div class="pay-logo-img" title="VISA">
+                <img src="images/pngwing.com (1).png" alt="Visa" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg'">
+            </div>
+            <!-- PayPal (image) -->
+            <div class="pay-logo-img" title="PayPal">
+                <img src="images/Sadapay-Logo.png" alt="PayPal" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg'">
+            </div>
+            <!-- JazzCash (image - using official style placeholder but reliable local representation) -->
+            <div class="pay-logo-img" title="JazzCash">
+                <img src="images/jazzcash.png" alt="JazzCash" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Jazz_Logo.svg/256px-Jazz_Logo.svg.png'">
+            </div>
+            <!-- EasyPaisa with CUSTOM BACKGROUND IMAGE behind the logo (actual PNG image) -->
+            <div class="easypaisa-bg-wrapper" id="easypaisaBgWrapper" title="EasyPaisa">
+                
+                <div class="easypaisa-logo-img">
+                    <img src="images/easypaisa.png" 
+                         alt="EasyPaisa"
+                         >
+                </div>
+            </div>
+        </div>
+    </div>
+      </div>
+    </div>
+  </footer>
+  </body>
+</html>

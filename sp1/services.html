@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Subhan Printers Services – Wedding cards, box packaging, flex banners, brochures, stickers, graphic design and more in Lahore, Pakistan." />
+  <title>Services | Subhan Printers – Lahore</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="assets/css/services.css">
+</head>
+
+<body>
+
+  <!-- ============================================================
+       NAVIGATION
+       ============================================================ -->
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="Subhan Printers Home">
+      <img src="images/logo.png" alt="Subhan Printers" width="44" height="44" onerror="this.style.display='none'"/>
+      Subhan <span>Printers</span>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li class="nav-dropdown" id="portfolioDropdown">
+        <button class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false" id="portfolioToggle">
+          Portfolio <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="portfolio.html"><i class="fas fa-th"></i> All Projects</a>
+          <a href="portfolio.html?cat=wedding"><i class="fas fa-heart"></i> Wedding Cards</a>
+          <a href="portfolio.html?cat=packaging"><i class="fas fa-box"></i> Box Packaging</a>
+          <a href="portfolio.html?cat=flex"><i class="fas fa-image"></i> Flex &amp; Banners</a>
+          <div class="dd-divider"></div>
+          <a href="portfolio.html?cat=brochures"><i class="fas fa-file-alt"></i> Brochures</a>
+          <a href="portfolio.html?cat=stickers"><i class="fas fa-tags"></i> Stickers</a>
+        </div>
+      </li>
+      <li><a href="About.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="login.html" class="btn-login">Login</a>
+      <a href="signup.html" class="btn-signup">Sign Up</a>
+      <a href="order.html" class="btn btn-accent" style="font-weight:700">
+        <i class="fas fa-shopping-cart"></i> Order Now
+      </a>
+    </div>
+    <button class="hamburger" id="hamburger-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="portfolio.html?cat=wedding" style="padding-left:32px;font-size:0.85rem">↳ Wedding Cards</a>
+    <a href="portfolio.html?cat=packaging" style="padding-left:32px;font-size:0.85rem">↳ Box Packaging</a>
+    <a href="About.html">About</a>
+    <a href="contact.html">Contact</a>
+    <div style="display:flex;gap:10px;padding:8px 16px">
+      <a href="login.html" class="btn btn-outline" style="flex:1;justify-content:center">Login</a>
+      <a href="signup.html" class="btn btn-primary" style="flex:1;justify-content:center">Sign Up</a>
+    </div>
+    <a href="https://wa.me/923001234567" target="_blank" rel="noopener" class="btn btn-green">
+      <i class="fab fa-whatsapp" aria-hidden="true"></i> Order Now
+    </a>
+  </div>
+
+  <main>
+
+    <!-- ============================================================
+         PAGE HERO
+         ============================================================ -->
+    <section id="svc-hero" aria-label="Services hero">
+      <div class="svc-hero-bg" aria-hidden="true"></div>
+      <div class="svc-hero-grid" aria-hidden="true"></div>
+      <div class="container svc-hero-inner">
+
+        <!-- Left -->
+        <div class="reveal">
+          <div class="svc-hero-eyebrow">Everything We Offer</div>
+          <h1 class="svc-hero-title">
+            All Our <span>Printing</span><br>Services
+          </h1>
+          <p class="svc-hero-desc">
+            From a single wedding card to bulk corrugated boxes — we handle every printing
+            and design need with speed, quality, and care. Based in Gawalmandi, Lahore.
+          </p>
+          <div class="svc-hero-actions">
+            <a href="https://wa.me/923001234567" target="_blank" rel="noopener" class="btn btn-green btn-lg">
+              <i class="fab fa-whatsapp" aria-hidden="true"></i> Get Free Quote
+            </a>
+            <a href="#svc-main" class="btn btn-outline btn-lg">
+              Explore Services <i class="fas fa-arrow-down" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right — stat cards -->
+        <div class="svc-hero-stats reveal reveal-delay-2">
+          <div class="svc-stat-card">
+            <div class="svc-stat-num" style="color:var(--clr-primary)">5000+</div>
+            <div class="svc-stat-label">Happy Clients</div>
+          </div>
+          <div class="svc-stat-card">
+            <div class="svc-stat-num" style="color:var(--clr-accent)">10K+</div>
+            <div class="svc-stat-label">Projects Done</div>
+          </div>
+          <div class="svc-stat-card">
+            <div class="svc-stat-num" style="color:var(--clr-green)">25+</div>
+            <div class="svc-stat-label">Years Experience</div>
+          </div>
+          <div class="svc-stat-card">
+            <div class="svc-stat-num" style="color:#3b82f6">24hr</div>
+            <div class="svc-stat-label">Rush Delivery</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         STICKY CATEGORY TABS
+         ============================================================ -->
+    <div id="svc-tabs" role="tablist" aria-label="Service categories">
+      <div class="container">
+        <div class="svc-tabs-inner">
+          <button class="svc-tab active" data-tab="all" role="tab" aria-selected="true">
+            <i class="fas fa-th-large" aria-hidden="true"></i> All Services
+          </button>
+          <button class="svc-tab" data-tab="print" role="tab" aria-selected="false">
+            <i class="fas fa-print" aria-hidden="true"></i> Printing
+          </button>
+          <button class="svc-tab" data-tab="packaging" role="tab" aria-selected="false">
+            <i class="fas fa-box" aria-hidden="true"></i> Packaging
+          </button>
+          <button class="svc-tab" data-tab="design" role="tab" aria-selected="false">
+            <i class="fas fa-palette" aria-hidden="true"></i> Graphic Design
+          </button>
+          <button class="svc-tab" data-tab="wedding" role="tab" aria-selected="false">
+            <i class="fas fa-heart" aria-hidden="true"></i> Wedding
+          </button>
+          <button class="svc-tab" data-tab="large-format" role="tab" aria-selected="false">
+            <i class="fas fa-expand" aria-hidden="true"></i> Large Format
+          </button>
+          <button class="svc-tab" data-tab="stationery" role="tab" aria-selected="false">
+            <i class="fas fa-sticky-note" aria-hidden="true"></i> Stationery
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         ALL SERVICES — GROUPED BY CATEGORY
+         ============================================================ -->
+    <section id="svc-main" class="section" aria-label="All services">
+      <div class="container">
+
+        <!-- ── PRINTING SERVICES ── -->
+        <div class="cat-section" data-cat="print">
+          <div class="cat-section-head reveal">
+            <div class="cat-section-icon" style="background:linear-gradient(135deg,#8b5cf6,#6d28d9)">
+              <i class="fas fa-print" aria-hidden="true"></i>
+            </div>
+            <div>
+              <div class="cat-section-title">Printing Services</div>
+              <div style="font-size:0.82rem;color:var(--clr-muted);margin-top:2px">Offset · Digital · Large Format</div>
+            </div>
+            <span class="cat-section-count">6 Services</span>
+          </div>
+
+          <div class="svc-grid">
+
+            <!-- Featured wide card -->
+            <div class="svc-card svc-card-wide reveal" data-service="offset-printing" data-cat="print">
+              <div class="svc-card-img-wrap">
+                <img class="svc-card-img" src="images/custom boxes.webp" alt="Offset printing"
+                     loading="lazy" onerror="this.src='https://placehold.co/720x440/1a1a2e/8b5cf6?text=Offset+Printing'" />
+                <span class="svc-card-badge">Most Popular</span>
+                <span class="svc-card-popular">⭐ Featured</span>
+              </div>
+              <div class="svc-card-body">
+                <div class="svc-card-icon" style="background:linear-gradient(135deg,#8b5cf6,#6d28d9)">
+                  <i class="fas fa-print" aria-hidden="true"></i>
+                </div>
+                <div class="svc-card-title">Offset Printing</div>
+                <div class="svc-card-desc">
+                  High-quality offset printing for bulk orders. Perfect colour consistency, sharp detail,
+                  and professional finish. Ideal for packaging, brochures, and wedding cards.
+                </div>
+                <div class="svc-card-features">
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> CMYK + Pantone colour matching</div>
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> Minimum 500 pcs for bulk pricing</div>
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> Gloss / matte lamination available</div>
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> UV spot, foiling &amp; embossing finishing</div>
+                </div>
+              </div>
+              <div class="svc-card-footer">
+                <div class="svc-card-price">₨ 2,500 <span>/ 500 pcs</span></div>
+                <a href="https://wa.me/923001234567?text=I'm interested in Offset Printing" target="_blank" rel="noopener" class="svc-card-cta">
+                  Order Now <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Digital Printing -->
+            <div class="svc-card reveal reveal-delay-1" data-service="digital-printing" data-cat="print">
+              <div class="svc-card-img-wrap">
+                <img class="svc-card-img" src="images/f1.jpg" alt="Digital printing"
+                     loading="lazy" onerror="this.src='https://placehold.co/600x360/1a1a2e/3b82f6?text=Digital+Printing'" />
+                <span class="svc-card-badge">Low MOQ</span>
+              </div>
+              <div class="svc-card-body">
+                <div class="svc-card-icon" style="background:linear-gradient(135deg,#3b82f6,#06b6d4)">
+                  <i class="fas fa-desktop" aria-hidden="true"></i>
+                </div>
+                <div class="svc-card-title">Digital Printing</div>
+                <div class="svc-card-desc">
+                  Fast turnaround digital printing for small runs. No printing plates needed —
+                  ideal for samples, prototypes, and low-quantity jobs.
+                </div>
+                <div class="svc-card-features">
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> Minimum 1 piece</div>
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> Same-day delivery available</div>
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> Full colour both sides</div>
+                </div>
+              </div>
+              <div class="svc-card-footer">
+                <div class="svc-card-price">₨ 150 <span>/ piece</span></div>
+                <a href="https://wa.me/923001234567?text=I'm interested in Digital Printing" target="_blank" rel="noopener" class="svc-card-cta">
+                  Order Now <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Business Cards -->
+            <div class="svc-card reveal reveal-delay-2" data-service="business-cards" data-cat="print stationery">
+              <div class="svc-card-img-wrap">
+                <img class="svc-card-img" src="images/vcards.jpg" alt="Business cards"
+                     loading="lazy" onerror="this.src='https://placehold.co/600x360/1a1a2e/22c55e?text=Business+Cards'" />
+              </div>
+              <div class="svc-card-body">
+                <div class="svc-card-icon" style="background:linear-gradient(135deg,#22c55e,#15803d)">
+                  <i class="fas fa-id-card" aria-hidden="true"></i>
+                </div>
+                <div class="svc-card-title">Business Cards</div>
+                <div class="svc-card-desc">
+                  Premium business cards in standard, square, folded, and round-corner styles.
+                  Matte, gloss, or soft-touch lamination.
+                </div>
+                <div class="svc-card-features">
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> 350gsm premium card stock</div>
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> UV spot coating option</div>
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> 100–5000 qty range</div>
+                </div>
+              </div>
+              <div class="svc-card-footer">
+                <div class="svc-card-price">₨ 1,800 <span>/ 100 pcs</span></div>
+                <a href="https://wa.me/923001234567?text=I need Business Cards" target="_blank" rel="noopener" class="svc-card-cta">
+                  Order Now <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Brochures -->
+            <div class="svc-card reveal" data-service="brochures" data-cat="print stationery">
+              <div class="svc-card-img-wrap">
+                <img class="svc-card-img" src="images/brouchers.avif" alt="Brochures"
+                     loading="lazy" onerror="this.src='https://placehold.co/600x360/1a1a2e/f59e0b?text=Brochures'" />
+              </div>
+              <div class="svc-card-body">
+                <div class="svc-card-icon" style="background:linear-gradient(135deg,#f59e0b,#b45309)">
+                  <i class="fas fa-file-alt" aria-hidden="true"></i>
+                </div>
+                <div class="svc-card-title">Brochures &amp; Leaflets</div>
+                <div class="svc-card-desc">
+                  Tri-fold, bi-fold, Z-fold brochures and DL leaflets for corporate, retail,
+                  restaurant, and medical businesses.
+                </div>
+                <div class="svc-card-features">
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> A4 / A5 / DL sizes</div>
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> Multiple fold styles</div>
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> 130–170gsm art paper</div>
+                </div>
+              </div>
+              <div class="svc-card-footer">
+                <div class="svc-card-price">₨ 3,500 <span>/ 500 pcs</span></div>
+                <a href="https://wa.me/923001234567?text=I need Brochures" target="_blank" rel="noopener" class="svc-card-cta">
+                  Order Now <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Flyers -->
+            <div class="svc-card reveal reveal-delay-1" data-service="flyers" data-cat="print stationery">
+              <div class="svc-card-img-wrap">
+                <img class="svc-card-img" src="images/food.webp" alt="Flyers"
+                     loading="lazy" onerror="this.src='https://placehold.co/600x360/1a1a2e/ec4899?text=Flyers'" />
+              </div>
+              <div class="svc-card-body">
+                <div class="svc-card-icon" style="background:linear-gradient(135deg,#ec4899,#be185d)">
+                  <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                </div>
+                <div class="svc-card-title">Flyers &amp; Posters</div>
+                <div class="svc-card-desc">
+                  Eye-catching flyers and posters for events, promotions, menus, and
+                  announcements. Fast turnaround for urgent needs.
+                </div>
+                <div class="svc-card-features">
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> A3 / A4 / A5 / custom</div>
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> 100–10,000 qty</div>
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> 48hr standard turnaround</div>
+                </div>
+              </div>
+              <div class="svc-card-footer">
+                <div class="svc-card-price">₨ 2,200 <span>/ 500 pcs</span></div>
+                <a href="https://wa.me/923001234567?text=I need Flyers" target="_blank" rel="noopener" class="svc-card-cta">
+                  Order Now <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+
+          </div><!-- /print grid -->
+        </div><!-- /print cat-section -->
+
+        <!-- ── PACKAGING SERVICES ── -->
+        <div class="cat-section" data-cat="packaging">
+          <div class="cat-section-head reveal">
+            <div class="cat-section-icon" style="background:linear-gradient(135deg,#f59e0b,#b45309)">
+              <i class="fas fa-box" aria-hidden="true"></i>
+            </div>
+            <div>
+              <div class="cat-section-title">Packaging Services</div>
+              <div style="font-size:0.82rem;color:var(--clr-muted);margin-top:2px">Custom Boxes · Labels · Bags</div>
+            </div>
+            <span class="cat-section-count">5 Services</span>
+          </div>
+
+          <div class="svc-grid">
+
+            <!-- Box Packaging wide -->
+            <div class="svc-card svc-card-wide reveal" data-service="box-packaging" data-cat="packaging">
+              <div class="svc-card-img-wrap">
+                <img class="svc-card-img" src="images/boxes.webp" alt="Custom box packaging"
+                     loading="lazy" onerror="this.src='https://placehold.co/720x440/1a1a2e/f59e0b?text=Box+Packaging'" />
+                <span class="svc-card-badge">Bulk Discounts</span>
+                <span class="svc-card-popular">🔥 Best Seller</span>
+              </div>
+              <div class="svc-card-body">
+                <div class="svc-card-icon" style="background:linear-gradient(135deg,#f59e0b,#b45309)">
+                  <i class="fas fa-box-open" aria-hidden="true"></i>
+                </div>
+                <div class="svc-card-title">Custom Box Packaging</div>
+                <div class="svc-card-desc">
+                  Complete custom box manufacturing — from design to die-cutting, offset printing,
+                  lamination, and pasting. All in-house in our Lahore facility.
+                </div>
+                <div class="svc-card-features">
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> Cosmetics, food, shoe, gift, mailer boxes</div>
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> Any size and shape — fully custom</div>
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> Rigid, folding carton, kraft, corrugated</div>
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> Hot foil, spot UV, emboss finishing</div>
+                </div>
+              </div>
+              <div class="svc-card-footer">
+                <div class="svc-card-price">₨ 25 <span>/ piece (bulk)</span></div>
+                <a href="https://wa.me/923001234567?text=I need Custom Box Packaging" target="_blank" rel="noopener" class="svc-card-cta">
+                  Get Quote <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Corrugated Boxes -->
+            <div class="svc-card reveal reveal-delay-1" data-service="corrugated-boxes" data-cat="packaging">
+              <div class="svc-card-img-wrap">
+                <img class="svc-card-img" src="images/corrugatedbox.jfif" alt="Corrugated boxes"
+                     loading="lazy" onerror="this.src='https://placehold.co/600x360/1a1a2e/f59e0b?text=Corrugated+Boxes'" />
+              </div>
+              <div class="svc-card-body">
+                <div class="svc-card-icon" style="background:linear-gradient(135deg,#78716c,#44403c)">
+                  <i class="fas fa-archive" aria-hidden="true"></i>
+                </div>
+                <div class="svc-card-title">Corrugated Boxes</div>
+                <div class="svc-card-desc">
+                  Strong corrugated shipping and storage boxes. Single, double, and triple wall
+                  options. Custom printing on brown or white kraft.
+                </div>
+                <div class="svc-card-features">
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> E / B / C flute options</div>
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> Custom sizes &amp; print</div>
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> Food-safe ink available</div>
+                </div>
+              </div>
+              <div class="svc-card-footer">
+                <div class="svc-card-price">₨ 35 <span>/ piece (bulk)</span></div>
+                <a href="https://wa.me/923001234567?text=I need Corrugated Boxes" target="_blank" rel="noopener" class="svc-card-cta">
+                  Get Quote <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Labels & Stickers -->
+            <div class="svc-card reveal reveal-delay-2" data-service="labels-stickers" data-cat="packaging stationery">
+              <div class="svc-card-img-wrap">
+                <img class="svc-card-img" src="images/f1.jpg" alt="Labels and stickers"
+                     loading="lazy" onerror="this.src='https://placehold.co/600x360/1a1a2e/22c55e?text=Labels'" />
+              </div>
+              <div class="svc-card-body">
+                <div class="svc-card-icon" style="background:linear-gradient(135deg,#22c55e,#15803d)">
+                  <i class="fas fa-tags" aria-hidden="true"></i>
+                </div>
+                <div class="svc-card-title">Labels &amp; Stickers</div>
+                <div class="svc-card-desc">
+                  Custom product labels, price tags, barcode stickers, transparent stickers,
+                  and holographic labels for products and packaging.
+                </div>
+                <div class="svc-card-features">
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> Die-cut any shape</div>
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> Waterproof &amp; outdoor grade</div>
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> Roll or sheet format</div>
+                </div>
+              </div>
+              <div class="svc-card-footer">
+                <div class="svc-card-price">₨ 5 <span>/ sticker (bulk)</span></div>
+                <a href="https://wa.me/923001234567?text=I need Labels and Stickers" target="_blank" rel="noopener" class="svc-card-cta">
+                  Order Now <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Paper Bags -->
+            <div class="svc-card reveal" data-service="paper-bags" data-cat="packaging">
+              <div class="svc-card-img-wrap">
+                <img class="svc-card-img" src="images/fabric.webp" alt="Printed paper bags"
+                     loading="lazy" onerror="this.src='https://placehold.co/600x360/1a1a2e/6366f1?text=Paper+Bags'" />
+              </div>
+              <div class="svc-card-body">
+                <div class="svc-card-icon" style="background:linear-gradient(135deg,#6366f1,#4338ca)">
+                  <i class="fas fa-shopping-bag" aria-hidden="true"></i>
+                </div>
+                <div class="svc-card-title">Custom Paper Bags</div>
+                <div class="svc-card-desc">
+                  Branded shopping bags, boutique bags, and craft paper bags with cord,
+                  ribbon, or flat handles. Available in all sizes.
+                </div>
+                <div class="svc-card-features">
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> Kraft / art paper options</div>
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> 150–400gsm thickness</div>
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> Custom ribbon / rope handle</div>
+                </div>
+              </div>
+              <div class="svc-card-footer">
+                <div class="svc-card-price">₨ 40 <span>/ piece (bulk)</span></div>
+                <a href="https://wa.me/923001234567?text=I need Custom Paper Bags" target="_blank" rel="noopener" class="svc-card-cta">
+                  Get Quote <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Ribbons -->
+            <div class="svc-card reveal reveal-delay-1" data-service="ribbons" data-cat="packaging">
+              <div class="svc-card-img-wrap">
+                <img class="svc-card-img" src="images/ribbons.avif" alt="Printed ribbons"
+                     loading="lazy" onerror="this.src='https://placehold.co/600x360/1a1a2e/ec4899?text=Ribbons'" />
+              </div>
+              <div class="svc-card-body">
+                <div class="svc-card-icon" style="background:linear-gradient(135deg,#ec4899,#be185d)">
+                  <i class="fas fa-ribbon" aria-hidden="true"></i>
+                </div>
+                <div class="svc-card-title">Printed Ribbons</div>
+                <div class="svc-card-desc">
+                  Custom printed satin and grosgrain ribbons for gifting, boutiques,
+                  and event branding. Your logo on every inch.
+                </div>
+                <div class="svc-card-features">
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> 6mm – 50mm widths</div>
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> Satin / grosgrain fabric</div>
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> Cut to length</div>
+                </div>
+              </div>
+              <div class="svc-card-footer">
+                <div class="svc-card-price">₨ 12 <span>/ meter</span></div>
+                <a href="https://wa.me/923001234567?text=I need Printed Ribbons" target="_blank" rel="noopener" class="svc-card-cta">
+                  Order Now <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+
+          </div><!-- /packaging grid -->
+        </div><!-- /packaging cat-section -->
+
+        <!-- ── GRAPHIC DESIGN ── -->
+        <div class="cat-section" data-cat="design">
+          <div class="cat-section-head reveal">
+            <div class="cat-section-icon" style="background:linear-gradient(135deg,#ec4899,#be185d)">
+              <i class="fas fa-palette" aria-hidden="true"></i>
+            </div>
+            <div>
+              <div class="cat-section-title">Graphic Design</div>
+              <div style="font-size:0.82rem;color:var(--clr-muted);margin-top:2px">Logo · Branding · Social Media · Packaging</div>
+            </div>
+            <span class="cat-section-count">4 Services</span>
+          </div>
+
+          <div class="svc-grid">
+            <div class="svc-card reveal" data-service="logo-design" data-cat="design">
+              <div class="svc-card-img-wrap">
+                <img class="svc-card-img" src="https://picsum.photos/id/20/600/360" alt="Logo design"
+                     loading="lazy" onerror="this.src='https://placehold.co/600x360/1a1a2e/8b5cf6?text=Logo+Design'" />
+                <span class="svc-card-badge">Free Revisions</span>
+              </div>
+              <div class="svc-card-body">
+                <div class="svc-card-icon" style="background:linear-gradient(135deg,#8b5cf6,#6d28d9)">
+                  <i class="fas fa-crown" aria-hidden="true"></i>
+                </div>
+                <div class="svc-card-title">Logo &amp; Brand Identity</div>
+                <div class="svc-card-desc">
+                  Professional logo design with full brand identity kit — business card,
+                  letterhead, brand guidelines, and social media kit included.
+                </div>
+                <div class="svc-card-features">
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> 3 unique concepts</div>
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> Unlimited revisions</div>
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> All file formats (AI, PDF, PNG, SVG)</div>
+                </div>
+              </div>
+              <div class="svc-card-footer">
+                <div class="svc-card-price">₨ 2,999 <span>starting</span></div>
+                <a href="https://wa.me/923001234567?text=I need a Logo Design" target="_blank" rel="noopener" class="svc-card-cta">
+                  Start Project <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="svc-card reveal reveal-delay-1" data-service="social-media" data-cat="design">
+              <div class="svc-card-img-wrap">
+                <img class="svc-card-img" src="https://picsum.photos/id/26/600/360" alt="Social media design"
+                     loading="lazy" onerror="this.src='https://placehold.co/600x360/1a1a2e/3b82f6?text=Social+Media'" />
+              </div>
+              <div class="svc-card-body">
+                <div class="svc-card-icon" style="background:linear-gradient(135deg,#3b82f6,#06b6d4)">
+                  <i class="fas fa-hashtag" aria-hidden="true"></i>
+                </div>
+                <div class="svc-card-title">Social Media Design</div>
+                <div class="svc-card-desc">
+                  Scroll-stopping Instagram posts, stories, Facebook covers, YouTube thumbnails,
+                  and full monthly content packages.
+                </div>
+                <div class="svc-card-features">
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> All platform sizes</div>
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> Animated stories available</div>
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> 24hr delivery</div>
+                </div>
+              </div>
+              <div class="svc-card-footer">
+                <div class="svc-card-price">₨ 1,499 <span>/ post</span></div>
+                <a href="https://wa.me/923001234567?text=I need Social Media Design" target="_blank" rel="noopener" class="svc-card-cta">
+                  Get Started <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="svc-card reveal reveal-delay-2" data-service="packaging-design" data-cat="design packaging">
+              <div class="svc-card-img-wrap">
+                <img class="svc-card-img" src="images/portfolio5.png" alt="Packaging design"
+                     loading="lazy" onerror="this.src='https://placehold.co/600x360/1a1a2e/22c55e?text=Packaging+Design'" />
+              </div>
+              <div class="svc-card-body">
+                <div class="svc-card-icon" style="background:linear-gradient(135deg,#22c55e,#15803d)">
+                  <i class="fas fa-box" aria-hidden="true"></i>
+                </div>
+                <div class="svc-card-title">Packaging Design</div>
+                <div class="svc-card-desc">
+                  Full dieline artwork creation and packaging design with print-ready files.
+                  Includes structural design and artwork.
+                </div>
+                <div class="svc-card-features">
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> Dieline + artwork</div>
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> 3D mockup preview</div>
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> Print-ready files</div>
+                </div>
+              </div>
+              <div class="svc-card-footer">
+                <div class="svc-card-price">₨ 4,999 <span>starting</span></div>
+                <a href="https://wa.me/923001234567?text=I need Packaging Design" target="_blank" rel="noopener" class="svc-card-cta">
+                  Get Started <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="svc-card reveal" data-service="web-ui" data-cat="design">
+              <div class="svc-card-img-wrap">
+                <img class="svc-card-img" src="https://picsum.photos/id/1/600/360" alt="Web UI design"
+                     loading="lazy" onerror="this.src='https://placehold.co/600x360/1a1a2e/6366f1?text=Web+Design'" />
+              </div>
+              <div class="svc-card-body">
+                <div class="svc-card-icon" style="background:linear-gradient(135deg,#6366f1,#4338ca)">
+                  <i class="fas fa-laptop-code" aria-hidden="true"></i>
+                </div>
+                <div class="svc-card-title">Web &amp; App UI Design</div>
+                <div class="svc-card-desc">
+                  Beautiful Figma UI/UX designs for websites, mobile apps, and dashboards.
+                  Pixel-perfect and developer-ready.
+                </div>
+                <div class="svc-card-features">
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> Figma source files</div>
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> Mobile responsive</div>
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> Style guide included</div>
+                </div>
+              </div>
+              <div class="svc-card-footer">
+                <div class="svc-card-price">₨ 7,999 <span>starting</span></div>
+                <a href="https://wa.me/923001234567?text=I need UI Design" target="_blank" rel="noopener" class="svc-card-cta">
+                  Start Project <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── WEDDING SERVICES ── -->
+        <div class="cat-section" data-cat="wedding">
+          <div class="cat-section-head reveal">
+            <div class="cat-section-icon" style="background:linear-gradient(135deg,#ec4899,#9333ea)">
+              <i class="fas fa-heart" aria-hidden="true"></i>
+            </div>
+            <div>
+              <div class="cat-section-title">Wedding Services</div>
+              <div style="font-size:0.82rem;color:var(--clr-muted);margin-top:2px">Cards · Envelopes · Thank You · Invitations</div>
+            </div>
+            <span class="cat-section-count">4 Services</span>
+          </div>
+
+          <div class="svc-grid">
+            <div class="svc-card svc-card-wide reveal" data-service="wedding-cards" data-cat="wedding">
+              <div class="svc-card-img-wrap">
+                <img class="svc-card-img" src="images/portfolio.jpg" alt="Wedding cards"
+                     loading="lazy" onerror="this.src='https://placehold.co/720x440/1a1a2e/ec4899?text=Wedding+Cards'" />
+                <span class="svc-card-badge">Traditional &amp; Modern</span>
+                <span class="svc-card-popular">💍 Wedding</span>
+              </div>
+              <div class="svc-card-body">
+                <div class="svc-card-icon" style="background:linear-gradient(135deg,#ec4899,#9333ea)">
+                  <i class="fas fa-heart" aria-hidden="true"></i>
+                </div>
+                <div class="svc-card-title">Wedding &amp; Shaadi Cards</div>
+                <div class="svc-card-desc">
+                  Elegant, traditional, and modern wedding invitation cards. Mehndi,
+                  Barat, Walima — all ceremonies covered. Printed on premium card stock
+                  with optional foiling, embossing, and ribbon finishing.
+                </div>
+                <div class="svc-card-features">
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> Urdu &amp; English both available</div>
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> Foiling &amp; embossing options</div>
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> Envelopes included free</div>
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> 50–5000 quantity range</div>
+                </div>
+              </div>
+              <div class="svc-card-footer">
+                <div class="svc-card-price">₨ 3,500 <span>/ 100 pcs</span></div>
+                <a href="https://wa.me/923001234567?text=I need Wedding Cards" target="_blank" rel="noopener" class="svc-card-cta">
+                  Order Now <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="svc-card reveal reveal-delay-1" data-service="thank-you-cards" data-cat="wedding stationery">
+              <div class="svc-card-img-wrap">
+                <img class="svc-card-img" src="images/thankyou.jpg" alt="Thank you cards"
+                     loading="lazy" onerror="this.src='https://placehold.co/600x360/1a1a2e/ec4899?text=Thank+You+Cards'" />
+              </div>
+              <div class="svc-card-body">
+                <div class="svc-card-icon" style="background:linear-gradient(135deg,#f472b6,#ec4899)">
+                  <i class="fas fa-hand-holding-heart" aria-hidden="true"></i>
+                </div>
+                <div class="svc-card-title">Thank You Cards</div>
+                <div class="svc-card-desc">
+                  Beautiful thank you cards for weddings, boutiques, and businesses.
+                  Custom design with your branding or personal message.
+                </div>
+                <div class="svc-card-features">
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> A6 / postcard size</div>
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> Personalised printing</div>
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> Same design as your cards</div>
+                </div>
+              </div>
+              <div class="svc-card-footer">
+                <div class="svc-card-price">₨ 1,500 <span>/ 100 pcs</span></div>
+                <a href="https://wa.me/923001234567?text=I need Thank You Cards" target="_blank" rel="noopener" class="svc-card-cta">
+                  Order Now <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="svc-card reveal reveal-delay-2" data-service="envelopes" data-cat="wedding stationery">
+              <div class="svc-card-img-wrap">
+                <img class="svc-card-img" src="images/envelop.jpg" alt="Custom envelopes"
+                     loading="lazy" onerror="this.src='https://placehold.co/600x360/1a1a2e/6366f1?text=Envelopes'" />
+              </div>
+              <div class="svc-card-body">
+                <div class="svc-card-icon" style="background:linear-gradient(135deg,#6366f1,#4338ca)">
+                  <i class="fas fa-envelope" aria-hidden="true"></i>
+                </div>
+                <div class="svc-card-title">Custom Envelopes</div>
+                <div class="svc-card-desc">
+                  Printed envelopes in any size. Standard, window, and pocket envelopes
+                  with custom colour, logo, and return address printing.
+                </div>
+                <div class="svc-card-features">
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> DL / C5 / C4 sizes</div>
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> Inside print option</div>
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> Peel &amp; seal closure</div>
+                </div>
+              </div>
+              <div class="svc-card-footer">
+                <div class="svc-card-price">₨ 800 <span>/ 100 pcs</span></div>
+                <a href="https://wa.me/923001234567?text=I need Custom Envelopes" target="_blank" rel="noopener" class="svc-card-cta">
+                  Order Now <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── LARGE FORMAT ── -->
+        <div class="cat-section" data-cat="large-format">
+          <div class="cat-section-head reveal">
+            <div class="cat-section-icon" style="background:linear-gradient(135deg,#0ea5e9,#0284c7)">
+              <i class="fas fa-expand" aria-hidden="true"></i>
+            </div>
+            <div>
+              <div class="cat-section-title">Large Format Printing</div>
+              <div style="font-size:0.82rem;color:var(--clr-muted);margin-top:2px">Flex · Banners · Standees · Wallpapers</div>
+            </div>
+            <span class="cat-section-count">3 Services</span>
+          </div>
+
+          <div class="svc-grid">
+            <div class="svc-card reveal" data-service="flex-banners" data-cat="large-format">
+              <div class="svc-card-img-wrap">
+                <img class="svc-card-img" src="images/portfolio2.webp" alt="Flex banners"
+                     loading="lazy" onerror="this.src='https://placehold.co/600x360/1a1a2e/0ea5e9?text=Flex+Banners'" />
+                <span class="svc-card-badge">Outdoor Ready</span>
+              </div>
+              <div class="svc-card-body">
+                <div class="svc-card-icon" style="background:linear-gradient(135deg,#0ea5e9,#0284c7)">
+                  <i class="fas fa-image" aria-hidden="true"></i>
+                </div>
+                <div class="svc-card-title">Flex &amp; Banners</div>
+                <div class="svc-card-desc">
+                  High-resolution solvent-printed flex banners for shops, events, and
+                  outdoor advertising. UV-resistant inks with hem and grommets.
+                </div>
+                <div class="svc-card-features">
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> 440gsm / 550gsm flex media</div>
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> Any custom width &amp; length</div>
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> Grommets &amp; hemming included</div>
+                </div>
+              </div>
+              <div class="svc-card-footer">
+                <div class="svc-card-price">₨ 120 <span>/ sq. ft.</span></div>
+                <a href="https://wa.me/923001234567?text=I need Flex Banners" target="_blank" rel="noopener" class="svc-card-cta">
+                  Order Now <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="svc-card reveal reveal-delay-1" data-service="standees" data-cat="large-format">
+              <div class="svc-card-img-wrap">
+                <img class="svc-card-img" src="images/bannerss.png" alt="Roll-up standees"
+                     loading="lazy" onerror="this.src='https://placehold.co/600x360/1a1a2e/f59e0b?text=Standees'" />
+              </div>
+              <div class="svc-card-body">
+                <div class="svc-card-icon" style="background:linear-gradient(135deg,#f59e0b,#b45309)">
+                  <i class="fas fa-arrows-alt-v" aria-hidden="true"></i>
+                </div>
+                <div class="svc-card-title">Roll-Up Standees</div>
+                <div class="svc-card-desc">
+                  Professional roll-up banner stands for exhibitions, conferences, retail,
+                  and office reception. Print + stand combo available.
+                </div>
+                <div class="svc-card-features">
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> 85cm × 200cm standard</div>
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> Premium chrome stand</div>
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> Carry bag included</div>
+                </div>
+              </div>
+              <div class="svc-card-footer">
+                <div class="svc-card-price">₨ 4,500 <span>/ unit</span></div>
+                <a href="https://wa.me/923001234567?text=I need Roll-Up Standees" target="_blank" rel="noopener" class="svc-card-cta">
+                  Order Now <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="svc-card reveal reveal-delay-2" data-service="wall-graphics" data-cat="large-format">
+              <div class="svc-card-img-wrap">
+                <img class="svc-card-img" src="https://picsum.photos/id/30/600/360" alt="Wall graphics"
+                     loading="lazy" onerror="this.src='https://placehold.co/600x360/1a1a2e/22c55e?text=Wall+Graphics'" />
+              </div>
+              <div class="svc-card-body">
+                <div class="svc-card-icon" style="background:linear-gradient(135deg,#22c55e,#15803d)">
+                  <i class="fas fa-paint-roller" aria-hidden="true"></i>
+                </div>
+                <div class="svc-card-title">Wall Graphics &amp; Wallpapers</div>
+                <div class="svc-card-desc">
+                  Custom wall wraps, office murals, and self-adhesive wallpapers.
+                  Transform your space with high-res digital printing.
+                </div>
+                <div class="svc-card-features">
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> Self-adhesive vinyl</div>
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> Removable option</div>
+                  <div class="svc-card-feature"><i class="fas fa-check-circle" aria-hidden="true"></i> Installation service</div>
+                </div>
+              </div>
+              <div class="svc-card-footer">
+                <div class="svc-card-price">₨ 180 <span>/ sq. ft.</span></div>
+                <a href="https://wa.me/923001234567?text=I need Wall Graphics" target="_blank" rel="noopener" class="svc-card-cta">
+                  Get Quote <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- /#svc-main -->
+
+    <!-- ============================================================
+         HOW IT WORKS
+         ============================================================ -->
+    <section id="svc-process" class="section" aria-label="How it works">
+      <div class="container">
+        <div class="text-center reveal">
+          <div class="tag">Simple Process</div>
+          <h2 class="section-title">How to <span class="highlight">Order</span></h2>
+          <p class="section-desc">From idea to delivery in 5 easy steps</p>
+        </div>
+        <div class="process-strip" style="margin-top:56px">
+          <div class="ps-step reveal">
+            <div class="ps-num" style="background:linear-gradient(135deg,#8b5cf6,#6d28d9)">1</div>
+            <div class="ps-icon"><i class="fas fa-comments" style="color:var(--clr-primary)" aria-hidden="true"></i></div>
+            <div class="ps-title">Share Your Idea</div>
+            <div class="ps-desc">Tell us what you need via WhatsApp, call, or visit our shop in Gawalmandi.</div>
+          </div>
+          <div class="ps-step reveal reveal-delay-1">
+            <div class="ps-num" style="background:linear-gradient(135deg,#3b82f6,#1d4ed8)">2</div>
+            <div class="ps-icon"><i class="fas fa-file-invoice-dollar" style="color:#3b82f6" aria-hidden="true"></i></div>
+            <div class="ps-title">Get Your Quote</div>
+            <div class="ps-desc">We give you an instant price. Negotiate, finalise, and pay to confirm order.</div>
+          </div>
+          <div class="ps-step reveal reveal-delay-2">
+            <div class="ps-num" style="background:linear-gradient(135deg,#f59e0b,#b45309)">3</div>
+            <div class="ps-icon"><i class="fas fa-magic" style="color:var(--clr-accent)" aria-hidden="true"></i></div>
+            <div class="ps-title">We Design &amp; Print</div>
+            <div class="ps-desc">Our designers create your artwork and our machines produce the final prints.</div>
+          </div>
+          <div class="ps-step reveal reveal-delay-3">
+            <div class="ps-num" style="background:linear-gradient(135deg,#22c55e,#15803d)">4</div>
+            <div class="ps-icon"><i class="fas fa-truck" style="color:var(--clr-green)" aria-hidden="true"></i></div>
+            <div class="ps-title">Pickup or Deliver</div>
+            <div class="ps-desc">Collect from our shop or get your order delivered to your door across Pakistan.</div>
+          </div>
+          <div class="ps-step reveal reveal-delay-4">
+            <div class="ps-num" style="background:linear-gradient(135deg,#ec4899,#be185d)">5</div>
+            <div class="ps-icon"><i class="fas fa-star" style="color:#ec4899" aria-hidden="true"></i></div>
+            <div class="ps-title">Leave a Review</div>
+            <div class="ps-desc">Share your experience and get 10% off your next order. We love happy clients!</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         MATERIALS & PAPER TYPES
+         ============================================================ -->
+    <section id="svc-materials" class="section" aria-label="Materials">
+      <div class="container">
+        <div class="text-center reveal">
+          <div class="tag">What We Use</div>
+          <h2 class="section-title">Premium <span class="highlight">Materials</span></h2>
+          <p class="section-desc">We use only high-grade substrates and inks for every job</p>
+        </div>
+        <div class="materials-grid">
+          <div class="mat-card reveal">
+            <div class="mat-icon"><i class="fas fa-layer-group" aria-hidden="true"></i></div>
+            <div class="mat-title">Art Paper &amp; Board</div>
+            <div class="mat-desc">Coated for sharp images and vivid colour reproduction. Used for brochures, leaflets, and packaging.</div>
+            <div class="mat-tags">
+              <span class="mat-tag">130gsm</span>
+              <span class="mat-tag">170gsm</span>
+              <span class="mat-tag">300gsm</span>
+              <span class="mat-tag">350gsm</span>
+            </div>
+          </div>
+          <div class="mat-card reveal reveal-delay-1">
+            <div class="mat-icon" style="background:linear-gradient(135deg,#f59e0b,#b45309)"><i class="fas fa-scroll" aria-hidden="true"></i></div>
+            <div class="mat-title">Kraft &amp; Brown Board</div>
+            <div class="mat-desc">Eco-friendly natural paper for bags, tags, and sustainable packaging. Rustic and premium feel.</div>
+            <div class="mat-tags">
+              <span class="mat-tag">Natural</span>
+              <span class="mat-tag">White Kraft</span>
+              <span class="mat-tag">Recycled</span>
+            </div>
+          </div>
+          <div class="mat-card reveal reveal-delay-2">
+            <div class="mat-icon" style="background:linear-gradient(135deg,#22c55e,#15803d)"><i class="fas fa-box" aria-hidden="true"></i></div>
+            <div class="mat-title">Corrugated Flute</div>
+            <div class="mat-desc">Strong and lightweight for shipping and storage boxes. Available in E, B, and C flute configurations.</div>
+            <div class="mat-tags">
+              <span class="mat-tag">E Flute</span>
+              <span class="mat-tag">B Flute</span>
+              <span class="mat-tag">C Flute</span>
+              <span class="mat-tag">Double Wall</span>
+            </div>
+          </div>
+          <div class="mat-card reveal reveal-delay-3">
+            <div class="mat-icon" style="background:linear-gradient(135deg,#3b82f6,#1d4ed8)"><i class="fas fa-gem" aria-hidden="true"></i></div>
+            <div class="mat-title">Finishing Options</div>
+            <div class="mat-desc">Transform ordinary print into premium with our speciality finishing services.</div>
+            <div class="mat-tags">
+              <span class="mat-tag">Gold Foil</span>
+              <span class="mat-tag">Silver Foil</span>
+              <span class="mat-tag">Spot UV</span>
+              <span class="mat-tag">Emboss</span>
+              <span class="mat-tag">Soft Touch</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PRICING TABLE
+         ============================================================ -->
+    <section id="svc-pricing" class="section" aria-label="Pricing">
+      <div class="container">
+        <div class="text-center reveal">
+          <div class="tag">Transparent Pricing</div>
+          <h2 class="section-title">Design <span class="highlight">Packages</span></h2>
+          <p class="section-desc">Fixed packages for graphic design. Printing priced separately based on quantity and specs.</p>
+        </div>
+        <div class="pricing-grid">
+
+          <!-- Basic -->
+          <div class="pricing-card reveal">
+            <div class="pricing-head">
+              <div class="pricing-badge basic">Starter</div>
+              <div class="pricing-name">Basic Design</div>
+              <div class="pricing-price"><sup>₨</sup>2,999</div>
+              <div class="pricing-period">one-time project fee</div>
+            </div>
+            <div class="pricing-body">
+              <div class="pricing-feature included"><i class="fas fa-check" aria-hidden="true"></i><span>1 design concept</span></div>
+              <div class="pricing-feature included"><i class="fas fa-check" aria-hidden="true"></i><span>2 revisions</span></div>
+              <div class="pricing-feature included"><i class="fas fa-check" aria-hidden="true"></i><span>PNG &amp; PDF files</span></div>
+              <div class="pricing-feature included"><i class="fas fa-check" aria-hidden="true"></i><span>3–5 day delivery</span></div>
+              <div class="pricing-feature excluded"><i class="fas fa-times" aria-hidden="true"></i><span>Source files (AI/PSD)</span></div>
+              <div class="pricing-feature excluded"><i class="fas fa-times" aria-hidden="true"></i><span>Brand style guide</span></div>
+              <div class="pricing-feature excluded"><i class="fas fa-times" aria-hidden="true"></i><span>Social media kit</span></div>
+            </div>
+            <div class="pricing-foot">
+              <a href="https://wa.me/923001234567?text=I want the Basic Design package" target="_blank" rel="noopener"
+                 class="btn btn-outline" style="width:100%;justify-content:center">
+                Get Started
+              </a>
+            </div>
+          </div>
+
+          <!-- Popular -->
+          <div class="pricing-card featured reveal reveal-delay-2">
+            <div class="pricing-head">
+              <div class="pricing-badge popular">⭐ Most Popular</div>
+              <div class="pricing-name">Professional</div>
+              <div class="pricing-price"><sup>₨</sup>6,999</div>
+              <div class="pricing-period">one-time project fee</div>
+            </div>
+            <div class="pricing-body">
+              <div class="pricing-feature included"><i class="fas fa-check" aria-hidden="true"></i><span>3 design concepts</span></div>
+              <div class="pricing-feature included"><i class="fas fa-check" aria-hidden="true"></i><span>Unlimited revisions</span></div>
+              <div class="pricing-feature included"><i class="fas fa-check" aria-hidden="true"></i><span>All file formats</span></div>
+              <div class="pricing-feature included"><i class="fas fa-check" aria-hidden="true"></i><span>48hr delivery</span></div>
+              <div class="pricing-feature included"><i class="fas fa-check" aria-hidden="true"></i><span>Source files (AI/PSD)</span></div>
+              <div class="pricing-feature included"><i class="fas fa-check" aria-hidden="true"></i><span>Brand style guide</span></div>
+              <div class="pricing-feature excluded"><i class="fas fa-times" aria-hidden="true"></i><span>Social media kit</span></div>
+            </div>
+            <div class="pricing-foot">
+              <a href="https://wa.me/923001234567?text=I want the Professional Design package" target="_blank" rel="noopener"
+                 class="btn btn-primary" style="width:100%;justify-content:center">
+                Get Started
+              </a>
+            </div>
+          </div>
+
+          <!-- Pro -->
+          <div class="pricing-card reveal reveal-delay-4">
+            <div class="pricing-head">
+              <div class="pricing-badge pro">Premium</div>
+              <div class="pricing-name">Brand Package</div>
+              <div class="pricing-price"><sup>₨</sup>14,999</div>
+              <div class="pricing-period">complete brand kit</div>
+            </div>
+            <div class="pricing-body">
+              <div class="pricing-feature included"><i class="fas fa-check" aria-hidden="true"></i><span>5 design concepts</span></div>
+              <div class="pricing-feature included"><i class="fas fa-check" aria-hidden="true"></i><span>Unlimited revisions</span></div>
+              <div class="pricing-feature included"><i class="fas fa-check" aria-hidden="true"></i><span>All file formats</span></div>
+              <div class="pricing-feature included"><i class="fas fa-check" aria-hidden="true"></i><span>24hr rush delivery</span></div>
+              <div class="pricing-feature included"><i class="fas fa-check" aria-hidden="true"></i><span>Source files (AI/PSD)</span></div>
+              <div class="pricing-feature included"><i class="fas fa-check" aria-hidden="true"></i><span>Complete brand guide</span></div>
+              <div class="pricing-feature included"><i class="fas fa-check" aria-hidden="true"></i><span>Social media kit (10 posts)</span></div>
+            </div>
+            <div class="pricing-foot">
+              <a href="https://wa.me/923001234567?text=I want the Brand Package" target="_blank" rel="noopener"
+                 class="btn btn-accent" style="width:100%;justify-content:center">
+                Get Started
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FAQ
+         ============================================================ -->
+    <section id="svc-faq" class="section" aria-label="Frequently Asked Questions">
+      <div class="container">
+        <div class="text-center reveal">
+          <div class="tag">FAQ</div>
+          <h2 class="section-title">Frequently Asked <span class="highlight">Questions</span></h2>
+          <p class="section-desc">Everything you need to know before placing your order</p>
+        </div>
+        <div class="faq-grid">
+
+          <div class="faq-item reveal" data-faq>
+            <button class="faq-question" aria-expanded="false">
+              What is the minimum order quantity?
+              <div class="faq-icon"><i class="fas fa-plus" aria-hidden="true"></i></div>
+            </button>
+            <div class="faq-answer">
+              <p>For offset printing the minimum is usually 500 pieces for cost-effective pricing. For digital printing, we can print even 1 piece with no minimum. Packaging boxes start from 100 pieces. Contact us for custom quotes on any quantity.</p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal reveal-delay-1" data-faq>
+            <button class="faq-question" aria-expanded="false">
+              How long does printing take?
+              <div class="faq-icon"><i class="fas fa-plus" aria-hidden="true"></i></div>
+            </button>
+            <div class="faq-answer">
+              <p>Standard turnaround is 3–5 business days for most jobs. Rush orders (24–48 hours) are available at an additional cost. Large packaging orders may take 7–14 days. We will give you an exact timeline when you confirm your order.</p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal reveal-delay-1" data-faq>
+            <button class="faq-question" aria-expanded="false">
+              Do you provide delivery across Pakistan?
+              <div class="faq-icon"><i class="fas fa-plus" aria-hidden="true"></i></div>
+            </button>
+            <div class="faq-answer">
+              <p>Yes! We deliver to all major cities across Pakistan via TCS, Leopards, and other courier services. Delivery charges depend on weight and destination. Lahore customers can also pick up from our shop in Gawalmandi free of charge.</p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal reveal-delay-2" data-faq>
+            <button class="faq-question" aria-expanded="false">
+              What file formats do you accept?
+              <div class="faq-icon"><i class="fas fa-plus" aria-hidden="true"></i></div>
+            </button>
+            <div class="faq-answer">
+              <p>We accept AI, PDF, PSD, CDR, EPS, PNG (300 DPI minimum), and TIFF. For best results, provide files in CMYK colour mode at 300 DPI with 3mm bleed. If you don't have a design, our team can create one for you.</p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal" data-faq>
+            <button class="faq-question" aria-expanded="false">
+              Can I get a sample before bulk printing?
+              <div class="faq-icon"><i class="fas fa-plus" aria-hidden="true"></i></div>
+            </button>
+            <div class="faq-answer">
+              <p>Yes, we can print a sample proof for you before proceeding with the bulk order. Sample printing charges apply and will be deducted from your final order. This is highly recommended for packaging and wedding cards.</p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal reveal-delay-1" data-faq>
+            <button class="faq-question" aria-expanded="false">
+              What payment methods do you accept?
+              <div class="faq-icon"><i class="fas fa-plus" aria-hidden="true"></i></div>
+            </button>
+            <div class="faq-answer">
+              <p>We accept cash, bank transfer, JazzCash, EasyPaisa, and card payments at our shop. For online orders, 50% advance is required before production starts and the remaining 50% upon delivery or pickup.</p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal reveal-delay-2" data-faq>
+            <button class="faq-question" aria-expanded="false">
+              Do you offer design services if I don't have artwork?
+              <div class="faq-icon"><i class="fas fa-plus" aria-hidden="true"></i></div>
+            </button>
+            <div class="faq-answer">
+              <p>Absolutely! Our in-house design team can create everything from scratch — logos, packaging artwork, wedding card designs, brochures, and more. Design fees are charged separately. Check our pricing packages above.</p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal reveal-delay-3" data-faq>
+            <button class="faq-question" aria-expanded="false">
+              Is there a discount for bulk orders?
+              <div class="faq-icon"><i class="fas fa-plus" aria-hidden="true"></i></div>
+            </button>
+            <div class="faq-answer">
+              <p>Yes! The more you print, the lower the cost per unit. We offer competitive bulk pricing for quantities of 1,000+ pieces. Contact us on WhatsApp for a custom bulk quote tailored to your specific requirements.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CTA BANNER
+         ============================================================ -->
+    <section id="svc-cta" aria-label="Call to action">
+      <div class="svc-cta-blob svc-cta-blob-1" aria-hidden="true"></div>
+      <div class="svc-cta-blob svc-cta-blob-2" aria-hidden="true"></div>
+      <div class="container svc-cta-inner reveal">
+        <div class="svc-cta-title">
+          Ready to Start Your<br>Printing Project?
+        </div>
+        <p class="svc-cta-desc">
+          Get a free quote in minutes. WhatsApp us your requirements and we'll
+          get back to you within 1 hour during business hours.
+        </p>
+        <div class="svc-cta-btns">
+          <a href="https://wa.me/923001234567" target="_blank" rel="noopener"
+             class="btn btn-green btn-lg">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i> Chat on WhatsApp
+          </a>
+          <a href="tel:+923001234567" class="btn btn-lg"
+             style="background:rgba(255,255,255,0.15);color:#fff;border:1.5px solid rgba(255,255,255,0.3)">
+            <i class="fas fa-phone" aria-hidden="true"></i> Call Now
+          </a>
+          <a href="contact.html" class="btn btn-lg"
+             style="background:rgba(255,255,255,0.1);color:#fff;border:1.5px solid rgba(255,255,255,0.2)">
+            <i class="fas fa-envelope" aria-hidden="true"></i> Send Message
+          </a>
+        </div>
+        <div class="svc-cta-trust">
+          <div class="svc-cta-trust-item"><i class="fas fa-shield-alt" aria-hidden="true"></i> 100% Quality Guarantee</div>
+          <div class="svc-cta-trust-item"><i class="fas fa-redo" aria-hidden="true"></i> Free Revisions on Design</div>
+          <div class="svc-cta-trust-item"><i class="fas fa-truck" aria-hidden="true"></i> Fast Nationwide Delivery</div>
+          <div class="svc-cta-trust-item"><i class="fas fa-clock" aria-hidden="true"></i> 1-Hour Response Time</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">
+            <img src="images/logo.png" alt="Subhan Printers" width="36" onerror="this.style.display='none'" />
+            Subhan <span>Printers</span>
+          </div>
+          <p class="footer-desc">Professional graphic designing and printing services in Gawalmandi, Lahore, Pakistan.</p>
+          <div class="footer-socials">
+            <a href="#" class="footer-social" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+            <a href="#" class="footer-social" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+            <a href="https://wa.me/923001234567" target="_blank" rel="noopener" class="footer-social" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+            <a href="mailto:info@subhanprinters.com" class="footer-social" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Home</a></li>
+            <li><a href="services.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Services</a></li>
+            <li><a href="portfolio.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Portfolio</a></li>
+            <li><a href="About.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> About Us</a></li>
+            <li><a href="contact.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Our Services</h4>
+          <ul class="footer-links">
+            <li><a href="#svc-main"><i class="fas fa-check" style="color:var(--clr-primary)" aria-hidden="true"></i> Offset Printing</a></li>
+            <li><a href="#svc-main"><i class="fas fa-check" style="color:var(--clr-primary)" aria-hidden="true"></i> Box Packaging</a></li>
+            <li><a href="#svc-main"><i class="fas fa-check" style="color:var(--clr-primary)" aria-hidden="true"></i> Flex Banners</a></li>
+            <li><a href="#svc-main"><i class="fas fa-check" style="color:var(--clr-primary)" aria-hidden="true"></i> Wedding Cards</a></li>
+            <li><a href="#svc-main"><i class="fas fa-check" style="color:var(--clr-primary)" aria-hidden="true"></i> Graphic Design</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Contact Info</h4>
+          <div class="footer-contact-item"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Hamza Center, Gawalmandi, Lahore</span></div>
+          <div class="footer-contact-item"><i class="fas fa-phone" aria-hidden="true"></i><a href="tel:+923001234567">+92 300 1234567</a></div>
+          <div class="footer-contact-item"><i class="fas fa-envelope" aria-hidden="true"></i><a href="mailto:info@subhanprinters.com">info@subhanprinters.com</a></div>
+          <div class="footer-contact-item"><i class="fas fa-clock" aria-hidden="true"></i><span>Mon–Sat: 9 AM – 8 PM</span></div>
+        </div>
+      </div>
+
+      <!-- Payment logos -->
+      <div class="footer-payments">
+        <span class="footer-payments-label">We Accept</span>
+        <div class="footer-payments-logos">
+          <div class="pay-logo" title="Mastercard" aria-label="Mastercard">
+            <svg viewBox="0 0 38 24" width="38" height="24" aria-hidden="true">
+              <circle cx="13" cy="12" r="9" fill="#EB001B"/>
+              <circle cx="25" cy="12" r="9" fill="#F79E1B"/>
+              <path d="M19 5.5a9 9 0 0 1 0 13 9 9 0 0 1 0-13z" fill="#FF5F00"/>
+            </svg>
+          </div>
+          <div class="pay-logo" title="VISA" aria-label="VISA">
+            <svg viewBox="0 0 60 24" width="60" height="24" aria-hidden="true">
+              <text x="2" y="19" font-family="Arial Black,sans-serif" font-weight="900" font-size="20" fill="#1A1F71" letter-spacing="-1">VISA</text>
+            </svg>
+          </div>
+          <div class="pay-logo" title="PayPal" aria-label="PayPal">
+            <svg viewBox="0 0 80 24" width="80" height="24" aria-hidden="true">
+              <text x="2" y="18" font-family="Arial,sans-serif" font-weight="700" font-size="13" fill="#003087">Pay</text>
+              <text x="30" y="18" font-family="Arial,sans-serif" font-weight="700" font-size="13" fill="#009CDE">Pal</text>
+            </svg>
+          </div>
+          <div class="pay-logo" title="JazzCash" aria-label="JazzCash">
+            <svg viewBox="0 0 90 24" width="90" height="24" aria-hidden="true">
+              <text x="2" y="18" font-family="Arial,sans-serif" font-weight="800" font-size="13" fill="#C8102E">Jazz</text>
+              <text x="40" y="18" font-family="Arial,sans-serif" font-weight="800" font-size="13" fill="#f5a623">Cash</text>
+            </svg>
+          </div>
+          <div class="pay-logo" title="EasyPaisa" aria-label="EasyPaisa">
+            <svg viewBox="0 0 100 24" width="100" height="24" aria-hidden="true">
+              <text x="2" y="18" font-family="Arial,sans-serif" font-weight="700" font-size="13" fill="#4CAF50">easy</text>
+              <text x="44" y="18" font-family="Arial,sans-serif" font-weight="700" font-size="13" fill="#2196F3">paisa</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-bottom-text">
+          © <span id="footer-year">2025</span> <strong style="color:var(--clr-white)">Subhan Printers</strong>. All rights reserved. &nbsp;|&nbsp; Gawalmandi, Lahore
+        </p>
+        <div class="footer-bottom-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="sitemap.xml">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp float -->
+  <a href="https://wa.me/923001234567" target="_blank" rel="noopener"
+     class="wa-float" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+  </a>
+
+  <!-- ============================================================
+       JAVASCRIPT
+       ============================================================ -->
+  <script src="assets/js/services.js">
+  
+  </script>
+
+</body>
+</html>

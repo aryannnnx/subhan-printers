@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subhan Printers - Order Flow Documentation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f2f5;
+            color: #1a1a2e;
+            line-height: 1.8;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        
+        /* ── Header ── */
+        .header {
+            text-align: center;
+            padding-bottom: 30px;
+            border-bottom: 3px solid #8b5cf6;
+            margin-bottom: 40px;
+        }
+        
+        .header h1 {
+            font-size: 36px;
+            color: #8b5cf6;
+            font-weight: 800;
+        }
+        
+        .header .subtitle {
+            color: #666;
+            font-size: 16px;
+            margin-top: 8px;
+        }
+        
+        .header .version {
+            display: inline-block;
+            background: #8b5cf6;
+            color: #fff;
+            padding: 4px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-top: 8px;
+        }
+        
+        /* ── Section ── */
+        .section {
+            margin: 40px 0;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            border-left: 4px solid #8b5cf6;
+        }
+        
+        .section h2 {
+            color: #4c1d95;
+            font-size: 24px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section h2 .badge {
+            background: #8b5cf6;
+            color: #fff;
+            font-size: 12px;
+            padding: 2px 12px;
+            border-radius: 20px;
+        }
+        
+        .section h3 {
+            color: #1a1a2e;
+            font-size: 18px;
+            margin: 20px 0 10px;
+        }
+        
+        .section h4 {
+            color: #4c1d95;
+            font-size: 15px;
+            margin: 16px 0 8px;
+        }
+        
+        .section p {
+            color: #444;
+            margin-bottom: 12px;
+        }
+        
+        /* ── Tables ── */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0 24px;
+            font-size: 14px;
+        }
+        
+        table th {
+            background: #8b5cf6;
+            color: #fff;
+            padding: 12px 16px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        table td {
+            padding: 10px 16px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        table tr:hover {
+            background: #f3f4f6;
+        }
+        
+        table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        /* ── Chat Box ── */
+        .chat-box {
+            background: #e8f0fe;
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin: 16px 0;
+            border-left: 4px solid #25d366;
+        }
+        
+        .chat-box .user {
+            color: #1a1a2e;
+            font-weight: 600;
+        }
+        
+        .chat-box .team {
+            color: #8b5cf6;
+            font-weight: 600;
+        }
+        
+        .chat-box .message {
+            padding: 8px 0 8px 20px;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .chat-box .message:last-child {
+            border-bottom: none;
+        }
+        
+        .chat-box .time {
+            color: #888;
+            font-size: 11px;
+        }
+        
+        /* ── Status Flow ── */
+        .flow-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            padding: 20px 0;
+        }
+        
+        .flow-step {
+            background: #1a1a2e;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            text-align: center;
+            min-width: 100px;
+            position: relative;
+        }
+        
+        .flow-step .arrow {
+            color: #8b5cf6;
+            font-size: 20px;
+            position: absolute;
+            right: -18px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .flow-step.pending { background: #f59e0b; }
+        .flow-step.quoted { background: #3b82f6; }
+        .flow-step.approved { background: #8b5cf6; }
+        .flow-step.production { background: #f59e0b; }
+        .flow-step.quality { background: #8b5cf6; }
+        .flow-step.ready { background: #22c55e; }
+        .flow-step.delivered { background: #22c55e; }
+        .flow-step.cancelled { background: #ef4444; }
+        
+        .flow-step .label {
+            display: block;
+            font-weight: 400;
+            font-size: 10px;
+            opacity: 0.7;
+            margin-top: 2px;
+        }
+        
+        /* ── Code Blocks ── */
+        pre {
+            background: #1a1a2e;
+            color: #e8e8f0;
+            padding: 16px 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-size: 13px;
+            font-family: 'Courier New', monospace;
+            margin: 12px 0;
+        }
+        
+        pre .comment {
+            color: #6b7280;
+        }
+        
+        pre .keyword {
+            color: #8b5cf6;
+        }
+        
+        pre .string {
+            color: #22c55e;
+        }
+        
+        /* ── Badges ── */
+        .badge-success {
+            display: inline-block;
+            background: #22c55e;
+            color: #fff;
+            padding: 2px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .badge-warning {
+            display: inline-block;
+            background: #f59e0b;
+            color: #111;
+            padding: 2px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .badge-primary {
+            display: inline-block;
+            background: #8b5cf6;
+            color: #fff;
+            padding: 2px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .badge-danger {
+            display: inline-block;
+            background: #ef4444;
+            color: #fff;
+            padding: 2px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        /* ── Product Grid ── */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 12px;
+            margin: 12px 0;
+        }
+        
+        .product-item {
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 12px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+        }
+        
+        .product-item .name {
+            font-weight: 600;
+            color: #1a1a2e;
+        }
+        
+        .product-item .price {
+            color: #f59e0b;
+            font-weight: 700;
+        }
+        
+        /* ── Flow Diagram ── */
+        .flow-diagram {
+            background: #1a1a2e;
+            color: #e8e8f0;
+            padding: 24px;
+            border-radius: 12px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            overflow-x: auto;
+            line-height: 1.6;
+            margin: 16px 0;
+        }
+        
+        .flow-diagram .highlight {
+            color: #8b5cf6;
+        }
+        
+        .flow-diagram .green {
+            color: #22c55e;
+        }
+        
+        .flow-diagram .yellow {
+            color: #f59e0b;
+        }
+        
+        /* ── Responsive ── */
+        @media (max-width: 768px) {
+            .container { padding: 20px; }
+            .section { padding: 16px; }
+            .flow-container { flex-direction: column; align-items: center; }
+            .flow-step .arrow { display: none; }
+            table { font-size: 12px; }
+            table th, table td { padding: 8px 10px; }
+            .product-grid { grid-template-columns: 1fr; }
+        }
+        
+        /* ── Print Styles ── */
+        @media print {
+            body { background: #fff; padding: 0; }
+            .container { box-shadow: none; padding: 20px; }
+            .flow-step .arrow { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- ==========================================
+         HEADER
+         ========================================== -->
+    <div class="header">
+        <h1>📋 Subhan Printers</h1>
+        <div class="subtitle">Complete Order Flow Documentation</div>
+        <div class="version">Version 1.0.0</div>
+    </div>
+
+    <!-- ==========================================
+         OVERVIEW
+         ========================================== -->
+    <div class="section">
+        <h2>📌 Overview</h2>
+        <p>
+            The order flow in Subhan Printers is a <strong>hybrid system</strong> that combines 
+            <strong>online browsing</strong> with <strong>manual WhatsApp ordering</strong>. 
+            This is because printing jobs are custom and require personal consultation.
+        </p>
+        <p>
+            <span class="badge-primary">Customer</span> → <span class="badge-warning">WhatsApp</span> → 
+            <span class="badge-primary">Admin</span> → <span class="badge-success">Order Created</span> → 
+            <span class="badge-warning">Production</span> → <span class="badge-success">Delivered</span>
+        </p>
+    </div>
+
+    <!-- ==========================================
+         STEP 1: BROWSE PRODUCTS
+         ========================================== -->
+    <div class="section">
+        <h2>📦 Step 1: Customer Browses Products</h2>
+        <p><strong>Page:</strong> <code>/order</code></p>
+        <p>
+            Customer sees all available products with:
+            <ul>
+                <li>Product name and description</li>
+                <li>Starting price</li>
+                <li>"Order Now" button</li>
+            </ul>
+        </p>
+
+        <h4>Products Available:</h4>
+        <div class="product-grid">
+            <div class="product-item">
+                <span class="name">💍 Wedding Cards</span>
+                <span class="price">₨ 3,500</span>
+            </div>
+            <div class="product-item">
+                <span class="name">📦 Box Packaging</span>
+                <span class="price">₨ 25/pc</span>
+            </div>
+            <div class="product-item">
+                <span class="name">🖼️ Flex Banners</span>
+                <span class="price">₨ 120/sq.ft</span>
+            </div>
+            <div class="product-item">
+                <span class="name">💳 Business Cards</span>
+                <span class="price">₨ 1,800</span>
+            </div>
+            <div class="product-item">
+                <span class="name">📄 Brochures</span>
+                <span class="price">₨ 3,500</span>
+            </div>
+            <div class="product-item">
+                <span class="name">🏷️ Stickers</span>
+                <span class="price">₨ 5/pc</span>
+            </div>
+            <div class="product-item">
+                <span class="name">👑 Logo Design</span>
+                <span class="price">₨ 2,999</span>
+            </div>
+            <div class="product-item">
+                <span class="name">📦 Corrugated Boxes</span>
+                <span class="price">₨ 35/pc</span>
+            </div>
+        </div>
+
+        <h4>Product Card Example:</h4>
+        <pre>
+┌─────────────────────────────────────┐
+│  💍 Wedding Cards                    │
+│  Elegant invitations with gold foil │
+│  From ₨ 3,500 / 50 cards            │
+│                                      │
+│  [ 🔹 Order Now ]                    │
+└─────────────────────────────────────┘</pre>
+    </div>
+
+    <!-- ==========================================
+         STEP 2: WHATSAPP INITIATION
+         ========================================== -->
+    <div class="section">
+        <h2>💬 Step 2: Customer Clicks "Order Now"</h2>
+        <p>
+            Customer clicks "Order Now" button → Opens WhatsApp with pre-filled message.
+        </p>
+
+        <h4>Pre-filled Messages by Product:</h4>
+        <table>
+            <tr>
+                <th>Product</th>
+                <th>WhatsApp Message</th>
+            </tr>
+            <tr>
+                <td>💍 Wedding Cards</td>
+                <td>"Hi! I want to order Wedding Cards. Please send me a quote."</td>
+            </tr>
+            <tr>
+                <td>📦 Box Packaging</td>
+                <td>"Hi! I want to order Custom Box Packaging. Please send me a quote."</td>
+            </tr>
+            <tr>
+                <td>🖼️ Flex Banners</td>
+                <td>"Hi! I want to order Flex Banners. Please send me a quote."</td>
+            </tr>
+            <tr>
+                <td>💳 Business Cards</td>
+                <td>"Hi! I want to order Business Cards. Please send me a quote."</td>
+            </tr>
+        </table>
+
+        <div class="chat-box">
+            <div class="message">
+                <span class="user">👤 Customer:</span>
+                <span>"Hi! I want to order Wedding Cards. Please send me a quote."</span>
+                <span class="time">10:00 AM</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         STEP 3: WHATSAPP CONSULTATION
+         ========================================== -->
+    <div class="section">
+        <h2>💬 Step 3: WhatsApp Consultation</h2>
+        <p>Team asks for requirements to prepare an accurate quote.</p>
+
+        <div class="chat-box">
+            <div class="message">
+                <span class="team">👨‍💼 Subhan Printers Team:</span>
+                <span>"Assalam-o-Alaikum! Thank you for contacting Subhan Printers. We'd be happy to help with your wedding cards! 🎉</span>
+            </div>
+            <div class="message">
+                <span class="team">👨‍💼 Team:</span>
+                <span>"To give you an accurate quote, please share:</span>
+            </div>
+            <div class="message">
+                <span class="team">👨‍💼 Team:</span>
+                <span>
+                    1. 📊 Quantity needed?<br>
+                    2. 📐 Preferred card size?<br>
+                    3. 🎨 Color scheme?<br>
+                    4. 📝 Text content?<br>
+                    5. ✨ Finishing options?<br>
+                    6. 📅 Delivery deadline?
+                </span>
+            </div>
+            <div class="message">
+                <span class="team">👨‍💼 Team:</span>
+                <span>"Share your preferences and we'll send you a detailed quote! 😊"</span>
+                <span class="time">10:05 AM</span>
+            </div>
+            <div class="message">
+                <span class="user">👤 Customer:</span>
+                <span>"Walaikum Assalam! Here are the details:</span>
+            </div>
+            <div class="message">
+                <span class="user">👤 Customer:</span>
+                <span>
+                    1. Quantity: 150 cards<br>
+                    2. Size: A5 (148 x 210 mm)<br>
+                    3. Color: Gold & Ivory<br>
+                    4. Text: English names, dates, venue<br>
+                    5. Finishing: Gold Foil on front, Ribbon tie<br>
+                    6. Deadline: 2 weeks from today
+                </span>
+                <span class="time">10:10 AM</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         STEP 4: CREATE QUOTE
+         ========================================== -->
+    <div class="section">
+        <h2>📄 Step 4: Team Creates Quote in System</h2>
+        <p>
+            <strong>Admin goes to:</strong> <code>/admin/quotes/</code>
+        </p>
+        <p><strong>Admin fills in:</strong></p>
+        <pre>
+$quoteData = [
+    'quote_number'   => 'Q2406001',
+    'customer_name'  => 'John Doe',
+    'customer_email' => 'john@example.com',
+    'customer_phone' => '03001234567',
+    'project_type'   => 'Wedding Cards + Envelopes + Thank You',
+    'quantity'       => 150,
+    'specifications' => 'A5 size, 350gsm ivory card, gold foil, ribbon tie',
+    'deadline'       => '2026-06-15',
+    'budget'         => 15000,
+    'status'         => 'pending'
+];</pre>
+
+        <h4>Database Entry:</h4>
+        <pre>
+INSERT INTO quotes (quote_number, customer_name, customer_email, ...) 
+VALUES ('Q2406001', 'John Doe', 'john@example.com', ...);</pre>
+
+        <p><span class="badge-success">✅ Quote saved to database</span></p>
+    </div>
+
+    <!-- ==========================================
+         STEP 5: SEND QUOTE
+         ========================================== -->
+    <div class="section">
+        <h2>📨 Step 5: Team Sends Quote via WhatsApp</h2>
+
+        <div class="chat-box">
+            <div class="message">
+                <span class="team">👨‍💼 Team:</span>
+                <span>"Here's your detailed quote for the wedding cards! 💍</span>
+            </div>
+            <div class="message">
+                <span class="team">👨‍💼 Team:</span>
+                <span>
+                    📋 QUOTE #Q2406001<br>
+                    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br>
+                    Product: Wedding Cards Set (150 cards)<br>
+                    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+                    1. Wedding Invitation Cards (150 pcs)<br>
+                       - A5 Size (148 x 210 mm)<br>
+                       - 350gsm Ivory Card<br>
+                       - Gold Foil Printing Front<br>
+                       - Custom Calligraphy<br>
+                       - Price: ₨ 3,500<br><br>
+                    2. Matching Envelopes (150 pcs)<br>
+                       - Gold Inner Lining<br>
+                       - Custom Address Printing<br>
+                       - Price: ₨ 800<br><br>
+                    3. Thank You Cards (100 pcs)<br>
+                       - Matching Design<br>
+                       - Gold Foil<br>
+                       - Price: ₨ 1,500<br>
+                    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br>
+                    TOTAL: ₨ 5,800<br>
+                    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+                    ✅ 50% Advance Required: ₨ 2,900<br>
+                    📅 Delivery: June 15, 2026 (2 weeks)<br>
+                    🚚 Delivery Charges: ₨ 500 (if required)
+                </span>
+            </div>
+            <div class="message">
+                <span class="team">👨‍💼 Team:</span>
+                <span>"Would you like to proceed with this quote?" 💌</span>
+                <span class="time">1:00 PM</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         STEP 6: CUSTOMER ACCEPTS
+         ========================================== -->
+    <div class="section">
+        <h2>✅ Step 6: Customer Accepts Quote</h2>
+
+        <div class="chat-box">
+            <div class="message">
+                <span class="user">👤 Customer:</span>
+                <span>"Yes, this looks perfect! I want to proceed."</span>
+                <span class="time">2:00 PM</span>
+            </div>
+            <div class="message">
+                <span class="user">👤 Customer:</span>
+                <span>"I'll send the advance payment today."</span>
+                <span class="time">2:01 PM</span>
+            </div>
+            <div class="message">
+                <span class="user">👤 Customer:</span>
+                <span>"Can you also share the design proof before printing?"</span>
+                <span class="time">2:02 PM</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         STEP 7: CONVERT TO ORDER
+         ========================================== -->
+    <div class="section">
+        <h2>🔄 Step 7: Admin Converts Quote to Order</h2>
+        <p><strong>Admin goes to:</strong> <code>/admin/quotes/</code></p>
+        <p><strong>Clicks:</strong> "Convert to Order"</p>
+
+        <h4>Order Created in System:</h4>
+        <pre>
+INSERT INTO orders (
+    order_number,
+    user_id,
+    customer_name,
+    customer_email,
+    customer_phone,
+    product_type,
+    quantity,
+    total,
+    status,
+    payment_status
+) VALUES (
+    'SP2406010001',
+    1,              -- user_id
+    'John Doe',
+    'john@example.com',
+    '03001234567',
+    'wedding_cards',
+    150,
+    5800.00,
+    'pending',
+    'deposit_paid'
+);</pre>
+
+        <h4>Timeline Entry:</h4>
+        <pre>
+INSERT INTO order_timeline (order_id, status, note) 
+VALUES (1, 'pending', 'Order created from quote Q2406001');</pre>
+
+        <p><span class="badge-success">✅ Order created successfully</span></p>
+    </div>
+
+    <!-- ==========================================
+         STEP 8: ORDER STATUS TRACKING
+         ========================================== -->
+    <div class="section">
+        <h2>📊 Step 8: Order Status Tracking</h2>
+
+        <h4>Status Flow:</h4>
+        <div class="flow-container">
+            <div class="flow-step pending">
+                PENDING
+                <span class="label">Order Created</span>
+                <span class="arrow">➜</span>
+            </div>
+            <div class="flow-step quoted">
+                QUOTED
+                <span class="label">Quote Sent</span>
+                <span class="arrow">➜</span>
+            </div>
+            <div class="flow-step approved">
+                APPROVED
+                <span class="label">Order Confirmed</span>
+                <span class="arrow">➜</span>
+            </div>
+            <div class="flow-step production">
+                IN PRODUCTION
+                <span class="label">Printing Started</span>
+                <span class="arrow">➜</span>
+            </div>
+            <div class="flow-step quality">
+                QUALITY CHECK
+                <span class="label">Inspection</span>
+                <span class="arrow">➜</span>
+            </div>
+            <div class="flow-step ready">
+                READY
+                <span class="label">For Delivery</span>
+                <span class="arrow">➜</span>
+            </div>
+            <div class="flow-step delivered">
+                DELIVERED
+                <span class="label">Completed</span>
+            </div>
+        </div>
+
+        <h4>Status Descriptions:</h4>
+        <table>
+            <tr>
+                <th>Status</th>
+                <th>Description</th>
+                <th>Timeline Entry</th>
+            </tr>
+            <tr>
+                <td><span class="badge-warning">PENDING</span></td>
+                <td>Order created, waiting for approval</td>
+                <td>"Order created"</td>
+            </tr>
+            <tr>
+                <td><span class="badge-primary">QUOTED</span></td>
+                <td>Price quote sent to customer</td>
+                <td>"Quote sent to customer"</td>
+            </tr>
+            <tr>
+                <td><span class="badge-primary">APPROVED</span></td>
+                <td>Customer approved the quote</td>
+                <td>"Order approved by customer"</td>
+            </tr>
+            <tr>
+                <td><span class="badge-warning">IN PRODUCTION</span></td>
+                <td>Printing started</td>
+                <td>"Production started"</td>
+            </tr>
+            <tr>
+                <td><span class="badge-primary">QUALITY CHECK</span></td>
+                <td>Quality inspection</td>
+                <td>"Quality check passed"</td>
+            </tr>
+            <tr>
+                <td><span class="badge-success">READY</span></td>
+                <td>Ready for delivery/pickup</td>
+                <td>"Order ready for pickup"</td>
+            </tr>
+            <tr>
+                <td><span class="badge-success">DELIVERED</span></td>
+                <td>Delivered to customer</td>
+                <td>"Order delivered"</td>
+            </tr>
+            <tr>
+                <td><span class="badge-danger">CANCELLED</span></td>
+                <td>Order cancelled</td>
+                <td>"Order cancelled"</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- ==========================================
+         STEP 9: CUSTOMER VIEW
+         ========================================== -->
+    <div class="section">
+        <h2>👤 Step 9: Customer Views Order</h2>
+        <p><strong>Location:</strong> <code>/dashboard</code></p>
+
+        <h4>Customer Dashboard View:</h4>
+        <pre>
+┌─────────────────────────────────────────────────────────────────────┐
+│  Recent Orders                                                      │
+│                                                                     │
+│  ┌─────────────────────────────────────────────────────────────┐    │
+│  │  #SP2406010001   │ Wedding Cards   │ 150 pieces            │    │
+│  │  Status: READY    │ Total: ₨ 5,800                        │    │
+│  │  Timeline:                                                │    │
+│  │  ├── Jun 1 10:30 - Order Created                          │    │
+│  │  ├── Jun 1 12:00 - Quoted                                 │    │
+│  │  ├── Jun 1 14:00 - Approved                               │    │
+│  │  ├── Jun 2 09:00 - In Production                          │    │
+│  │  ├── Jun 4 16:00 - Quality Check                          │    │
+│  │  └── Jun 5 10:00 - Ready                                  │    │
+│  └─────────────────────────────────────────────────────────────┘    │
+│                                                                     │
+│  Upcoming Deadlines:                                                │
+│  ┌─────────────────────────────────────────────────────────────┐    │
+│  │  #SP2406010001  │ Jun 5, 2026  │ READY for pickup         │    │
+│  └─────────────────────────────────────────────────────────────┘    │
+└─────────────────────────────────────────────────────────────────────┘</pre>
+    </div>
+
+    <!-- ==========================================
+         STEP 10: COMPLETE
+         ========================================== -->
+    <div class="section">
+        <h2>🎯 Step 10: Order Completed</h2>
+
+        <div class="chat-box">
+            <div class="message">
+                <span class="team">👨‍💼 Team:</span>
+                <span>"Your wedding cards are ready! 🎉</span>
+            </div>
+            <div class="message">
+                <span class="team">👨‍💼 Team:</span>
+                <span>
+                    📦 ORDER #SP2406010001<br>
+                    Status: ✅ READY FOR DELIVERY<br><br>
+                    You can:<br>
+                    1. Pickup from our shop in Gawalmandi<br>
+                    2. Get it delivered via TCS (₨ 500)
+                </span>
+            </div>
+            <div class="message">
+                <span class="team">👨‍💼 Team:</span>
+                <span>"Please let us know your preference. We hope you love your wedding cards! 💍✨"</span>
+                <span class="time">4:00 PM</span>
+            </div>
+            <div class="message">
+                <span class="user">👤 Customer:</span>
+                <span>"I'll pick them up tomorrow. Thank you!"</span>
+                <span class="time">4:05 PM</span>
+            </div>
+        </div>
+
+        <h4>Payment Status Updated:</h4>
+        <pre>
+UPDATE orders SET payment_status = 'paid' WHERE id = 1;</pre>
+
+        <p><span class="badge-success">✅ Order Complete!</span></p>
+    </div>
+
+    <!-- ==========================================
+         COMPLETE FLOW DIAGRAM
+         ========================================== -->
+    <div class="section">
+        <h2>🔄 Complete Order Flow Diagram</h2>
+
+        <div class="flow-diagram">
+            <span class="highlight">┌─────────────────────────────────────────────────────────────┐</span><br>
+            <span class="highlight">│                           USER BROWSES WEBSITE               │</span><br>
+            <span class="highlight">│                                                                 │</span><br>
+            <span class="highlight">│   ┌──────────┐   ┌──────────┐   ┌──────────┐   ┌──────────┐   │</span><br>
+            <span class="highlight">│   │  Home    │   │ Services │   │ Portfolio│   │   Order  │   │</span><br>
+            <span class="highlight">│   │  Page    │   │  Page    │   │   Page   │   │   Page   │   │</span><br>
+            <span class="highlight">│   └──────────┘   └──────────┘   └──────────┘   └──────────┘   │</span><br>
+            <span class="highlight">│                                                                 │</span><br>
+            <span class="highlight">└─────────────────────────────────────────────────────────────┘</span><br>
+            <span class="green">                                    │</span><br>
+            <span class="green">                                    ▼</span><br>
+            <span class="highlight">┌─────────────────────────────────────────────────────────────┐</span><br>
+            <span class="highlight">│                     USER CLICKS "ORDER NOW" BUTTON            │</span><br>
+            <span class="highlight">└─────────────────────────────────────────────────────────────┘</span><br>
+            <span class="green">                                    │</span><br>
+            <span class="green">                                    ▼</span><br>
+            <span class="highlight">┌─────────────────────────────────────────────────────────────┐</span><br>
+            <span class="highlight">│                        WHATSAPP CHAT STARTS                   │</span><br>
+            <span class="highlight">│                                                                 │</span><br>
+            <span class="highlight">│   ┌─────────────────────────────────────────────────────┐   │</span><br>
+            <span class="highlight">│   │  Customer ↔ Subhan Printers Team                    │   │</span><br>
+            <span class="highlight">│   │                                                       │   │</span><br>
+            <span class="highlight">│   │  1. Customer shares requirements                     │   │</span><br>
+            <span class="highlight">│   │  2. Team discusses options                           │   │</span><br>
+            <span class="highlight">│   │  3. Team provides quote                              │   │</span><br>
+            <span class="highlight">│   │  4. Customer accepts quote                           │   │</span><br>
+            <span class="highlight">│   │  5. Team creates order in system                     │   │</span><br>
+            <span class="highlight">│   └─────────────────────────────────────────────────────┘   │</span><br>
+            <span class="highlight">│                                                                 │</span><br>
+            <span class="highlight">└─────────────────────────────────────────────────────────────┘</span><br>
+            <span class="green">                                    │</span><br>
+            <span class="green">                                    ▼</span><br>
+            <span class="highlight">┌─────────────────────────────────────────────────────────────┐</span><br>
+            <span class="highlight">│                          ORDER STATUS TRACKING                │</span><br>
+            <span class="highlight">│                                                                 │</span><br>
+            <span class="highlight">│   PENDING ───► QUOTED ───► APPROVED ───► IN PRODUCTION        │</span><br>
+            <span class="highlight">│                                                              │</span><br>
+            <span class="highlight">│   ───► QUALITY CHECK ───► READY ───► DELIVERED                │</span><br>
+            <span class="highlight">│                                                                 │</span><br>
+            <span class="highlight">└─────────────────────────────────────────────────────────────┘</span><br>
+            <span class="green">                                    │</span><br>
+            <span class="green">                                    ▼</span><br>
+            <span class="highlight">┌─────────────────────────────────────────────────────────────┐</span><br>
+            <span class="highlight">│                         ORDER COMPLETED                       │</span><br>
+            <span class="highlight">│                                                                 │</span><br>
+            <span class="highlight">│  1. Customer picks up OR receives delivery                     │</span><br>
+            <span class="highlight">│  2. Payment completed                                          │</span><br>
+            <span class="highlight">│  3. Status updated to DELIVERED                                │</span><br>
+            <span class="highlight">│                                                                 │</span><br>
+            <span class="highlight">└─────────────────────────────────────────────────────────────┘</span>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         SUMMARY TABLE
+         ========================================== -->
+    <div class="section">
+        <h2>📋 Quick Summary</h2>
+        <table>
+            <tr>
+                <th>Step</th>
+                <th>Action</th>
+                <th>Who</th>
+                <th>Time</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Customer sends WhatsApp</td>
+                <td>Customer</td>
+                <td>0 min</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Team asks for details</td>
+                <td>Team</td>
+                <td>5 min</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Customer shares details</td>
+                <td>Customer</td>
+                <td>10 min</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Team creates quote</td>
+                <td>Team</td>
+                <td>2-3 hours</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Team sends quote</td>
+                <td>Team</td>
+                <td>3 hours</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Customer accepts</td>
+                <td>Customer</td>
+                <td>1-2 hours</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Quote → Order</td>
+                <td>Admin</td>
+                <td>5 min</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Production starts</td>
+                <td>Team</td>
+                <td>1-2 days</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Quality check</td>
+                <td>Team</td>
+                <td>1 day</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Ready for delivery</td>
+                <td>Team</td>
+                <td>Final day</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>Customer receives</td>
+                <td>Customer</td>
+                <td>Delivery day</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- ==========================================
+         KEY POINTS
+         ========================================== -->
+    <div class="section" style="border-left-color: #22c55e;">
+        <h2>✅ Key Points</h2>
+        <ul>
+            <li>🔹 <strong>All communication</strong> happens via WhatsApp</li>
+            <li>🔹 <strong>Quotes</strong> are generated in the system</li>
+            <li>🔹 <strong>Orders</strong> are created from quotes</li>
+            <li>🔹 <strong>Status updates</strong> are tracked in dashboard</li>
+            <li>🔹 <strong>Payments</strong> are handled offline (cash/bank transfer)</li>
+            <li>🔹 <strong>Delivery</strong> can be pickup or courier</li>
+            <li>🔹 <strong>Timeline</strong> shows complete order history</li>
+            <li>🔹 <strong>Admin</strong> manages all orders from admin panel</li>
+        </ul>
+    </div>
+
+    <!-- ==========================================
+         FOOTER
+         ========================================== -->
+    <div style="text-align: center; padding-top: 30px; border-top: 2px solid #e5e7eb; margin-top: 40px;">
+        <p style="color: #888; font-size: 14px;">
+            <strong>Subhan Printers</strong> — Complete Order Flow Documentation<br>
+            Version 1.0.0 | June 2026<br>
+            📧 info@subhanprinters.com | 📞 +92 300 1234567
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>

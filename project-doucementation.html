@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Subhan Printers - Project Documentation</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 1200px; margin: 0 auto; padding: 40px; background: #fff; color: #333; line-height: 1.6; }
+        h1 { color: #8b5cf6; font-size: 32px; border-bottom: 3px solid #8b5cf6; padding-bottom: 10px; }
+        h2 { color: #6d28d9; font-size: 24px; margin-top: 40px; border-bottom: 2px solid #e5e5e5; padding-bottom: 8px; }
+        h3 { color: #4c1d95; font-size: 20px; margin-top: 30px; }
+        h4 { color: #1a1a2e; font-size: 16px; margin-top: 20px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { padding: 12px; border: 1px solid #ddd; text-align: left; }
+        th { background: #f3f4f6; font-weight: bold; }
+        code { background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-family: monospace; }
+        pre { background: #1a1a2e; color: #e8e8f0; padding: 16px; border-radius: 8px; overflow-x: auto; }
+        .section { margin: 30px 0; }
+        .highlight { background: #fef3c7; padding: 2px 4px; }
+        ul { padding-left: 20px; }
+        .toc { background: #f8f8fa; padding: 20px; border-radius: 8px; }
+        .toc a { color: #8b5cf6; text-decoration: none; }
+        .toc a:hover { text-decoration: underline; }
+        @media print { body { padding: 20px; } }
+    </style>
+</head>
+<body>
+
+<!-- ============================================
+     TABLE OF CONTENTS
+     ============================================ -->
+<h1>📚 SUBHAN PRINTERS</h1>
+<p style="color: #666; font-size: 18px;">Complete Project Documentation</p>
+<p><strong>Version:</strong> 1.0.0 | <strong>Date:</strong> June 2026</p>
+<hr>
+
+<div class="toc">
+    <h2>📋 Table of Contents</h2>
+    <ol>
+        <li><a href="#overview">Project Overview</a></li>
+        <li><a href="#architecture">System Architecture</a></li>
+        <li><a href="#tech-stack">Technology Stack</a></li>
+        <li><a href="#installation">Installation Guide</a></li>
+        <li><a href="#database">Database Schema</a></li>
+        <li><a href="#file-structure">File Structure</a></li>
+        <li><a href="#api">API Documentation</a></li>
+        <li><a href="#frontend">Frontend Pages</a></li>
+        <li><a href="#admin">Admin Panel</a></li>
+        <li><a href="#dashboard">User Dashboard</a></li>
+        <li><a href="#auth">Authentication System</a></li>
+        <li><a href="#features">Features Guide</a></li>
+        <li><a href="#troubleshooting">Troubleshooting Guide</a></li>
+        <li><a href="#deployment">Deployment Guide</a></li>
+    </ol>
+</div>
+
+<!-- ============================================
+     SECTION 1: PROJECT OVERVIEW
+     ============================================ -->
+<div id="overview" class="section">
+    <h2>1. Project Overview</h2>
+    
+    <h3>Project Name:</h3>
+    <p><strong>Subhan Printers</strong></p>
+    
+    <h3>Version:</h3>
+    <p>1.0.0</p>
+    
+    <h3>Type:</h3>
+    <p>E-commerce Printing Business Website</p>
+    
+    <h3>Location:</h3>
+    <p>Gawalmandi, Lahore, Pakistan</p>
+    
+    <h3>Description:</h3>
+    <p>Subhan Printers is a complete web-based platform for a professional printing and graphic design business. The system manages everything from customer orders and quotes to portfolio management and admin controls.</p>
+    
+    <h3>Key Features:</h3>
+    <ul>
+        <li>✅ Customer-facing website with all pages</li>
+        <li>✅ User authentication (Login/Register via Email + Google)</li>
+        <li>✅ User Dashboard with order tracking</li>
+        <li>✅ Admin Panel with full CRUD operations</li>
+        <li>✅ Newsletter subscription system</li>
+        <li>✅ Quote request system</li>
+        <li>✅ Contact form</li>
+        <li>✅ Portfolio management</li>
+        <li>✅ Product management</li>
+        <li>✅ Order management</li>
+        <li>✅ User management</li>
+        <li>✅ Settings management</li>
+    </ul>
+</div>
+
+<!-- ============================================
+     SECTION 2: SYSTEM ARCHITECTURE
+     ============================================ -->
+<div id="architecture" class="section">
+    <h2>2. System Architecture</h2>
+    
+    <pre>
+    ┌─────────────────────────────────────────────────────────────────┐
+    │                         USER (Browser)                          │
+    └─────────────────────────────────────────────────────────────────┘
+                                    │
+                                    ▼
+    ┌─────────────────────────────────────────────────────────────────┐
+    │                      Frontend (PHP Pages)                        │
+    │  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐           │
+    │  │   Home   │ │ Services │ │ Portfolio│ │   Order  │           │
+    │  └──────────┘ └──────────┘ └──────────┘ └──────────┘           │
+    │  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐           │
+    │  │  Contact │ │   About  │ │   Login  │ │ Register │           │
+    │  └──────────┘ └──────────┘ └──────────┘ └──────────┘           │
+    └─────────────────────────────────────────────────────────────────┘
+                                    │
+                                    ▼
+    ┌─────────────────────────────────────────────────────────────────┐
+    │                        API Layer (PHP)                          │
+    │  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐           │
+    │  │   Auth   │ │  Orders  │ │  Quotes  │ │Portfolio │           │
+    │  └──────────┘ └──────────┘ └──────────┘ └──────────┘           │
+    │  ┌──────────┐ ┌──────────┐ ┌──────────┐                        │
+    │  │ Products │ │Newsletter│ │  Contact │                        │
+    │  └──────────┘ └──────────┘ └──────────┘                        │
+    └─────────────────────────────────────────────────────────────────┘
+                                    │
+                                    ▼
+    ┌─────────────────────────────────────────────────────────────────┐
+    │                      Model Layer (Database)                     │
+    │  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐           │
+    │  │   User   │ │  Order   │ │  Quote   │ │Portfolio │           │
+    │  └──────────┘ └──────────┘ └──────────┘ └──────────┘           │
+    │  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐           │
+    │  │ Product  │ │Newsletter│ │ Settings │ │   ...    │           │
+    │  └──────────┘ └──────────┘ └──────────┘ └──────────┘           │
+    └─────────────────────────────────────────────────────────────────┘
+                                    │
+                                    ▼
+    ┌─────────────────────────────────────────────────────────────────┐
+    │                         Database (MySQL)                        │
+    └─────────────────────────────────────────────────────────────────┘
+    </pre>
+</div>
+
+<!-- ============================================
+     SECTION 3: TECHNOLOGY STACK
+     ============================================ -->
+<div id="tech-stack" class="section">
+    <h2>3. Technology Stack</h2>
+    
+    <table>
+        <tr>
+            <th>Component</th>
+            <th>Technology</th>
+            <th>Version</th>
+        </tr>
+        <tr><td>Backend</td><td>PHP</td><td>7.4+</td></tr>
+        <tr><td>Database</td><td>MySQL</td><td>5.7+</td></tr>
+        <tr><td>Web Server</td><td>Apache</td><td>2.4+</td></tr>
+        <tr><td>Frontend</td><td>HTML5, CSS3, JavaScript</td><td>-</td></tr>
+        <tr><td>JavaScript Libraries</td><td>Chart.js, Font Awesome</td><td>Latest</td></tr>
+        <tr><td>Authentication</td><td>Firebase Auth + PHP Sessions</td><td>-</td></tr>
+        <tr><td>Email</td><td>PHPMailer</td><td>6.8+</td></tr>
+        <tr><td>Fonts</td><td>Google Fonts</td><td>-</td></tr>
+    </table>
+</div>
+
+<!-- ============================================
+     SECTION 4: INSTALLATION GUIDE
+     ============================================ -->
+<div id="installation" class="section">
+    <h2>4. Installation Guide</h2>
+    
+    <h3>4.1 Prerequisites</h3>
+    <table>
+        <tr><th>Requirement</th><th>Version</th></tr>
+        <tr><td>XAMPP</td><td>7.4+</td></tr>
+        <tr><td>PHP</td><td>7.4+</td></tr>
+        <tr><td>MySQL</td><td>5.7+</td></tr>
+        <tr><td>Composer</td><td>Latest</td></tr>
+        <tr><td>Browser</td><td>Chrome/Firefox/Edge</td></tr>
+    </table>
+    
+    <h3>4.2 Step-by-Step Installation</h3>
+    
+    <h4>Step 1: Download & Install XAMPP</h4>
+    <pre>Download from: https://www.apachefriends.org/</pre>
+    
+    <h4>Step 2: Start XAMPP Services</h4>
+    <pre>1. Open XAMPP Control Panel
+2. Click Start on Apache
+3. Click Start on MySQL</pre>
+    
+    <h4>Step 3: Clone/Copy Project</h4>
+    <pre>C:\xampp\htdocs\SP\</pre>
+    
+    <h4>Step 4: Install Composer Dependencies</h4>
+    <pre>cd C:\xampp\htdocs\SP
+composer require phpmailer/phpmailer firebase/php-jwt</pre>
+    
+    <h4>Step 5: Configure Environment</h4>
+    <p>Create <code>.env</code> file in project root:</p>
+    <pre>
+APP_NAME="Subhan Printers"
+APP_ENV=development
+APP_DEBUG=true
+APP_URL=http://localhost:8080/SP
+
+DB_HOST=localhost
+DB_NAME=subhan_printers
+DB_USER=root
+DB_PASS=
+DB_PORT=3306
+
+SMTP_ENABLED=false
+FIREBASE_ENABLED=false</pre>
+    
+    <h4>Step 6: Create Database & Import Schema</h4>
+    <pre>Open phpMyAdmin: http://localhost/phpmyadmin
+Create database: subhan_printers
+Import: database.sql</pre>
+    
+    <h4>Step 7: Test Installation</h4>
+    <pre>Visit: http://localhost:8080/SP/</pre>
+</div>
+
+<!-- ============================================
+     SECTION 5: DATABASE SCHEMA
+     ============================================ -->
+<div id="database" class="section">
+    <h2>5. Database Schema</h2>
+    
+    <h3>5.1 Tables Overview</h3>
+    <table>
+        <tr><th>Table</th><th>Purpose</th></tr>
+        <tr><td>users</td><td>User accounts</td></tr>
+        <tr><td>orders</td><td>Customer orders</td></tr>
+        <tr><td>order_timeline</td><td>Order status history</td></tr>
+        <tr><td>quotes</td><td>Quote requests</td></tr>
+        <tr><td>portfolio</td><td>Portfolio items</td></tr>
+        <tr><td>portfolio_images</td><td>Portfolio images</td></tr>
+        <tr><td>products</td><td>Products for order page</td></tr>
+        <tr><td>newsletter</td><td>Subscribers</td></tr>
+        <tr><td>testimonials</td><td>Client testimonials</td></tr>
+        <tr><td>faqs</td><td>Frequently asked questions</td></tr>
+        <tr><td>settings</td><td>Site settings</td></tr>
+    </table>
+    
+    <h3>5.2 Key Table Structures</h3>
+    
+    <h4>users</h4>
+    <pre>
+CREATE TABLE users (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    password_hash VARCHAR(255),
+    role ENUM('admin','staff','customer') DEFAULT 'customer',
+    is_active TINYINT(1) DEFAULT 1,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);</pre>
+    
+    <h4>orders</h4>
+    <pre>
+CREATE TABLE orders (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    order_number VARCHAR(20) UNIQUE NOT NULL,
+    user_id INT,
+    customer_name VARCHAR(100) NOT NULL,
+    customer_email VARCHAR(100) NOT NULL,
+    customer_phone VARCHAR(20) NOT NULL,
+    product_type VARCHAR(50) NOT NULL,
+    quantity INT NOT NULL,
+    total DECIMAL(10,2) DEFAULT 0,
+    status ENUM('pending','approved','in_production','ready','delivered','cancelled') DEFAULT 'pending',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);</pre>
+</div>
+
+<!-- ============================================
+     SECTION 6: FILE STRUCTURE
+     ============================================ -->
+<div id="file-structure" class="section">
+    <h2>6. File Structure</h2>
+    
+    <pre>
+subhan-printers-backend/
+├── .env                          # Environment configuration
+├── .htaccess                     # Apache URL rewriting
+├── index.php                     # Main entry point / Router
+│
+├── config/
+│   ├── database.php              # Database connection
+│   ├── firebase.php              # Firebase JWT verification
+│   └── email.php                 # Email service
+│
+├── includes/
+│   ├── functions.php             # Helper functions
+│   ├── session.php               # Session management
+│   └── validation.php            # Input validation
+│
+├── templates/
+│   ├── header.php                # Full header
+│   ├── header-simple.php         # Simple header
+│   └── footer.php                # Footer with scripts
+│
+├── models/
+│   ├── User.php                  # User CRUD
+│   ├── Order.php                 # Order CRUD
+│   ├── Quote.php                 # Quote CRUD
+│   ├── Portfolio.php             # Portfolio CRUD
+│   ├── Product.php               # Product CRUD
+│   └── Newsletter.php            # Newsletter CRUD
+│
+├── api/
+│   ├── auth.php                  # Login/Register/Logout
+│   ├── orders.php                # Order management
+│   ├── quote.php                 # Quote management
+│   ├── portfolio.php             # Portfolio management
+│   ├── products.php              # Product management
+│   ├── newsletter.php            # Newsletter management
+│   └── contact.php               # Contact form
+│
+├── pages/
+│   ├── home.php                  # Homepage
+│   ├── services.php              # Services page
+│   ├── portfolio.php             # Portfolio page
+│   ├── order.php                 # Order page
+│   ├── contact.php               # Contact page
+│   ├── about.php                 # About page
+│   ├── login.php                 # Login page
+│   ├── register.php              # Register page
+│   ├── forgot-password.php       # Forgot password
+│   └── dashboard.php             # User dashboard
+│
+├── admin/
+│   ├── index.php                 # Admin dashboard
+│   ├── login.php                 # Admin login
+│   ├── orders/
+│   │   ├── index.php             # Order management
+│   │   └── view.php              # View order details
+│   ├── quotes/
+│   │   └── index.php             # Quote management
+│   ├── portfolio/
+│   │   ├── index.php             # Portfolio management
+│   │   ├── add.php               # Add portfolio item
+│   │   └── edit.php              # Edit portfolio item
+│   ├── products/
+│   │   ├── index.php             # Product management
+│   │   ├── add.php               # Add product
+│   │   └── edit.php              # Edit product
+│   ├── newsletter/
+│   │   └── index.php             # Newsletter management
+│   ├── users/
+│   │   └── index.php             # User management
+│   └── settings/
+│       └── index.php             # Site settings
+│
+├── assets/
+│   ├── css/                      # Stylesheets
+│   └── js/                       # JavaScript files
+│
+├── uploads/
+│   └── portfolio/                # Portfolio images
+│
+├── logs/
+│   └── app.log                   # Application logs
+│
+├── vendor/                       # Composer dependencies
+├── composer.json                 # Composer configuration
+└── database.sql                  # Database schema</pre>
+</div>
+
+<!-- ============================================
+     SECTIONS 7-14 (Continued)
+     ============================================ -->
+<div id="api" class="section">
+    <h2>7. API Documentation</h2>
+    
+    <h3>7.1 Authentication APIs</h3>
+    
+    <h4>Login</h4>
+    <pre>POST /api/auth?action=login
+Content-Type: application/json
+
+Request: {"email": "user@example.com", "password": "password123"}
+
+Response (Success):
+{"success": true, "message": "Login successful", "user": {"id": 1, "name": "User"}}</pre>
+    
+    <h4>Register</h4>
+    <pre>POST /api/auth?action=register
+Content-Type: application/json
+
+Request: {"name": "User", "email": "user@example.com", "password": "password123"}
+
+Response (Success):
+{"success": true, "message": "Registration successful!", "user": {"id": 2, "name": "User"}}</pre>
+    
+    <h3>7.2 Order APIs</h3>
+    <h4>Create Order</h4>
+    <pre>POST /api/orders
+Content-Type: application/json
+
+Request: {
+    "customer_name": "John Doe",
+    "customer_email": "john@example.com",
+    "customer_phone": "03001234567",
+    "product_type": "wedding_cards",
+    "quantity": 100
+}</pre>
+    
+    <h3>7.3 Quote APIs</h3>
+    <h4>Submit Quote</h4>
+    <pre>POST /api/quote
+Content-Type: application/json
+
+Request: {
+    "customer_name": "Jane Doe",
+    "customer_email": "jane@example.com",
+    "customer_phone": "03001234568",
+    "project_type": "Box Packaging",
+    "quantity": 500
+}</pre>
+    
+    <h3>7.4 Newsletter API</h3>
+    <h4>Subscribe</h4>
+    <pre>POST /api/newsletter
+Content-Type: application/json
+
+Request: {"email": "user@example.com"}
+Response: {"success": true, "message": "Subscribed successfully!"}</pre>
+</div>
+
+<!-- ============================================
+     SECTION 8: FRONTEND PAGES
+     ============================================ -->
+<div id="frontend" class="section">
+    <h2>8. Frontend Pages</h2>
+    
+    <table>
+        <tr><th>Page</th><th>URL</th><th>Description</th></tr>
+        <tr><td>Home</td><td>/</td><td>Hero slider, categories, portfolio, products, testimonials</td></tr>
+        <tr><td>Services</td><td>/services</td><td>Service categories with detailed cards and pricing</td></tr>
+        <tr><td>Portfolio</td><td>/portfolio</td><td>Filterable grid with lightbox</td></tr>
+        <tr><td>Order</td><td>/order</td><td>Product cards, pricing table, order channels</td></tr>
+        <tr><td>Contact</td><td>/contact</td><td>Multi-step quote form, map, social links</td></tr>
+        <tr><td>Login</td><td>/login</td><td>Email/Password + Google Sign-In</td></tr>
+        <tr><td>Register</td><td>/register</td><td>Registration with password strength</td></tr>
+        <tr><td>Dashboard</td><td>/dashboard</td><td>User stats, orders, activity, profile</td></tr>
+    </table>
+</div>
+
+<!-- ============================================
+     SECTION 9: ADMIN PANEL
+     ============================================ -->
+<div id="admin" class="section">
+    <h2>9. Admin Panel</h2>
+    
+    <h3>Login</h3>
+    <p><strong>URL:</strong> /admin/login.php</p>
+    <p><strong>Credentials:</strong> admin@subhanprinters.com / admin123</p>
+    
+    <table>
+        <tr><th>Section</th><th>Features</th></tr>
+        <tr><td>Dashboard</td><td>Stats cards, charts, recent orders, recent quotes</td></tr>
+        <tr><td>Orders</td><td>List, filter, search, view details, update status</td></tr>
+        <tr><td>Quotes</td><td>List, filter, search, convert to order, delete</td></tr>
+        <tr><td>Portfolio</td><td>Add, edit, delete, feature/unfeature items</td></tr>
+        <tr><td>Products</td><td>Add, edit, delete, toggle active</td></tr>
+        <tr><td>Newsletter</td><td>List, search, unsubscribe, delete, export CSV</td></tr>
+        <tr><td>Users</td><td>List, role management, toggle active, delete</td></tr>
+        <tr><td>Settings</td><td>General, social media, business info</td></tr>
+    </table>
+</div>
+
+<!-- ============================================
+     SECTIONS 10-14
+     ============================================ -->
+<div id="dashboard" class="section">
+    <h2>10. User Dashboard</h2>
+    
+    <h3>Features</h3>
+    <ul>
+        <li><strong>Stats Cards:</strong> Total Orders, Quotes, Completed, Spent</li>
+        <li><strong>Quick Actions:</strong> New Order, Request Quote, Browse Portfolio</li>
+        <li><strong>Recent Orders:</strong> List of user's orders with status</li>
+        <li><strong>Recent Activity:</strong> Combined order and quote activity feed</li>
+        <li><strong>Profile Card:</strong> User avatar, name, email, role, stats</li>
+        <li><strong>Upcoming Deadlines:</strong> Orders with delivery dates</li>
+    </ul>
+    
+    <p><strong>Access:</strong> /dashboard (Requires logged-in user)</p>
+</div>
+
+<div id="auth" class="section">
+    <h2>11. Authentication System</h2>
+    
+    <h3>Email/Password Login Flow</h3>
+    <ol>
+        <li>User enters credentials on login page</li>
+        <li>Form submits to <code>/api/auth?action=login</code></li>
+        <li>API checks database for user</li>
+        <li>Password verified using <code>password_verify()</code></li>
+        <li>Session created with user data</li>
+        <li>User redirected to dashboard</li>
+    </ol>
+    
+    <h3>Google Sign-In Flow</h3>
+    <ol>
+        <li>User clicks "Continue with Google"</li>
+        <li>Firebase popup opens</li>
+        <li>User selects Google account</li>
+        <li>Firebase returns ID token</li>
+        <li>Token sent to <code>/api/auth?action=firebase</code></li>
+        <li>User created/fetched from database</li>
+        <li>Session created</li>
+        <li>User redirected to dashboard</li>
+    </ol>
+    
+    <h3>Session Data</h3>
+    <pre>
+$_SESSION['user_id']      // User ID
+$_SESSION['user_name']    // User name
+$_SESSION['user_email']   // User email
+$_SESSION['user_role']    // User role
+$_SESSION['user_avatar']  // User avatar (Google)
+$_SESSION['logged_in_at'] // Login timestamp</pre>
+</div>
+
+<div id="features" class="section">
+    <h2>12. Features Guide</h2>
+    
+    <h3>Order Flow</h3>
+    <ol>
+        <li>User browses products → /order</li>
+        <li>Clicks "Order Now" → WhatsApp</li>
+        <li>Discusses requirements → WhatsApp chat</li>
+        <li>Receives quote → Admin creates quote</li>
+        <li>User approves → Admin creates order</li>
+        <li>Order goes to production → Status updates</li>
+        <li>Order ready → User notified</li>
+        <li>Delivery/Pickup → Order completed</li>
+    </ol>
+    
+    <h3>Quote Flow</h3>
+    <ol>
+        <li>User fills form → /contact (Step 1-3)</li>
+        <li>Quote request saved → Database (quotes table)</li>
+        <li>Admin notified → Email</li>
+        <li>Admin reviews → /admin/quotes/</li>
+        <li>Admin responds → WhatsApp/Email</li>
+        <li>Quote status updated → Quoted/Converted/Lost</li>
+    </ol>
+    
+    <h3>Newsletter Flow</h3>
+    <ol>
+        <li>User enters email → Newsletter form</li>
+        <li>Email saved → Database (newsletter table)</li>
+        <li>Welcome email sent → PHPMailer</li>
+        <li>Admin manages → /admin/newsletter/</li>
+        <li>Export CSV → Download subscriber list</li>
+    </ol>
+</div>
+
+<div id="troubleshooting" class="section">
+    <h2>13. Troubleshooting Guide</h2>
+    
+    <h3>Common Issues</h3>
+    <table>
+        <tr><th>Issue</th><th>Cause</th><th>Solution</th></tr>
+        <tr><td>White Screen</td><td>PHP error</td><td>Check error logs, enable display_errors</td></tr>
+        <tr><td>404 Not Found</td><td>Wrong path</td><td>Check .htaccess, confirm file exists</td></tr>
+        <tr><td>Database Error</td><td>Wrong credentials</td><td>Check .env file, confirm DB exists</td></tr>
+        <tr><td>Login Fails</td><td>Wrong password</td><td>Reset password via SQL</td></tr>
+        <tr><td>CSS Not Loading</td><td>Wrong path</td><td>Check paths in header.php</td></tr>
+        <tr><td>API Returns HTML</td><td>PHP error</td><td>Check API file for errors</td></tr>
+    </table>
+    
+    <h3>Error Logs Location</h3>
+    <table>
+        <tr><th>Log</th><th>Location</th></tr>
+        <tr><td>Apache Error Log</td><td>C:\xampp\apache\logs\error.log</td></tr>
+        <tr><td>PHP Error Log</td><td>C:\xampp\php\logs\php_error_log</td></tr>
+        <tr><td>Application Log</td><td>/SP/logs/app.log</td></tr>
+    </table>
+</div>
+
+<div id="deployment" class="section">
+    <h2>14. Deployment Guide</h2>
+    
+    <h3>Production Server Requirements</h3>
+    <table>
+        <tr><th>Requirement</th><th>Minimum</th></tr>
+        <tr><td>PHP</td><td>7.4+</td></tr>
+        <tr><td>MySQL</td><td>5.7+</td></tr>
+        <tr><td>Apache</td><td>2.4+</td></tr>
+        <tr><td>SSL</td><td>Recommended</td></tr>
+    </table>
+    
+    <h3>Deployment Steps</h3>
+    <ol>
+        <li>Upload all files to server via FTP</li>
+        <li>Update .env for production</li>
+        <li>Set proper permissions (755 for folders, 644 for files)</li>
+        <li>Import database</li>
+        <li>Enable HTTPS (SSL)</li>
+    </ol>
+    
+    <h3>Security Checklist</h3>
+    <ul>
+        <li>HTTPS Enabled</li>
+        <li>.env file secured</li>
+        <li>Error reporting off</li>
+        <li>Database backups configured</li>
+        <li>Strong passwords set</li>
+    </ul>
+    
+    <h3>Backup Strategy</h3>
+    <pre>
+# Database backup
+mysqldump -u root -p subhan_printers > backup_$(date +%Y%m%d).sql
+
+# Files backup
+tar -czf backup_$(date +%Y%m%d).tar.gz /var/www/html/SP/</pre>
+</div>
+
+<!-- ============================================
+     FOOTER
+     ============================================ -->
+<hr>
+<div style="background: #f3f4f6; padding: 20px; border-radius: 8px; margin-top: 40px;">
+    <h3>📋 Quick Reference</h3>
+    
+    <h4>Important URLs</h4>
+    <table>
+        <tr><td>Home</td><td>/SP/</td></tr>
+        <tr><td>Services</td><td>/SP/services</td></tr>
+        <tr><td>Portfolio</td><td>/SP/portfolio</td></tr>
+        <tr><td>Order</td><td>/SP/order</td></tr>
+        <tr><td>Login</td><td>/SP/login</td></tr>
+        <tr><td>Dashboard</td><td>/SP/dashboard</td></tr>
+        <tr><td>Admin</td><td>/SP/admin/</td></tr>
+    </table>
+    
+    <h4>Default Admin Credentials</h4>
+    <p><strong>Email:</strong> admin@subhanprinters.com</p>
+    <p><strong>Password:</strong> admin123</p>
+    
+    <h4>Key Files</h4>
+    <ul>
+        <li><code>index.php</code> - Main router</li>
+        <li><code>.env</code> - Environment config</li>
+        <li><code>config/database.php</code> - Database connection</li>
+        <li><code>includes/functions.php</code> - Helper functions</li>
+        <li><code>templates/header.php</code> - Navigation</li>
+    </ul>
+</div>
+
+<hr>
+<p style="text-align: center; color: #666; margin-top: 40px;">
+    <strong>Subhan Printers</strong> — Complete Project Documentation<br>
+    Version 1.0.0 | June 2026<br>
+    📧 info@subhanprinters.com | 📞 +92 300 1234567
+</p>
+
+</body>
+</html>

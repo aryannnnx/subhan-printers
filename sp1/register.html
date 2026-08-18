@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Create your Subhan Printers account - Start ordering professional printing services.">
+<title>Register | Subhan Printers</title>
+
+<link rel="icon" href="images/logo.png" type="image/png">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<link rel="stylesheet" href="assets/css/register.css">
+</head>
+<body>
+
+<div class="bg-blob purple"></div>
+<div class="bg-blob gold"></div>
+
+<!-- Header -->
+<header class="header-home" id="headerHome">
+    <nav class="nav-container">
+        <a href="index.html" class="nav-logo">
+            <img src="images/logo.png" alt="Subhan Printers Logo">
+            <span class="nav-brand"><span class="brand-first">Subhan</span> <span class="brand-second">Printers</span></span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li>
+                <a href="portfolio.html" class="dropdown-toggle">
+                    Portfolio <i class="fas fa-chevron-down dropdown-icon"></i>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="portfolio.html"><i class="fas fa-th-large"></i> All Projects</a></li>
+                    <li><a href="portfolio.html?cat=wedding"><i class="fas fa-heart"></i> Wedding Cards</a></li>
+                </ul>
+            </li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+            <a href="login.html" class="btn-login"><i class="fas fa-user"></i> Login</a>
+            <a href="order.html" class="btn-order"><i class="fas fa-shopping-cart"></i> Order Now</a>
+        </div>
+        <div class="hamburger-menu" id="hamburgerMenu">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+</header>
+
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<div class="mobile-menu" id="mobileMenu">
+    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+    <a href="services.html"><i class="fas fa-cogs"></i> Services</a>
+    <a href="portfolio.html"><i class="fas fa-images"></i> Portfolio</a>
+    <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+    <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+    <a href="login.html" style="color:var(--primary);"><i class="fas fa-user"></i> Login</a>
+    <a href="order.html" style="color:var(--gold);"><i class="fas fa-shopping-cart"></i> Order Now</a>
+</div>
+
+<!-- Main Content -->
+<main class="main-wrapper">
+    <div class="register-container">
+
+        <!-- Left Side -->
+        <div class="left">
+
+            <div class="logo-wrap">
+                <img src="images/logo.png" alt="Logo" class="logo">
+                <span class="logo-text"><span class="brand-first">Subhan</span> <span class="brand-second">Printers</span></span>
+            </div>
+
+            <h1 class="welcome">Create <span>Account</span></h1>
+
+            <p class="subtitle">
+                Join Subhan Printers and start ordering professional printing services today.
+            </p>
+
+            <form id="registerForm" novalidate>
+
+                <div class="form-group">
+                    <div class="input-wrap">
+                        <input type="text" id="nameInput" placeholder="Full Name" autocomplete="name" required>
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="input-error" id="nameError">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <span>Please enter your full name</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-wrap">
+                        <input type="email" id="emailInput" placeholder="Email Address" autocomplete="email" required>
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="input-error" id="emailError">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <span>Please enter a valid email address</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-wrap">
+                        <input type="password" id="passwordInput" placeholder="Password" autocomplete="new-password" required>
+                        <i class="fas fa-lock"></i>
+                        <button type="button" class="password-toggle" id="passToggle" aria-label="Show password">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="password-strength" id="passwordStrength">
+                        <div class="strength-bar"><div class="strength-fill" id="strengthFill"></div></div>
+                        <div class="strength-text" id="strengthText">Password strength</div>
+                    </div>
+                    <div class="input-error" id="passwordError">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <span>Password must be at least 6 characters</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-wrap">
+                        <input type="password" id="confirmPasswordInput" placeholder="Confirm Password" autocomplete="new-password" required>
+                        <i class="fas fa-lock"></i>
+                        <button type="button" class="password-toggle" id="confirmPassToggle" aria-label="Show password">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="input-error" id="confirmPasswordError">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <span>Passwords do not match</span>
+                    </div>
+                </div>
+
+                <label class="terms-check">
+                    <input type="checkbox" id="termsCheck" required>
+                    <span>I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></span>
+                </label>
+
+                <button type="submit" class="register-btn" id="registerBtn">
+                    <i class="fas fa-user-plus"></i> Create Account
+                </button>
+
+                <div class="divider">OR CONTINUE WITH</div>
+
+                <button type="button" class="google-btn" id="googleBtn">
+                    <svg class="google-icon" viewBox="0 0 24 24">
+                        <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                        <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                        <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                        <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                    </svg>
+                    Continue With Google
+                </button>
+
+                <div class="login-link">
+                    Already have an account?
+                    <a href="login.html">Sign In</a>
+                </div>
+
+            </form>
+
+        </div>
+
+        <!-- Right Side -->
+        <div class="right">
+            <div class="right-bg"></div>
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+
+            <div class="brand-box">
+                <img src="images/logo.png" alt="Subhan Printers" class="brand-logo">
+                <h2 class="brand-title">SUBHAN PRINTERS</h2>
+                <p class="brand-description">
+                    Professional graphic designing and printing services — wedding cards, packaging, flex banners & more since 1998.
+                </p>
+
+                <div class="brand-stats">
+                    <div class="stat-item">
+                        <div class="stat-num">25+</div>
+                        <div class="stat-label">Years</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-num">10K+</div>
+                        <div class="stat-label">Orders</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-num">5★</div>
+                        <div class="stat-label">Rating</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<!-- Toast -->
+<div class="toast" id="toast">
+    <div class="toast-icon"><i class="fas fa-check"></i></div>
+    <div class="toast-message">Account created successfully!</div>
+</div>
+
+<script src="assets/js/register.js">
+// Header scroll
+
+</script>
+
+</body>
+</html>
